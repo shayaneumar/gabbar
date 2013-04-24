@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{61A13BB1-0311-4B78-B4A5-DF2D8CB4F1AD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JohnsonControls.BuildingSecurity.Pseudo.Client</RootNamespace>
+    <AssemblyName>JohnsonControls.BuildingSecurity.Pseudo.Client</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.4.5.8\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IdHelpers.cs" />
+    <Compile Include="InMemoryAlarmRepository.cs" />
+    <Compile Include="InMemoryCaseRepository.cs" />
+    <Compile Include="InMemoryUserRepository.cs" />
+    <Compile Include="Scripting\JVent\Runtime\AlarmData.cs" />
+    <Compile Include="Scripting\JVent\Runtime\CaseData.cs" />
+    <Compile Include="Scripting\JVent\Runtime\CaseNoteData.cs" />
+    <Compile Include="Scripting\JVent\Runtime\InMemorySimulationClient.cs" />
+    <Compile Include="PseudoBuildingSecurityClient.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PseudoCookie.cs" />
+    <Compile Include="PseudoMessageProcessingClient.cs" />
+    <Compile Include="Scripting\JVent\JsonEvent.cs" />
+    <Compile Include="Scripting\JVent\JsonEventScript.cs" />
+    <Compile Include="Scripting\JVent\Runtime\ResponseData.cs" />
+    <Compile Include="Scripting\JVent\Runtime\Scheduler.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JohnsonControls.BuildingSecurity\JohnsonControls.BuildingSecurity.csproj">
+      <Project>{2E986667-407A-4B1B-B5A6-4BACF481DA01}</Project>
+      <Name>JohnsonControls.BuildingSecurity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JohnsonControls.Core\JohnsonControls.Core.csproj">
+      <Project>{2D6A836C-C3A4-4109-A9AB-CB274FA5ADA1}</Project>
+      <Name>JohnsonControls.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

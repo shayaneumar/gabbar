@@ -1,0 +1,187 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Configuring the P2000 Web UI to Communicate with the P2000 ARS</title>
+
+ <meta content="P2000, Archive Report Server, Version 3.12, P2000 Archive Report Server" name="search-keywords">
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="N:\Techpubs\P2000 5.0\Archive Report Server\24-10685-25 Rev. - (ARS User Guide)\Ch2.fm" />
+ <link rel="stylesheet" href="../../../RHStyleMapping.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\..\RHStyleMapping.css" type="text/css" />
+
+ <script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("P2000 ARS Online Help\nSetup\nConfiguring the P2000 Web UI to Communicate with the P2000 ARS");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../../index.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+<table style="border-collapse: separate; border-collapse: separate;" cellspacing="0" 
+		 width="100%" bgcolor="#70AF42" border="1">
+	<col style="width: 100%;" />
+	<tr>
+		<td style="vertical-align: middle;">
+  <p style="margin-top: 0pt; 
+												 line-height: 200%; margin-bottom: 0pt; 
+												 font-family: Arial, sans-serif; 
+												 font-weight: bold; font-size: 11pt; 
+												 color: #ffffff; font-variant: normal; 
+												 text-transform: none; 
+												 letter-spacing: normal; 
+												 text-decoration: none; ">P2000 
+		 Web User Interface Help</p></td>
+	</tr>
+ </table>
+<script type="text/javascript" language="javascript">//<![CDATA[
+document.write("<p  style=\"text-align:left;\" class=\"breadcrumbs\">");
+AddMasterBreadcrumbs("../../../index.htm", "breadcrumbs", " | ", "Home", "../Ch1/Introduction.htm");
+document.write("<a class=\"breadcrumbs\" href=\"../Ch1/Introduction.htm\">P2000 ARS Online Help<\/a>  |  <a class=\"breadcrumbs\" href=\"Setup.htm\">Setup<\/a>  |  Configuring the P2000 Web UI to Communicate with the P2000 ARS<\/p>");
+//]]></script>
+
+ <h1><a name="XREF_45251_Logging_in_to_the"></a><a name="XREF_31450_Configuring_the"></a>Configuring the <a name="CSH_1"></a>P2000 Web UI to Communicate with the P2000 ARS</h1>
+ <p class="Body">To run or schedule a report using&#160;the P2000 Web UI, you must configure it&#160;to communicate with SSRS on the P2000&nbsp;ARS. This is only required once, as long as the information stays the same.</p>
+ 
+<p class="SpecialNote"><span class="Bold">Note:     </span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;</font></span>The fields on the Report Server screen require knowledge of P2000 Web UI and P2000&nbsp;ARS network settings. If you have any difficulty configuring communications between the two, contact your P2000 administrator or IT staff.</p>
+
+ <p class="StepTitle">To configure communication between the P2000 Web UI and the P2000 ARS:</p>
+ <p class="Step">1.<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Using a supported Web browser, log on to the <span style="letter-spacing : 0.00em; ">P2000 Web UI.</span></p>
+ <p class="Step">2.<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Click <span class="Bold">System Setup</span> at the top of the screen, then slide down and select <span class="Bold">Report Server</span>.</p>
+ <p class="StepText">The Report Server screen appears.</p>
+ <p class="Step">3.<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Enter the following information on the <span class="Bold">Report Server</span> screen:</p>
+ 
+<p class="StepBullet" style="font-weight : bold; letter-spacing : 0.00em;">●<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span class="Bold" style="font-weight : bold; text-decoration : none; letter-spacing : 0.00em; "><b>Use SSL/TLS</b></span><span style="font-weight : normal; ">&#160;check-box: Check to create an encrypted tunnel between the P2000 Web UI and the P2000&nbsp;ARS using SSL/TLS. If you check this box, the </span><span class="Bold" style="font-weight : bold; text-decoration : none; letter-spacing : 0.00em; "><b>Web Service URL</b></span><span style="font-weight : normal; ">&#160;and </span><span class="Bold" style="font-weight : bold; text-decoration : none; letter-spacing : 0.00em; "><b>User Interface URL</b></span><span style="font-weight : normal; "> fields on this screen changes from http to https.</span></p>
+
+ 
+<p class="SpecialNote"><span class="Bold">Note:     </span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;</font></span>SSL must be configured in SSRS on the P2000 ARS for this feature to work. Johnson Controls recommends using SSL for added security.</p>
+
+ 
+<p class="StepBullet" style="font-weight : bold; letter-spacing : 0.00em;">●<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Server (IP Address or Host Name)<span style="font-weight : normal; ">: Enter the IP address or host name of the system hosting the P2000&nbsp;ARS. The information in this field is used to create part of the Web Service URL field and the User Interface URL field on this screen.</span></p>
+
+ 
+<p class="StepBullet" style="font-weight : bold; letter-spacing : 0.00em;">●<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Web Service Virtual Directory<span style="font-weight : normal; ">: Enter the location of the </span><span style="font-weight : normal; letter-spacing : 0.00em; ">SSRS </span><span style="font-weight : normal; ">Web Service directory on the P2000 ARS </span><span class="Italic" style="font-family : Times New Roman; font-style : italic; font-weight : normal; font-size  : 10.0pt; color   : #000000; text-decoration : none; letter-spacing : 0.00em; "><font size="2" color="black" style="font-size:10.000000pt;"><i>if</i></font></span><span style="font-weight : normal; ">&#160;it has been changed from the default setting, which is ReportServer. The information in this field is used to create part of the Web Service URL field on this screen.</span></p>
+
+ 
+<p class="StepBullet">●<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span style="font-weight : bold; letter-spacing : 0.00em; "><b>Web </b></span><span class="Bold">Service URL</span>: This is the URL of the SSRS Web service running on the P2000&nbsp;ARS. The default is: <span class="Bold">http://[IP address or machine name]/ReportServer</span>. This field is not editable.</p>
+
+ 
+<p class="StepBullet">●<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span class="Bold">Domain</span>: Only required if the account being used to access the P2000&nbsp;ARS from the P2000 Web UI is an Active Directory account rather than a local machine account on the P2000&nbsp;ARS. If necessary, consult your P2000&nbsp;ARS administrator for more information.</p>
+
+ 
+<p class="StepBullet">●<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span class="Bold">User Name</span>: This is the user name of a user account on the P2000&nbsp;ARS that is authorized to run and schedule reports.</p>
+
+ 
+<p class="StepBullet">●<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span class="Bold">Password</span>: This is the password of the user account.&#160;This field is case sensitive.</p>
+
+ <p class="Step">4.<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Click <span class="Bold">Test Configuration</span>&#160;to make sure the configuration information you entered is accurate. A status message appears under the <span class="Bold">Test Configuration</span>&#160;button to indicate success or failure of the test of the current configuration.</p>
+ <p class="StepText">If the current configuration is <span class="Italic">not</span>&#160;correct, verify all of the settings and then test the configuration again.</p>
+ <p class="Step">5.<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Click <span class="Bold">Save</span> to save your configuration settings.</p>
+ <table style="border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px;" 
+		 cellspacing="0" width="100%">
+	<col style="width: 16.87%;" />
+	<col style="width: 58.505%;" />
+	<col style="width: 24.625%;" />
+	<tr style="height: 5px;">
+		<td colspan="3" style="border-bottom: Solid 1px #143d75; vertical-align: Top;">
+  <p 
+			 style="margin-top: 18px;">&#160;</p></td>
+		
+	</tr>
+	<tr style="height: 38px;">
+		<td style="vertical-align: Top;">
+  <p style="margin-top: 4.5pt;"><a 
+		 href="http://www.johnsoncontrols.com" target="_blank" title="Johnson Controls Web Site"><img src="../../../jci_logo_color_small.png" alt="jci_logo_color_small.png" style="border: none;" border="0" /></a></p></td>
+		<td style="vertical-align: Top;">
+  <p style="text-align: center; 
+											 margin-top: 20px;">&#160;</p></td>
+		<td style="vertical-align: Top;">
+  <p style="text-align: center; 
+											 margin-top: 12px;">© 2013 
+		 Johnson Controls, Inc.<br />
+		<a title="Online Product Literature" href="http://cgproducts.johnsoncontrols.com/default.aspx?topframe.aspx&amp;0" 
+			 target="_blank" style="text-decoration: none; ">Product Documentation</a></p></td>
+	</tr>
+ </table>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

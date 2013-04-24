@@ -1,0 +1,138 @@
+﻿@*----------------------------------------------------------------------------
+
+(C) Copyright 2012 Johnson Controls, Inc.
+Use or Copying of all or any part of this program, except as
+permitted by License Agreement, is prohibited.
+
+------------------------------------------------------------------------------*@
+
+@using BuildingSecurity.Reporting
+@model ReportSchedulerModel
+
+<div>
+    <span class="badge">1</span>
+    @Resources.ReportSchedulerDescriptionPrompt
+</div>
+<div class="description">
+    <div>
+        @Html.LabelFor(m => m.Description)
+        @Html.TextBoxFor(m => m.Description)
+    </div>
+</div>
+
+<div>
+    <span class="badge">2</span>
+    @Resources.ReportSchedulerConfigurePrompt
+</div>
+<div class="parameters">
+    <div class="clearfix">
+        @Html.HiddenFor(m => m.ReportId)
+        @Html.HiddenFor(m => m.ReportName)
+        @Html.HiddenFor(m => m.ScheduleId)
+        @Html.HiddenFor(m => m.ReportUiCulture)
+        @Html.HiddenParameters(Model.Parameters)
+        @Html.Partial(Model.ParametersView, Model)
+    </div>
+</div>
+                    
+<div>
+    <span class="badge">3</span>
+    @Resources.ReportSchedulerReceiveFormatPrompt
+</div>
+<div class="output">
+    <div class="clear-fix">
+        <label class="radio">
+            <div class="float-left">@Html.RadioButtonFor(m => m.ReportOutputType, ReportOutputType.Pdf)</div>
+            <div class="float-left"><img src="@Url.Content(ReportOutputType.Pdf.IconPath())" alt="@ReportOutputType.Pdf.Label()"/></div>
+            <div class="radio-label float-left">@ReportOutputType.Pdf.Label()</div>
+        </label>
+        <label class="radio">
+            <div class="float-left">@Html.RadioButtonFor(m => m.ReportOutputType, ReportOutputType.Excel)</div>
+            <div class="float-left"><img src="@Url.Content(ReportOutputType.Excel.IconPath())" alt="@ReportOutputType.Excel.Label()"/></div>
+            <div class="radio-label float-left">@ReportOutputType.Excel.Label()</div>
+        </label>
+        <label class="radio">
+            <div class="float-left">@Html.RadioButtonFor(m => m.ReportOutputType, ReportOutputType.Csv)</div>
+            <div class="float-left"><img src="@Url.Content(ReportOutputType.Csv.IconPath())" alt="@ReportOutputType.Csv.Label()"/></div>
+            <div class="radio-label float-left">@ReportOutputType.Csv.Label()</div>
+        </label>
+    </div>
+    @Html.ValidationMessageFor(m => m.ReportOutputType)
+</div>
+
+<div>
+    <span class="badge">4</span>
+    @Resources.ReportSchedulerRunWhenPrompt
+</div>
+<div class="timing">
+    <div class="clear-fix">
+        <label class="radio">
+            @Html.RadioButtonFor(m => m.ReportFrequency, ReportFrequency.Daily, new { data_bind = "checked: reportFreqency" })
+            @ReportFrequency.Daily.Label()
+        </label>
+        <label class="radio">
+            @Html.RadioButtonFor(m => m.ReportFrequency, ReportFrequency.Weekly, new { data_bind = "checked: reportFreqency" })
+            @ReportFrequency.Weekly.Label()
+        </label>
+    </div>
+    @Html.ValidationMessageFor(m => m.ReportFrequency)
+    <div>
+        @Html.LabelFor(m => m.Weekday, new { data_bind = "visible: isWeekySelected" })
+        @Html.DropDownListFor(m => m.Weekday, ReportSchedulerModel.Weekdays, new { data_bind = "visible: isWeekySelected" })
+
+        @Html.LabelFor(m => m.ScheduledTime)
+        @Html.TextBoxFor(m => m.ScheduledTime)
+
+        @Html.LabelFor(m => m.StartDate)
+        @Html.TextBoxFor(m => m.StartDate, new { @class = "datepicker" })
+
+        <label for="EndDate">
+            @Html.CheckBoxFor(m => m.EndDateSpecified, new { data_bind = "checked: endDateSpecified" })
+            <span data-bind="enable: endDateSpecified">@Resources.ReportSchedulerModelEndDateLabel</span>
+        </label>                             
+        @Html.TextBoxFor(m => m.EndDate, new { @class = "datepicker", data_bind = "enable: endDateSpecified" })
+    </div>
+</div>
+
+<div>
+    <span class="badge">5</span>
+    @Resources.ReportSchedulerWhereToReceivePrompt
+</div>
+<div class="destination">
+    <div class="clear-fix">
+        <label class="radio">
+            @Html.RadioButtonFor(m => m.ReportDestination, ReportDestination.FileShare, new { data_bind = "checked: reportDestination" })
+            @ReportDestination.FileShare.Label()
+        </label>
+        <label class="radio">
+            @Html.RadioButtonFor(m => m.ReportDestination, ReportDestination.Email, new { data_bind = "checked: reportDestination" })
+            @ReportDestination.Email.Label()
+        </label>                            
+    </div>
+    <div>
+        <div data-bind="visible: isShareSelected">
+            @Html.LabelFor(m => m.Location)
+            @Html.TextBoxFor(m => m.Location)
+
+            @Html.LabelFor(m => m.UserName)
+            @Html.TextBoxFor(m => m.UserName)
+
+            @Html.LabelFor(m => m.Password)
+            @Html.PasswordFor(m => m.Password)
+        </div>
+        <div data-bind="visible: isEmailSelected">
+            @Html.LabelFor(m => m.EmailAddresses)
+            @Html.TextBoxFor(m => m.EmailAddresses)
+            @Html.ValidationMessageFor(m => m.EmailAddresses)
+            <p class="help-block">
+                @Resources.ReportSchedulerEmailAddressesHelpBlock
+            </p>
+                                
+            @Html.LabelFor(m => m.Subject)
+            @Html.TextBoxFor(m => m.Subject)
+
+            @Html.LabelFor(m => m.Comment)
+            @Html.TextBoxFor(m => m.Comment)                            
+        </div>
+    </div>
+</div>

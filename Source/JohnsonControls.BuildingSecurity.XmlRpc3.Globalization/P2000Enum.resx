@@ -1,0 +1,648 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BOOLEAN_TYPE_0" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="BOOLEAN_TYPE_1" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="FAULT_CODE_1" xml:space="preserve">
+    <value>Invalid Enumeration Value Key</value>
+  </data>
+  <data name="FAULT_CODE_2" xml:space="preserve">
+    <value>Invalid Partition</value>
+  </data>
+  <data name="FAULT_CODE_3" xml:space="preserve">
+    <value>Invalid Session Information</value>
+  </data>
+  <data name="FAULT_CODE_4" xml:space="preserve">
+    <value>Invalid Response Text</value>
+  </data>
+  <data name="FAULT_CODE_5" xml:space="preserve">
+    <value>Invalid Server Name</value>
+  </data>
+  <data name="FAULT_CODE_6" xml:space="preserve">
+    <value>Invalid Port Number</value>
+  </data>
+  <data name="FAULT_CODE_7" xml:space="preserve">
+    <value>Invalid User Name</value>
+  </data>
+  <data name="FAULT_CODE_8" xml:space="preserve">
+    <value>Invalid Filter Node</value>
+  </data>
+  <data name="FAULT_CODE_9" xml:space="preserve">
+    <value>Invalid Xml Document</value>
+  </data>
+  <data name="FAULT_CODE_10" xml:space="preserve">
+    <value>Invalid Sort Key</value>
+  </data>
+  <data name="FAULT_CODE_11" xml:space="preserve">
+    <value>Invalid Enumeration Value Parent Key</value>
+  </data>
+  <data name="FAULT_CODE_12" xml:space="preserve">
+    <value>Invalid AD Configuration</value>
+  </data>
+  <data name="FAULT_CODE_13" xml:space="preserve">
+    <value>Invalid Enumeration Set Key</value>
+  </data>
+  <data name="FAULT_CODE_14" xml:space="preserve">
+    <value>Invalid Alarm GUID </value>
+  </data>
+  <data name="FAULT_CODE_15" xml:space="preserve">
+    <value>Invalid Alarm Site Name</value>
+  </data>
+  <data name="FAULT_CODE_16" xml:space="preserve">
+    <value>Invalid Alarm Type Name</value>
+  </data>
+  <data name="FAULT_CODE_17" xml:space="preserve">
+    <value>Invalid Item Name</value>
+  </data>
+  <data name="FAULT_CODE_18" xml:space="preserve">
+    <value>Invalid Operator name</value>
+  </data>
+  <data name="FAULT_CODE_19" xml:space="preserve">
+    <value>Invalid Sort Order</value>
+  </data>
+  <data name="FAULT_CODE_20" xml:space="preserve">
+    <value>Invalid Parameter Node</value>
+  </data>
+  <data name="FAULT_CODE_21" xml:space="preserve">
+    <value>Invalid Condition Sequence Number</value>
+  </data>
+  <data name="FAULT_CODE_22" xml:space="preserve">
+    <value>Invalid Command</value>
+  </data>
+  <data name="FAULT_CODE_23" xml:space="preserve">
+    <value>Invalid Preference Type</value>
+  </data>
+  <data name="FAULT_CODE_24" xml:space="preserve">
+    <value>Invalid Application Preference Document</value>
+  </data>
+  <data name="FAULT_CODE_25" xml:space="preserve">
+    <value>Invalid Operation</value>
+  </data>
+  <data name="FAULT_CODE_26" xml:space="preserve">
+    <value>Invalid Password</value>
+  </data>
+  <data name="FAULT_CODE_27" xml:space="preserve">
+    <value>Invalid Function Name</value>
+  </data>
+  <data name="FAULT_CODE_28" xml:space="preserve">
+    <value>Invalid Host Address</value>
+  </data>
+  <data name="FAULT_CODE_29" xml:space="preserve">
+    <value>Invalid Application Key</value>
+  </data>
+  <data name="FAULT_CODE_30" xml:space="preserve">
+    <value>Invalid Computer Name</value>
+  </data>
+  <data name="FAULT_CODE_31" xml:space="preserve">
+    <value>Invalid Interface Type</value>
+  </data>
+  <data name="FAULT_CODE_32" xml:space="preserve">
+    <value>Invalid Page Number</value>
+  </data>
+  <data name="FAULT_CODE_33" xml:space="preserve">
+    <value>Invalid Records Per Page</value>
+  </data>
+  <data name="FAULT_CODE_34" xml:space="preserve">
+    <value>Invalid Record Count</value>
+  </data>
+  <data name="FAULT_CODE_35" xml:space="preserve">
+    <value>Invalid Alarm Response Text</value>
+  </data>
+  <data name="FAULT_CODE_36" xml:space="preserve">
+    <value>Invalid Password Mode</value>
+  </data>
+  <data name="FAULT_CODE_37" xml:space="preserve">
+    <value>Invalid Number of Parameters</value>
+  </data>
+  <data name="FAULT_CODE_38" xml:space="preserve">
+    <value>Invalid Privilege Level</value>
+  </data>
+  <data name="FAULT_CODE_39" xml:space="preserve">
+    <value>Invalid Xml String</value>
+  </data>
+  <data name="FAULT_CODE_40" xml:space="preserve">
+    <value>Invalid Return Type</value>
+  </data>
+  <data name="FAULT_CODE_41" xml:space="preserve">
+    <value>Invalid Sort Key Name</value>
+  </data>
+  <data name="FAULT_CODE_42" xml:space="preserve">
+    <value>Invalid Sort Key Sequence Number</value>
+  </data>
+  <data name="FAULT_CODE_43" xml:space="preserve">
+    <value>Invalid Sort Order</value>
+  </data>
+  <data name="FAULT_CODE_44" xml:space="preserve">
+    <value>The username or password you entered is incorrect.</value>
+  </data>
+  <data name="FAULT_CODE_1001" xml:space="preserve">
+    <value>Missing Enumeration Value Key</value>
+  </data>
+  <data name="FAULT_CODE_1002" xml:space="preserve">
+    <value>Missing Partition</value>
+  </data>
+  <data name="FAULT_CODE_1003" xml:space="preserve">
+    <value>Missing Session Information</value>
+  </data>
+  <data name="FAULT_CODE_1004" xml:space="preserve">
+    <value>Missing response Text</value>
+  </data>
+  <data name="FAULT_CODE_1005" xml:space="preserve">
+    <value>Missing Server Name</value>
+  </data>
+  <data name="FAULT_CODE_1006" xml:space="preserve">
+    <value>Missing Port Number</value>
+  </data>
+  <data name="FAULT_CODE_1007" xml:space="preserve">
+    <value>Missing User Name</value>
+  </data>
+  <data name="FAULT_CODE_1008" xml:space="preserve">
+    <value>Missing Filter Node</value>
+  </data>
+  <data name="FAULT_CODE_1009" xml:space="preserve">
+    <value>Missing Xml Document</value>
+  </data>
+  <data name="FAULT_CODE_1010" xml:space="preserve">
+    <value>Missing Sort Key</value>
+  </data>
+  <data name="FAULT_CODE_1011" xml:space="preserve">
+    <value>Missing Enumeration Value Parent Key</value>
+  </data>
+  <data name="FAULT_CODE_1012" xml:space="preserve">
+    <value>Missing AD Configuration</value>
+  </data>
+  <data name="FAULT_CODE_1013" xml:space="preserve">
+    <value>Missing Enumeration Set Key</value>
+  </data>
+  <data name="FAULT_CODE_1014" xml:space="preserve">
+    <value>Missing Alarm GUID</value>
+  </data>
+  <data name="FAULT_CODE_1015" xml:space="preserve">
+    <value>Missing Alarm Site Name</value>
+  </data>
+  <data name="FAULT_CODE_1016" xml:space="preserve">
+    <value>Missing Alarm Type Name</value>
+  </data>
+  <data name="FAULT_CODE_1017" xml:space="preserve">
+    <value>Missing Item Name</value>
+  </data>
+  <data name="FAULT_CODE_1018" xml:space="preserve">
+    <value>Missing Operator Name</value>
+  </data>
+  <data name="FAULT_CODE_1019" xml:space="preserve">
+    <value>Missing Sort Order</value>
+  </data>
+  <data name="FAULT_CODE_1020" xml:space="preserve">
+    <value>Missing Parameter Node</value>
+  </data>
+  <data name="FAULT_CODE_1021" xml:space="preserve">
+    <value>Missing Condition Sequence Number</value>
+  </data>
+  <data name="FAULT_CODE_1022" xml:space="preserve">
+    <value>Missing Command</value>
+  </data>
+  <data name="FAULT_CODE_1023" xml:space="preserve">
+    <value>Missing Preference Type</value>
+  </data>
+  <data name="FAULT_CODE_1024" xml:space="preserve">
+    <value>Missing Application Preference Document</value>
+  </data>
+  <data name="FAULT_CODE_1029" xml:space="preserve">
+    <value>Missing Application Key</value>
+  </data>
+  <data name="FAULT_CODE_2004" xml:space="preserve">
+    <value>Existing Response Text</value>
+  </data>
+  <data name="FAULT_CODE_2021" xml:space="preserve">
+    <value>Existing Condition Sequence Number</value>
+  </data>
+  <data name="FAULT_CODE_3000" xml:space="preserve">
+    <value>Unauthorized Function</value>
+  </data>
+  <data name="FAULT_CODE_3001" xml:space="preserve">
+    <value>Internal Error</value>
+  </data>
+  <data name="FAULT_CODE_3002" xml:space="preserve">
+    <value>TCP IP Connection Error</value>
+  </data>
+  <data name="FAULT_CODE_3003" xml:space="preserve">
+    <value>TCP IP Sending Error</value>
+  </data>
+  <data name="FAULT_CODE_3004" xml:space="preserve">
+    <value>TCP IP Receiving Error</value>
+  </data>
+  <data name="FAULT_CODE_3005" xml:space="preserve">
+    <value>TCP IP Connecting Error</value>
+  </data>
+  <data name="FAULT_CODE_3006" xml:space="preserve">
+    <value>Failed To Login</value>
+  </data>
+  <data name="FAULT_CODE_3007" xml:space="preserve">
+    <value>Failed To Authenticate</value>
+  </data>
+  <data name="FAULT_CODE_3008" xml:space="preserve">
+    <value>Failed To Issue Command</value>
+  </data>
+  <data name="FAULT_CODE_3009" xml:space="preserve">
+    <value>Failed To Impersonate New User</value>
+  </data>
+  <data name="FAULT_CODE_3010" xml:space="preserve">
+    <value>Failed To Process Multi-Entry Request</value>
+  </data>
+  <data name="FAULT_CODE_3011" xml:space="preserve">
+    <value>Failed Operation</value>
+  </data>
+  <data name="FAULT_CODE_3012" xml:space="preserve">
+    <value>Enumeration Value Not Found</value>
+  </data>
+  <data name="FAULT_CODE_3013" xml:space="preserve">
+    <value>Function Name Not Found</value>
+  </data>
+  <data name="FAULT_CODE_3014" xml:space="preserve">
+    <value>Named Value Not Found</value>
+  </data>
+  <data name="FAULT_CODE_3015" xml:space="preserve">
+    <value>Method Not Implemented</value>
+  </data>
+  <data name="FAULT_CODE_3016" xml:space="preserve">
+    <value>Duplicate Xml Node</value>
+  </data>
+  <data name="FAULT_CODE_3017" xml:space="preserve">
+    <value>Time Out, SQL Transaction Timeout</value>
+  </data>
+  <data name="FAULT_CODE_3018" xml:space="preserve">
+    <value>Account Locked Out</value>
+  </data>
+  <data name="FAULT_CODE_3019" xml:space="preserve">
+    <value>Account Disabled</value>
+  </data>
+  <data name="FAULT_CODE_3100" xml:space="preserve">
+    <value>Mismatched Partition Name and Key Count</value>
+  </data>
+  <data name="FAULT_CODE_3101" xml:space="preserve">
+    <value>Mismatched Permission Resource and Level Count</value>
+  </data>
+  <data name="FAULT_CODE_3200" xml:space="preserve">
+    <value>Account Disabled</value>
+  </data>
+  <data name="FAULT_CODE_3201" xml:space="preserve">
+    <value>Account Locked</value>
+  </data>
+  <data name="FAULT_CODE_4000" xml:space="preserve">
+    <value>Command Parameter Below Minimum</value>
+  </data>
+  <data name="FAULT_CODE_4001" xml:space="preserve">
+    <value>Command Parameter Above Maximum</value>
+  </data>
+  <data name="FAULT_CODE_4002" xml:space="preserve">
+    <value>Command Parameter Too Short</value>
+  </data>
+  <data name="FAULT_CODE_4003" xml:space="preserve">
+    <value>Command Parameter Too Long</value>
+  </data>
+  <data name="FAULT_CODE_4004" xml:space="preserve">
+    <value>Command Parameter Invalid Type</value>
+  </data>
+  <data name="FAULT_CODE_4005" xml:space="preserve">
+    <value>Command Parameter Null</value>
+  </data>
+  <data name="FAULT_CODE_4006" xml:space="preserve">
+    <value>Command Parameter Value Out Of Range</value>
+  </data>
+  <data name="FAULT_CODE_0" xml:space="preserve">
+    <value>Success</value>
+  </data>
+  <data name="FAULT_CODE_N1" xml:space="preserve">
+    <value>Unknown error</value>
+  </data>
+  <data name="FAULT_CODE_N10" xml:space="preserve">
+    <value>Terminal not found in database</value>
+  </data>
+  <data name="FAULT_CODE_N11" xml:space="preserve">
+    <value>Terminal Group not found in database</value>
+  </data>
+  <data name="FAULT_CODE_N12" xml:space="preserve">
+    <value>Timezone not found in database</value>
+  </data>
+  <data name="FAULT_CODE_N13" xml:space="preserve">
+    <value>Timezone is in use</value>
+  </data>
+  <data name="FAULT_CODE_N14" xml:space="preserve">
+    <value>Alarm not found in database</value>
+  </data>
+  <data name="FAULT_CODE_N15" xml:space="preserve">
+    <value>Alarm is in incorrect state</value>
+  </data>
+  <data name="FAULT_CODE_N16" xml:space="preserve">
+    <value>Event not found in database</value>
+  </data>
+  <data name="FAULT_CODE_N17" xml:space="preserve">
+    <value>Scheduled action not found in database</value>
+  </data>
+  <data name="FAULT_CODE_N18" xml:space="preserve">
+    <value>Badge not found in database</value>
+  </data>
+  <data name="FAULT_CODE_N19" xml:space="preserve">
+    <value>Cardholder not found in database</value>
+  </data>
+  <data name="FAULT_CODE_N2" xml:space="preserve">
+    <value>Error opening database</value>
+  </data>
+  <data name="FAULT_CODE_N20" xml:space="preserve">
+    <value>Invalid UDF type</value>
+  </data>
+  <data name="FAULT_CODE_N21" xml:space="preserve">
+    <value>Counter not found in database</value>
+  </data>
+  <data name="FAULT_CODE_N22" xml:space="preserve">
+    <value>Error downloading data to controller</value>
+  </data>
+  <data name="FAULT_CODE_N23" xml:space="preserve">
+    <value>Terminal is not a reader</value>
+  </data>
+  <data name="FAULT_CODE_N24" xml:space="preserve">
+    <value>Terminal is disabled</value>
+  </data>
+  <data name="FAULT_CODE_N25" xml:space="preserve">
+    <value>Input not found in database</value>
+  </data>
+  <data name="FAULT_CODE_N26" xml:space="preserve">
+    <value>Output not found in database</value>
+  </data>
+  <data name="FAULT_CODE_N27" xml:space="preserve">
+    <value>Panel not found in database</value>
+  </data>
+  <data name="FAULT_CODE_N28" xml:space="preserve">
+    <value>Output Group not found in database</value>
+  </data>
+  <data name="FAULT_CODE_N29" xml:space="preserve">
+    <value>Invalid security level</value>
+  </data>
+  <data name="FAULT_CODE_N3" xml:space="preserve">
+    <value>Error reading from or writing to database</value>
+  </data>
+  <data name="FAULT_CODE_N30" xml:space="preserve">
+    <value>Alarm already exists</value>
+  </data>
+  <data name="FAULT_CODE_N31" xml:space="preserve">
+    <value>Invalid UDF selection choice</value>
+  </data>
+  <data name="FAULT_CODE_N32" xml:space="preserve">
+    <value>UDF not found in database</value>
+  </data>
+  <data name="FAULT_CODE_N33" xml:space="preserve">
+    <value>Operation not supported</value>
+  </data>
+  <data name="FAULT_CODE_N4" xml:space="preserve">
+    <value>The username or password you entered is incorrect.</value>
+  </data>
+  <data name="FAULT_CODE_N5" xml:space="preserve">
+    <value>Unexpected error during processing</value>
+  </data>
+  <data name="FAULT_CODE_N6" xml:space="preserve">
+    <value>Invalid name</value>
+  </data>
+  <data name="FAULT_CODE_N7" xml:space="preserve">
+    <value>Duplicate name</value>
+  </data>
+  <data name="FAULT_CODE_N8" xml:space="preserve">
+    <value>Partition not found in database</value>
+  </data>
+  <data name="FAULT_CODE_N9" xml:space="preserve">
+    <value>Access Group not found in database</value>
+  </data>
+  <data name="CONDITION_STATE_0" xml:space="preserve">
+    <value>Secure</value>
+  </data>
+  <data name="CONDITION_STATE_1" xml:space="preserve">
+    <value>Alarm</value>
+  </data>
+  <data name="CONDITION_STATE_N1" xml:space="preserve">
+    <value>N/A</value>
+  </data>
+  <data name="FAULT_CODE_3202" xml:space="preserve">
+    <value>The username or password you entered is incorrect.</value>
+  </data>
+  <data name="FAULT_CODE_1047" xml:space="preserve">
+    <value>Missing Site Name</value>
+  </data>
+  <data name="FAULT_CODE_1048" xml:space="preserve">
+    <value>Missing Alarm State</value>
+  </data>
+  <data name="FAULT_CODE_1049" xml:space="preserve">
+    <value>Missing Alarm GUID or Alarm State</value>
+  </data>
+  <data name="FAULT_CODE_3203" xml:space="preserve">
+    <value>Active Directory Server Is Downed</value>
+  </data>
+  <data name="FAULT_CODE_3204" xml:space="preserve">
+    <value>Max Station Logged In</value>
+  </data>
+  <data name="FAULT_CODE_3205" xml:space="preserve">
+    <value>Max Badging Station Logged In</value>
+  </data>
+  <data name="FAULT_CODE_4100" xml:space="preserve">
+    <value>Incorrect Current Alarm State</value>
+  </data>
+  <data name="FAULT_CODE_4101" xml:space="preserve">
+    <value>Error Updating Alarm</value>
+  </data>
+  <data name="FAULT_CODE_4102" xml:space="preserve">
+    <value>Alarm Not Allowed To Update To Request State</value>
+  </data>
+  <data name="FAULT_CODE_4103" xml:space="preserve">
+    <value>Alarm Has Already Completed</value>
+  </data>
+  <data name="FAULT_CODE_4104" xml:space="preserve">
+    <value>Error Delete Alarm</value>
+  </data>
+  <data name="FAULT_CODE_4106" xml:space="preserve">
+    <value>Unmatched Alarm Condition Sequence Number</value>
+  </data>
+  <data name="FAULT_CODE_45" xml:space="preserve">
+    <value>Invalid User ID</value>
+  </data>
+  <data name="FAULT_CODE_46" xml:space="preserve">
+    <value>Invalid Registration</value>
+  </data>
+  <data name="FAULT_CODE_48" xml:space="preserve">
+    <value>Invalid Alarm State</value>
+  </data>
+  <data name="FAULT_CODE_49" xml:space="preserve">
+    <value>Invalid Principal</value>
+  </data>
+  <data name="ALARM_STATE_1" xml:space="preserve">
+    <value>Complete</value>
+  </data>
+  <data name="ALARM_STATE_2" xml:space="preserve">
+    <value>Responding</value>
+  </data>
+  <data name="ALARM_STATE_3" xml:space="preserve">
+    <value>Acknowledged</value>
+  </data>
+  <data name="ALARM_STATE_4" xml:space="preserve">
+    <value>Pending</value>
+  </data>
+  <data name="CONDITION_STATE_11" xml:space="preserve">
+    <value>Unknown</value>
+  </data>
+  <data name="CONDITION_STATE_16" xml:space="preserve">
+    <value>Bypassed</value>
+  </data>
+  <data name="CONDITION_STATE_2" xml:space="preserve">
+    <value>Short</value>
+  </data>
+  <data name="CONDITION_STATE_3" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="CONDITION_STATE_4" xml:space="preserve">
+    <value>Suppressed</value>
+  </data>
+  <data name="CONDITION_STATE_5" xml:space="preserve">
+    <value>Tamper</value>
+  </data>
+  <data name="CONDITION_STATE_6" xml:space="preserve">
+    <value>Trouble</value>
+  </data>
+  <data name="CONDITION_STATE_22" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="CONDITION_STATE_23" xml:space="preserve">
+    <value>Up</value>
+  </data>
+  <data name="CONDITION_STATE_24" xml:space="preserve">
+    <value>Down</value>
+  </data>
+  <data name="CONDITION_STATE_25" xml:space="preserve">
+    <value>Unavailable</value>
+  </data>
+  <data name="CONDITION_STATE_26" xml:space="preserve">
+    <value>Misconfigured</value>
+  </data>
+  <data name="CONDITION_STATE_27" xml:space="preserve">
+    <value>Enabled</value>
+  </data>
+  <data name="CONDITION_STATE_28" xml:space="preserve">
+    <value>Disabled</value>
+  </data>
+</root>

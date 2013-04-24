@@ -1,0 +1,382 @@
+﻿
+table.Table tr.t1Row td {
+        
+	border-bottom-style: Solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	margin-left: 0pt;
+	margin-top: 0pt;
+	margin-bottom: 0pt;
+
+}
+table.Table tr.t2Row td {
+        
+	border-bottom-style: Solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	margin-left: 0pt;
+	margin-top: 0pt;
+	margin-bottom: 0pt;
+
+}
+table.Table {
+        
+	font-family: Arial;
+	font-size: 8pt;
+	x-1st-row: 1;
+	x-1st-row-name: t1st;
+	x-row-pat-1: 1;
+	x-row-pat-1-name: t1Row;
+	x-row-pat-count: 2;
+	x-row-pat-2: 1;
+	x-row-pat-2-name: t2Row;
+	x-border-spacing: 0px;
+	border-top-style: Solid;
+	border-top-width: 1px;
+	border-top-color: #000000;
+
+}
+table.Table tr.t1st td {
+        
+	border-bottom-style: Solid;
+	border-bottom-width: 2px;
+	border-bottom-color: #000000;
+	margin-top: 0pt;
+	margin-bottom: 0pt;
+
+}
+table.Matrix {
+        
+	font-family: Arial;
+	font-size: 8pt;
+	x-1st-row: 1;
+	x-1st-row-name: t1st0;
+	border-left-style: Solid;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-right-style: Solid;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-top-style: Solid;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-bottom-style: Solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	x-row-pat-1: 1;
+	x-row-pat-1-name: t1Row;
+	x-row-pat-count: 2;
+	x-row-pat-2: 1;
+	x-row-pat-2-name: t2Row;
+	x-1st-col: 1;
+	x-1st-col-name: t1st;
+	x-border-spacing: 0px;
+
+}
+table.Matrix tr.t2Row td {
+        
+	border-left-style: Solid;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-right-style: Solid;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-top-style: Solid;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-bottom-style: Solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+
+}
+table.Matrix tr.t1Row td {
+        
+	font-family: Arial;
+	font-size: 8pt;
+	border-left-style: Solid;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-right-style: Solid;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-top-style: Solid;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-bottom-style: Solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #efefef;
+
+}
+table.Matrix td.t1st {
+        
+	font-size: 9pt;
+	border-left-style: Solid;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-right-style: Solid;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-top-style: Solid;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-bottom-style: Solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	font-family: Arial;
+	font-size: 8pt;
+	font-weight: bold;
+
+}
+table.Matrix tr.t1Row td.t1st {
+        
+	border-left-style: Solid;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-right-style: Solid;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-top-style: Solid;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-bottom-style: Solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	font-family: Arial;
+	font-size: 8pt;
+	font-weight: bold;
+
+}
+table.Matrix tr.t1st0 td {
+        
+	background-color: #808080;
+	font-family: Arial;
+	font-size: 8pt;
+	color: #ffffff;
+	font-weight: bold;
+	border-left-style: Solid;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-right-style: Solid;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-top-style: Solid;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-bottom-style: Solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+
+}
+table.Matrix tr.t2Row td.t1st {
+        
+	border-left-style: Solid;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-right-style: Solid;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-top-style: Solid;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-bottom-style: Solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	font-family: Arial;
+	font-size: 8pt;
+	font-weight: bold;
+
+}
+p.FM_ZHeader {
+        margin-left:     0.000pt;
+        margin-right:    0.000pt;
+        text-align:      left;
+        text-indent:     0.000pt;
+        margin-top:      0.000pt;
+        margin-bottom:   0.000pt;
+        word-spacing:    0.250em;
+        font-family:     Arial;
+        font-style:      normal;
+        font-weight:     normal;
+        font-size:       8.0pt;
+        color:           #000000;
+        background-color: none;
+        text-decoration: none;
+        letter-spacing:  0.00em;
+        
+}
+caption.FM_ZHeader {
+        margin-left:     0.000pt;
+        margin-right:    0.000pt;
+        text-align:      left;
+        text-indent:     0.000pt;
+        margin-top:      0.000pt;
+        margin-bottom:   0.000pt;
+        word-spacing:    0.250em;
+        font-family:     Arial;
+        font-style:      normal;
+        font-weight:     normal;
+        font-size:       8.0pt;
+        color:           #000000;
+        background-color: none;
+        text-decoration: none;
+        letter-spacing:  0.00em;
+        
+}
+p.FM_ZFooterPageNumber {
+        margin-left:     0.000pt;
+        margin-right:    0.000pt;
+        text-align:      center;
+        text-indent:     0.000pt;
+        margin-top:      0.000pt;
+        margin-bottom:   0.000pt;
+        word-spacing:    0.250em;
+        font-family:     Arial;
+        font-style:      italic;
+        font-weight:     normal;
+        font-size:       12.0pt;
+        color:           #000000;
+        background-color: none;
+        text-decoration: none;
+        letter-spacing:  0.00em;
+        
+}
+caption.FM_ZFooterPageNumber {
+        margin-left:     0.000pt;
+        margin-right:    0.000pt;
+        text-align:      center;
+        text-indent:     0.000pt;
+        margin-top:      0.000pt;
+        margin-bottom:   0.000pt;
+        word-spacing:    0.250em;
+        font-family:     Arial;
+        font-style:      italic;
+        font-weight:     normal;
+        font-size:       12.0pt;
+        color:           #000000;
+        background-color: none;
+        text-decoration: none;
+        letter-spacing:  0.00em;
+        
+}
+caption.TableTitle {
+        
+	text-align: left;
+	margin-top: 12pt;
+	x-next-class: Body;
+	x-next-type: p;
+	margin-bottom: 2pt;
+
+}
+p.FM_FigureInsertPDFonly {
+        margin-left:     0.000pt;
+        margin-right:    0.000pt;
+        text-align:      center;
+        text-indent:     0.000pt;
+        margin-top:      0.000pt;
+        margin-bottom:   0.000pt;
+        word-spacing:    0.250em;
+        font-family:     Arial;
+        font-style:      normal;
+        font-weight:     normal;
+        font-size:       3.0pt;
+        color:           #000000;
+        background-color: none;
+        text-decoration: none;
+        letter-spacing:  0.00em;
+        
+}
+caption.FM_FigureInsertPDFonly {
+        margin-left:     0.000pt;
+        margin-right:    0.000pt;
+        text-align:      center;
+        text-indent:     0.000pt;
+        margin-top:      0.000pt;
+        margin-bottom:   0.000pt;
+        word-spacing:    0.250em;
+        font-family:     Arial;
+        font-style:      normal;
+        font-weight:     normal;
+        font-size:       3.0pt;
+        color:           #000000;
+        background-color: none;
+        text-decoration: none;
+        letter-spacing:  0.00em;
+        
+}
+p.FM_ZFooter {
+        margin-left:     0.000pt;
+        margin-right:    0.000pt;
+        text-align:      left;
+        text-indent:     0.000pt;
+        margin-top:      0.000pt;
+        margin-bottom:   0.000pt;
+        word-spacing:    0.250em;
+        font-family:     Arial;
+        font-style:      normal;
+        font-weight:     normal;
+        font-size:       5.0pt;
+        color:           #000000;
+        background-color: none;
+        text-decoration: none;
+        letter-spacing:  0.00em;
+        
+}
+caption.FM_ZFooter {
+        margin-left:     0.000pt;
+        margin-right:    0.000pt;
+        text-align:      left;
+        text-indent:     0.000pt;
+        margin-top:      0.000pt;
+        margin-bottom:   0.000pt;
+        word-spacing:    0.250em;
+        font-family:     Arial;
+        font-style:      normal;
+        font-weight:     normal;
+        font-size:       5.0pt;
+        color:           #000000;
+        background-color: none;
+        text-decoration: none;
+        letter-spacing:  0.00em;
+        
+}
+OL, UL {
+        margin-top: 0px;
+        margin-bottom: 0px;
+}
+
+span.FM_Verdana {
+        font-family:     Verdana;
+        font-style:      normal;
+        font-weight:     bold;
+        font-size:       14.0pt;
+        color:           #000000;
+        background-color: none;
+        text-decoration: none;
+        letter-spacing:  0.00em;
+        font-variant:    small-caps;
+        
+}
+span.FM_ChapterNumber {
+        font-family:     Times New Roman;
+        font-style:      normal;
+        font-weight:     bold;
+        font-size:       14.0pt;
+        color:           #000000;
+        background-color: none;
+        text-decoration: none;
+        letter-spacing:  0.00em;
+        font-variant:    small-caps;
+        
+}
+span.FM_PublicationTitle {
+        font-style:      italic;
+        font-weight:     normal;
+        color:           #000000;
+        text-decoration: none;
+        letter-spacing:  0.00em;
+        
+}
+span.FM_CoverManualTitle {
+        
+}

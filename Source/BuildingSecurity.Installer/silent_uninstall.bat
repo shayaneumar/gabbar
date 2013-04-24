@@ -1,0 +1,1 @@
+msiexec /x "%~dp0bin\Release\BuildingSecurity.Installer.msi" /lv "%~dp0log.txt" /qn

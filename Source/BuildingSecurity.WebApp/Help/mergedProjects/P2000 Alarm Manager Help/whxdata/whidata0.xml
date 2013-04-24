@@ -1,0 +1,379 @@
+﻿<?xml version='1.0' encoding='utf-8' ?>
+<!-- saved from url=(0014)about:internet -->
+<indexdata>
+<key name="About" >
+  <key name="access control" >
+    <topic name="Important Terms" url="Framemaker_Files/24-10685-9/Chp1/Important_Terms.htm#IX_access_control" />
+  </key>
+  <key name="access points" >
+    <topic name="Important Terms" url="Framemaker_Files/24-10685-9/Chp1/Important_Terms.htm#IX_access_points" />
+  </key>
+  <key name="alarms" >
+    <topic name="Important Terms" url="Framemaker_Files/24-10685-9/Chp1/Important_Terms.htm#IX_alarms" />
+  </key>
+  <key name="badges (cards)" >
+    <topic name="Important Terms" url="Framemaker_Files/24-10685-9/Chp1/Important_Terms.htm#IX_badges_cards" />
+  </key>
+  <key name="cardholders (badgeholders)" >
+    <topic name="Important Terms" url="Framemaker_Files/24-10685-9/Chp1/Important_Terms.htm#IX_cardholders_badgeholders" />
+  </key>
+  <key name="controllers" >
+    <topic name="Important Terms" url="Framemaker_Files/24-10685-9/Chp1/Important_Terms.htm#IX_controllers" />
+  </key>
+  <key name="credentials" >
+    <topic name="Important Terms" url="Framemaker_Files/24-10685-9/Chp1/Important_Terms.htm#IX_credentials" />
+  </key>
+  <key name="inputs" >
+    <topic name="Important Terms" url="Framemaker_Files/24-10685-9/Chp1/Important_Terms.htm#IX_inputs" />
+  </key>
+  <key name="outputs" >
+    <topic name="Important Terms" url="Framemaker_Files/24-10685-9/Chp1/Important_Terms.htm#IX_outputs" />
+  </key>
+  <key name="P2000 alarms" >
+    <topic name="About P2000 Alarms" url="Framemaker_Files/24-10685-9/Chp2/About_P2000_Alarms.htm#IX_P2000_alarms" />
+  </key>
+  <key name="readers" >
+    <topic name="Important Terms" url="Framemaker_Files/24-10685-9/Chp1/Important_Terms.htm#IX_readers" />
+  </key>
+  <key name="Security Management System (SMS)" >
+    <topic name="Important Terms" url="Framemaker_Files/24-10685-9/Chp1/Important_Terms.htm#IX_Security_Management" />
+  </key>
+  <key name="the P2000 Alarm Manager" >
+    <topic name="About the P2000 Alarm Manager" url="Framemaker_Files/24-10685-9/Chp1/About_the_P2000_Alarm_Manager.htm#IX_the_P2000_Alarm_Manager" />
+  </key>
+</key>
+<key name="Access Control" >
+  <key name="defined" >
+    <topic name="Important Terms" url="Framemaker_Files/24-10685-9/Chp1/Important_Terms.htm#IX_defined" />
+  </key>
+</key>
+<key name="Access Points" >
+  <key name="defined" >
+    <topic name="Important Terms" url="Framemaker_Files/24-10685-9/Chp1/Important_Terms.htm#IX_defined_1" />
+  </key>
+</key>
+<key name="Access Privileges" >
+  <topic name="Important Terms" url="Framemaker_Files/24-10685-9/Chp1/Important_Terms.htm#IX_Access_Privileges" />
+</key>
+<key name="Acknowledging" >
+  <key name="alarms" >
+    <topic name="Acknowledging Alarms" url="Framemaker_Files/24-10685-9/Chp4/Acknowledging_Alarms.htm#IX_alarms_1" />
+  </key>
+</key>
+<key name="Alarm Authorization" >
+  <topic name="Authorization (Menu Permissions)" url="Framemaker_Files/24-10685-9/Chp2/Authorization_Menu_Permissions.htm#IX_Alarm_Authorization" />
+</key>
+<key name="Alarm Date/Time" >
+  <topic name="Alarm Visibility and Notification" url="Framemaker_Files/24-10685-9/Chp2/Alarm_Visibility_and_Notification.htm#IX_Alarm_Date_Time" />
+</key>
+<key name="Alarm Display Options" >
+  <topic name="Configuring Alarm Display Options" url="Framemaker_Files/24-10685-9/Chp3/Configuring_Alarm_Display_Options.htm#IX_Alarm_Display_Options_1" />
+</key>
+<key name="Alarm Escalation" >
+  <topic name="Alarm Escalation" url="Framemaker_Files/24-10685-9/Chp2/Alarm_Escalation.htm#IX_Alarm_Escalation" />
+</key>
+<key name="Alarm History" >
+  <topic name="Alarm History" url="Framemaker_Files/24-10685-9/Chp2/Alarm_History.htm#IX_Alarm_History" />
+  <key name="viewing" >
+    <topic name="Viewing Alarms and Alarm History" url="Framemaker_Files/24-10685-9/Chp4/Viewing_Alarms_and_Alarm_History.htm#IX_viewing_1" />
+  </key>
+</key>
+<key name="Alarm Indicators" >
+  <topic name="Alarm Color and Sound Indicators" url="Framemaker_Files/24-10685-9/Chp2/Alarm_Color_and_Sound_Indicators.htm#IX_Alarm_Indicators" />
+</key>
+<key name="Alarm Life Cycle" >
+  <topic name="Alarm Life Cycle" url="Framemaker_Files/24-10685-9/Chp2/Alarm_Life_Cycle.htm#IX_Alarm_Life_Cycle" />
+  <key name="scenario" >
+    <topic name="Alarm Life Cycle Scenario" url="Framemaker_Files/24-10685-9/Chp2/Alarm_Life_Cycle_Scenario.htm#IX_scenario" />
+  </key>
+</key>
+<key name="Alarm Notification" >
+  <topic name="Alarm Visibility and Notification" url="Framemaker_Files/24-10685-9/Chp2/Alarm_Visibility_and_Notification.htm#IX_Alarm_Notification" />
+</key>
+<key name="Alarm Priority" >
+  <topic name="Alarm Visibility and Notification" url="Framemaker_Files/24-10685-9/Chp2/Alarm_Visibility_and_Notification.htm#IX_Alarm_Priority" />
+</key>
+<key name="Alarm Source" >
+  <topic name="Alarm Visibility and Notification" url="Framemaker_Files/24-10685-9/Chp2/Alarm_Visibility_and_Notification.htm#IX_Alarm_Source" />
+</key>
+<key name="Alarm States" >
+  <topic name="Alarm States" url="Framemaker_Files/24-10685-9/Chp2/Alarm_States.htm#IX_Alarm_States" />
+</key>
+<key name="Alarm Status" >
+  <topic name="Alarm Visibility and Notification" url="Framemaker_Files/24-10685-9/Chp2/Alarm_Visibility_and_Notification.htm#IX_Alarm_Status" />
+</key>
+<key name="Alarm Types" >
+  <topic name="Alarm Types" url="Framemaker_Files/24-10685-9/Chp2/Alarm_Types.htm#IX_Alarm_Types" />
+</key>
+<key name="Alarm Visibility" >
+  <topic name="Alarm Visibility and Notification" url="Framemaker_Files/24-10685-9/Chp2/Alarm_Visibility_and_Notification.htm#IX_Alarm_Visibility" />
+</key>
+<key name="Alarms" >
+  <key name="about P2000" >
+    <topic name="About P2000 Alarms" url="Framemaker_Files/24-10685-9/Chp2/About_P2000_Alarms.htm#IX_about_P2000" />
+  </key>
+  <key name="acknowledging" >
+    <topic name="Acknowledging Alarms" url="Framemaker_Files/24-10685-9/Chp4/Acknowledging_Alarms.htm#IX_acknowledging" />
+  </key>
+  <key name="completing" >
+    <topic name="Completing Alarms" url="Framemaker_Files/24-10685-9/Chp4/Completing_Alarms.htm#IX_completing" />
+  </key>
+  <key name="defined" >
+    <topic name="Important Terms" url="Framemaker_Files/24-10685-9/Chp1/Important_Terms.htm#IX_defined_2" />
+  </key>
+  <key name="removing" >
+    <topic name="Removing Alarms" url="Framemaker_Files/24-10685-9/Chp4/Removing_Alarms.htm#IX_removing" />
+  </key>
+  <key name="responding" >
+    <topic name="Responding to Alarms" url="Framemaker_Files/24-10685-9/Chp4/Responding_to_Alarms.htm#IX_responding" />
+  </key>
+  <key name="total number of" >
+    <topic name="Alarm Visibility and Notification" url="Framemaker_Files/24-10685-9/Chp2/Alarm_Visibility_and_Notification.htm#IX_total_number_of" />
+  </key>
+  <key name="total of pending" >
+    <topic name="Alarm Visibility and Notification" url="Framemaker_Files/24-10685-9/Chp2/Alarm_Visibility_and_Notification.htm#IX_total_of_pending" />
+  </key>
+  <key name="viewing" >
+    <topic name="Viewing Alarms and Alarm History" url="Framemaker_Files/24-10685-9/Chp4/Viewing_Alarms_and_Alarm_History.htm#IX_viewing" />
+  </key>
+</key>
+<key name="Audience Types" >
+  <topic name="Audience" url="Framemaker_Files/24-10685-9/Chp1/Audience.htm#IX_Audience_Types" />
+</key>
+<key name="Authorization" >
+  <topic name="Authorization (Menu Permissions)" url="Framemaker_Files/24-10685-9/Chp2/Authorization_Menu_Permissions.htm#IX_Authorization" />
+</key>
+<key name="Badgeholders" >
+  <key name="defined" >
+    <topic name="Important Terms" url="Framemaker_Files/24-10685-9/Chp1/Important_Terms.htm#IX_defined_6" />
+  </key>
+</key>
+<key name="Badges" >
+  <key name="defined" >
+    <topic name="Important Terms" url="Framemaker_Files/24-10685-9/Chp1/Important_Terms.htm#IX_defined_3" />
+  </key>
+</key>
+<key name="Cardholders" >
+  <key name="defined" >
+    <topic name="Important Terms" url="Framemaker_Files/24-10685-9/Chp1/Important_Terms.htm#IX_defined_5" />
+  </key>
+</key>
+<key name="Cards" >
+  <key name="defined" >
+    <topic name="Important Terms" url="Framemaker_Files/24-10685-9/Chp1/Important_Terms.htm#IX_defined_4" />
+  </key>
+</key>
+<key name="Changing" >
+  <key name="alarm colors" >
+    <topic name="Configuring Alarm Display Options" url="Framemaker_Files/24-10685-9/Chp3/Configuring_Alarm_Display_Options.htm#IX_alarm_colors" />
+  </key>
+  <key name="alarm sounds" >
+    <topic name="Configuring Alarm Display Options" url="Framemaker_Files/24-10685-9/Chp3/Configuring_Alarm_Display_Options.htm#IX_alarm_sounds" />
+  </key>
+</key>
+<key name="Color Indicators" >
+  <topic name="Alarm Color and Sound Indicators" url="Framemaker_Files/24-10685-9/Chp2/Alarm_Color_and_Sound_Indicators.htm#IX_Color_Indicators" />
+</key>
+<key name="Colors" >
+  <key name="changing alarm" >
+    <topic name="Configuring Alarm Display Options" url="Framemaker_Files/24-10685-9/Chp3/Configuring_Alarm_Display_Options.htm#IX_changing_alarm_1" />
+  </key>
+</key>
+<key name="Completing" >
+  <key name="alarms" >
+    <topic name="Completing Alarms" url="Framemaker_Files/24-10685-9/Chp4/Completing_Alarms.htm#IX_alarms_2" />
+  </key>
+</key>
+<key name="Conceptual Information" >
+  <topic name="Understanding the P2000 Alarm Manager" url="Framemaker_Files/24-10685-9/Chp2/Understanding_the_P2000_Alarm_Manager.htm#IX_Conceptual_Information" />
+</key>
+<key name="Configuring" >
+  <key name="alarm display options" >
+    <topic name="Configuring Alarm Display Options" url="Framemaker_Files/24-10685-9/Chp3/Configuring_Alarm_Display_Options.htm#IX_alarm_display_options" />
+  </key>
+  <key name="P2000 Alarm Manager" >
+    <topic name="Configuring the P2000 Alarm Manager" url="Framemaker_Files/24-10685-9/Chp3/Configuring_the_P2000_Alarm_Manager.htm#IX_P2000_Alarm_Manager" />
+  </key>
+</key>
+<key name="Controllers" >
+  <key name="defined" >
+    <topic name="Important Terms" url="Framemaker_Files/24-10685-9/Chp1/Important_Terms.htm#IX_defined_7" />
+  </key>
+</key>
+<key name="Credentials" >
+  <key name="defined" >
+    <topic name="Important Terms" url="Framemaker_Files/24-10685-9/Chp1/Important_Terms.htm#IX_defined_8" />
+  </key>
+</key>
+<key name="Date/Time" >
+  <topic name="Alarm Visibility and Notification" url="Framemaker_Files/24-10685-9/Chp2/Alarm_Visibility_and_Notification.htm#IX_Date_Time" />
+</key>
+<key name="Door Alarms" >
+  <topic name="Alarm Types" url="Framemaker_Files/24-10685-9/Chp2/Alarm_Types.htm#IX_Door_Alarms" />
+</key>
+<key name="Escalating Alarms" >
+  <topic name="Alarm Escalation" url="Framemaker_Files/24-10685-9/Chp2/Alarm_Escalation.htm#IX_Escalating_Alarms" />
+</key>
+<key name="External Device Alarms" >
+  <topic name="Alarm Types" url="Framemaker_Files/24-10685-9/Chp2/Alarm_Types.htm#IX_External_Device_Alarms" />
+</key>
+<key name="Forced Door Alarm" >
+  <topic name="Alarm Types" url="Framemaker_Files/24-10685-9/Chp2/Alarm_Types.htm#IX_Forced_Door_Alarm" />
+</key>
+<key name="Glossary" >
+  <topic name="Important Terms" url="Framemaker_Files/24-10685-9/Chp1/Important_Terms.htm#IX_Glossary" />
+</key>
+<key name="History" >
+  <key name="viewing alarm" >
+    <topic name="Alarm History" url="Framemaker_Files/24-10685-9/Chp2/Alarm_History.htm#IX_viewing_alarm_2" />
+  </key>
+</key>
+<key name="Important Terms" >
+  <topic name="Important Terms" url="Framemaker_Files/24-10685-9/Chp1/Important_Terms.htm#IX_Important_Terms" />
+</key>
+<key name="Inputs" >
+  <key name="defined" >
+    <topic name="Important Terms" url="Framemaker_Files/24-10685-9/Chp1/Important_Terms.htm#IX_defined_9" />
+  </key>
+</key>
+<key name="Introduction" >
+  <topic name="Introduction" url="Framemaker_Files/24-10685-9/Chp1/Introduction.htm#IX_Introduction" />
+</key>
+<key name="Life Cycle (Alarms)" >
+  <topic name="Alarm Life Cycle" url="Framemaker_Files/24-10685-9/Chp2/Alarm_Life_Cycle.htm#IX_Life_Cycle_Alarms" />
+  <key name="scenario" >
+    <topic name="Alarm Life Cycle Scenario" url="Framemaker_Files/24-10685-9/Chp2/Alarm_Life_Cycle_Scenario.htm#IX_scenario_1" />
+  </key>
+</key>
+<key name="Logging Issues" >
+  <topic name="Troubleshooting" url="Framemaker_Files/24-10685-9/AppxA/Troubleshooting.htm#IX_Logging_Issues" />
+</key>
+<key name="Menu Permissions" >
+  <topic name="Authorization (Menu Permissions)" url="Framemaker_Files/24-10685-9/Chp2/Authorization_Menu_Permissions.htm#IX_Menu_Permissions" />
+</key>
+<key name="Outputs" >
+  <key name="defined" >
+    <topic name="Important Terms" url="Framemaker_Files/24-10685-9/Chp1/Important_Terms.htm#IX_defined_10" />
+  </key>
+</key>
+<key name="P2000 Alarm Manager" >
+  <key name="about" >
+    <topic name="About the P2000 Alarm Manager" url="Framemaker_Files/24-10685-9/Chp1/About_the_P2000_Alarm_Manager.htm#IX_about" />
+  </key>
+  <key name="configuring" >
+    <topic name="Configuring the P2000 Alarm Manager" url="Framemaker_Files/24-10685-9/Chp3/Configuring_the_P2000_Alarm_Manager.htm#IX_configuring" />
+  </key>
+  <key name="troubleshooting" >
+    <topic name="Troubleshooting" url="Framemaker_Files/24-10685-9/AppxA/Troubleshooting.htm#IX_troubleshooting_1" />
+  </key>
+  <key name="understanding" >
+    <topic name="Understanding the P2000 Alarm Manager" url="Framemaker_Files/24-10685-9/Chp2/Understanding_the_P2000_Alarm_Manager.htm#IX_understanding" />
+  </key>
+  <key name="using" >
+    <topic name="Using the P2000 Alarm Manager" url="Framemaker_Files/24-10685-9/Chp4/Using_the_P2000_Alarm_Manager.htm#IX_using" />
+  </key>
+</key>
+<key name="P2000 Alarms" >
+  <key name="about" >
+    <topic name="About P2000 Alarms" url="Framemaker_Files/24-10685-9/Chp2/About_P2000_Alarms.htm#IX_about" />
+  </key>
+</key>
+<key name="P2000 Host Alarms" >
+  <topic name="Alarm Types" url="Framemaker_Files/24-10685-9/Chp2/Alarm_Types.htm#IX_P2000_Host_Alarms" />
+</key>
+<key name="Pending Alarms" >
+  <topic name="Alarm Visibility and Notification" url="Framemaker_Files/24-10685-9/Chp2/Alarm_Visibility_and_Notification.htm#IX_Pending_Alarms" />
+</key>
+<key name="Priority" >
+  <topic name="Alarm Visibility and Notification" url="Framemaker_Files/24-10685-9/Chp2/Alarm_Visibility_and_Notification.htm#IX_Priority" />
+</key>
+<key name="Propped Door Alarm" >
+  <topic name="Alarm Types" url="Framemaker_Files/24-10685-9/Chp2/Alarm_Types.htm#IX_Propped_Door_Alarm" />
+</key>
+<key name="Readers" >
+  <key name="defined" >
+    <topic name="Important Terms" url="Framemaker_Files/24-10685-9/Chp1/Important_Terms.htm#IX_defined_11" />
+  </key>
+</key>
+<key name="Remote Alarms" >
+  <topic name="Alarm Types" url="Framemaker_Files/24-10685-9/Chp2/Alarm_Types.htm#IX_Remote_Alarms" />
+</key>
+<key name="Removing Alarms" >
+  <topic name="Removing Alarms" url="Framemaker_Files/24-10685-9/Chp4/Removing_Alarms.htm#IX_Removing_Alarms" />
+</key>
+<key name="Responding to Alarms" >
+  <topic name="Responding to Alarms" url="Framemaker_Files/24-10685-9/Chp4/Responding_to_Alarms.htm#IX_Responding_to_Alarms" />
+</key>
+<key name="Secured Area" >
+  <topic name="Important Terms" url="Framemaker_Files/24-10685-9/Chp1/Important_Terms.htm#IX_Secured_Area" />
+</key>
+<key name="Security Management System (SMS)" >
+  <key name="defined" >
+    <topic name="Important Terms" url="Framemaker_Files/24-10685-9/Chp1/Important_Terms.htm#IX_defined_12" />
+  </key>
+</key>
+<key name="Sequence of Alarm Actions" >
+  <topic name="Alarm Life Cycle" url="Framemaker_Files/24-10685-9/Chp2/Alarm_Life_Cycle.htm#IX_Sequence_of_Alarm_Actions" />
+  <key name="scenario" >
+    <topic name="Alarm Life Cycle Scenario" url="Framemaker_Files/24-10685-9/Chp2/Alarm_Life_Cycle_Scenario.htm#IX_scenario_2" />
+  </key>
+</key>
+<key name="Software Only Alarms" >
+  <topic name="Alarm Types" url="Framemaker_Files/24-10685-9/Chp2/Alarm_Types.htm#IX_Software_Only_Alarms" />
+</key>
+<key name="Sound Indicators" >
+  <topic name="Alarm Color and Sound Indicators" url="Framemaker_Files/24-10685-9/Chp2/Alarm_Color_and_Sound_Indicators.htm#IX_Sound_Indicators" />
+</key>
+<key name="Sounds" >
+  <key name="changing alarm" >
+    <topic name="Configuring Alarm Display Options" url="Framemaker_Files/24-10685-9/Chp3/Configuring_Alarm_Display_Options.htm#IX_changing_alarm" />
+  </key>
+</key>
+<key name="Source" >
+  <key name="viewing alarm" >
+    <topic name="Alarm Visibility and Notification" url="Framemaker_Files/24-10685-9/Chp2/Alarm_Visibility_and_Notification.htm#IX_viewing_alarm" />
+  </key>
+</key>
+<key name="States (Alarm)" >
+  <topic name="Alarm States" url="Framemaker_Files/24-10685-9/Chp2/Alarm_States.htm#IX_States_Alarm" />
+</key>
+<key name="Status" >
+  <key name="viewing alarm" >
+    <topic name="Alarm Visibility and Notification" url="Framemaker_Files/24-10685-9/Chp2/Alarm_Visibility_and_Notification.htm#IX_viewing_alarm_1" />
+  </key>
+</key>
+<key name="Terms Defined" >
+  <topic name="Important Terms" url="Framemaker_Files/24-10685-9/Chp1/Important_Terms.htm#IX_Terms_Defined" />
+</key>
+<key name="Total Number of Alarms" >
+  <topic name="Alarm Visibility and Notification" url="Framemaker_Files/24-10685-9/Chp2/Alarm_Visibility_and_Notification.htm#IX_Total_Number_of_Alarms" />
+</key>
+<key name="Troubleshooting" >
+  <topic name="Troubleshooting" url="Framemaker_Files/24-10685-9/AppxA/Troubleshooting.htm#IX_Troubleshooting" />
+</key>
+<key name="Types of Alarms" >
+  <topic name="Alarm Types" url="Framemaker_Files/24-10685-9/Chp2/Alarm_Types.htm#IX_Types_of_Alarms" />
+</key>
+<key name="Understanding" >
+  <key name="P2000 Alarm Manager" >
+    <topic name="Understanding the P2000 Alarm Manager" url="Framemaker_Files/24-10685-9/Chp2/Understanding_the_P2000_Alarm_Manager.htm#IX_P2000_Alarm_Manager" />
+  </key>
+</key>
+<key name="Unsecured Area" >
+  <topic name="Important Terms" url="Framemaker_Files/24-10685-9/Chp1/Important_Terms.htm#IX_Unsecured_Area" />
+</key>
+<key name="Using" >
+  <key name="P2000 Alarm Manager" >
+    <topic name="Using the P2000 Alarm Manager" url="Framemaker_Files/24-10685-9/Chp4/Using_the_P2000_Alarm_Manager.htm#IX_P2000_Alarm_Manager" />
+  </key>
+</key>
+<key name="Viewing" >
+  <key name="alarm history" >
+    <topic name="Viewing Alarms and Alarm History" url="Framemaker_Files/24-10685-9/Chp4/Viewing_Alarms_and_Alarm_History.htm#IX_alarm_history" />
+  </key>
+  <key name="alarms" >
+    <topic name="Viewing Alarms and Alarm History" url="Framemaker_Files/24-10685-9/Chp4/Viewing_Alarms_and_Alarm_History.htm#IX_alarms" />
+  </key>
+</key>
+
+</indexdata>

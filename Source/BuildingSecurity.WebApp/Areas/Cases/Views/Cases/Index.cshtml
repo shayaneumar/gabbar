@@ -1,0 +1,107 @@
+﻿@*----------------------------------------------------------------------------
+
+(C) Copyright 2013 Johnson Controls, Inc.
+Use or Copying of all or any part of this program, except as
+permitted by License Agreement, is prohibited.
+
+------------------------------------------------------------------------------*@
+
+@{
+    ViewBag.Title = Resources.CaseManagerPageTitle;
+    //TODO:Update help link
+}
+
+@section Scripts
+{
+    <script src="@BundleTable.Bundles.ResolveBundleUrl("~/Cases/js")" type="text/javascript"></script>
+}
+
+@section PartTemplates
+{
+    <div id="case-list-view">
+        @Html.Partial("CaseList")
+    </div>
+    <div id="create-case-view">
+        @Html.Partial("CreateCase")
+    </div>
+    <div id="view-case-view">
+        @Html.Partial("ViewCase")
+    </div>
+    <div id="note-details-view">
+        @Html.Partial("NoteDetails")
+    </div>
+    <div id="editable-case-title">
+        <span id="case-title" data-bind="text: title"></span><span class="edit-icon"><span class="icon-pencil"></span></span>
+    </div>
+    <div id="edit-case-title-form">
+        <input id="edit-case-title" type="text" required="required" maxlength="255" data-bind="enable:!isClosed(), value: editableTitle, valueUpdate: 'afterkeydown', event: {keypress: onTitleInputKeypress}"/>
+        <div class="edit-toolbar btn-group">
+            <button class="btn btn-small btn-accept" data-bind="click: acceptEditCaseTitle, enable: isEditableTitleValid" title="@Resources.CaseTitleAcceptEdit"><i class="icon-ok"></i></button>
+            <button class="btn btn-small btn-cancel" data-bind="click: cancelEditCaseTitle" title="@Resources.CaseTitleCancelEdit"><i class="icon-remove"></i></button>
+        </div>
+    </div>
+}
+
+<div style="width:111%; position:relative; left:-50px;">
+<div class="area">
+    <div class="nav cases core">
+        <h1>@Resources.CaseManagerPageTitle</h1>
+        <a class="btn" data-bind="attr: {href: newCase}, click:newCaseSoftLink">@Resources.NewCaseButton</a>
+    </div>
+    <div class="nav cases supporting" id="side-nav-container">
+    </div>
+    <div class="content" id="main-container">
+        <!--Body content-->
+    </div>
+    <div class="content-details" id="content-details-container">
+    </div>
+</div>
+</div>
+
+<script id="myScript" type="text/javascript">
+    $(document).ready(function () {
+        "use strict";
+
+        define('casesApplicationViewModelFactory', ['rivets', 'crossroads'], function (rivets) {
+            rivets.clear('content-details');
+            $('#main-container').addClass('full-width');
+
+            return function () {
+                this.newCase = rivets.getLinkablePath('Cases/New');
+                this.newCaseSoftLink = function () {
+                    rivets.softlink(this.newCase);
+                };
+            };
+        });
+
+        require(['ko', 'casesApplicationViewModelFactory'], function (ko, createViewModel) {
+            ko.applyBindings(new createViewModel());
+        });
+
+        require(['jquery'], function ($) {
+            $("#cases").addClass('active');
+        });
+
+        require(['crossroads', 'rivets', 'context', 'logging'], function (crossroads, rivets, context, log) {
+            crossroads.addRoute("Cases", function () {
+                log.info('Showing cases landing page');
+
+                rivets.clear('main');
+                rivets.clear('content-details');
+                $('#main-container').addClass('full-width');
+            });
+            crossroads.addRoute('Cases/New', function () {
+                log.info('Show create case ui');
+                rivets.show('main', 'create case');
+            });
+            crossroads.addRoute("Cases/{id}", function (id) {
+                log.info('Showing case ' + id);
+                rivets.show('main', 'view case', [id]);
+            });
+
+            //Initialize side nav to show a list of all cases
+            rivets.show('side-nav', 'case list');
+            crossroads.parse(rivets.getRoutablePath(context.location.pathname));
+        });
+    });
+</script>

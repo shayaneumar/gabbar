@@ -1,0 +1,16 @@
+﻿<?xml version='1.0' encoding='utf-8' ?>
+<tocdata>
+<book name="P2000 Web UI - Getting Started" url="FrameMaker_Files/24-10685-173_Rev.-/Contents/Getting_Started.htm" >
+  <book name="About the P2000 Web UI" url="FrameMaker_Files/24-10685-173_Rev.-/Contents/About_the_P2000_Web_UI.htm" >
+    <item name="Browser Requirements" url="FrameMaker_Files/24-10685-173_Rev.-/Contents/Browser_Requirements.htm" />
+  </book>
+  <item name="Installing the P2000 Web UI" url="FrameMaker_Files/24-10685-173_Rev.-/Contents/Installing_the_P2000_Web_UI.htm" />
+  <item name="Configuring SSL" url="FrameMaker_Files/24-10685-173_Rev.-/Contents/Configuring_SSL.htm" />
+  <item name="Communications with the P2000 ARS" url="FrameMaker_Files/24-10685-173_Rev.-/Contents/Communications_with_the_P2000_ARS.htm" />
+  <item name="Signing In" url="FrameMaker_Files/24-10685-173_Rev.-/Contents/Signing_In.htm" />
+  <item name="Uploading a Company Logo" url="FrameMaker_Files/24-10685-173_Rev.-/Contents/Uploading_a_Company_Logo.htm" />
+  <item name="P2000 Web UI Navigation Options (Menu Bar)" url="FrameMaker_Files/24-10685-173_Rev.-/Contents/P2000_Web_UI_Navigation_Options_Menu_Bar.htm" />
+  <item name="P2000 Menu Permissions for Web UI" url="FrameMaker_Files/24-10685-173_Rev.-/Contents/P2000_Menu_Permissions_for_Web_UI.htm" />
+</book>
+
+</tocdata>

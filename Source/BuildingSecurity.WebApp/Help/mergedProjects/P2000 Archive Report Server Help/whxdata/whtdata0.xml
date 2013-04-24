@@ -1,0 +1,35 @@
+﻿<?xml version='1.0' encoding='utf-8' ?>
+<!-- saved from url=(0014)about:internet -->
+<tocdata>
+<book name="P2000 ARS Online Help" >
+  <book name="Introduction" url="Framemaker_Files/24-10685-25/Ch1/Introduction.htm" >
+    <item name="About the P2000 ARS" url="Framemaker_Files/24-10685-25/Ch1/About_the_P2000_ARS.htm" />
+    <item name="Audience" url="Framemaker_Files/24-10685-25/Ch1/Audience.htm" />
+    <item name="Important Terms" url="Framemaker_Files/24-10685-25/Ch1/Important_Terms.htm" />
+  </book>
+  <book name="Setup" url="Framemaker_Files/24-10685-25/Ch2/Setup.htm" >
+    <item name="Overview" url="Framemaker_Files/24-10685-25/Ch2/Overview.htm" />
+    <item name="Configuring the P2000 Web UI to Communicate with the P2000 ARS" url="Framemaker_Files/24-10685-25/Ch2/Configuring_the_P2000_Web_UI_to_Communicate_with_the_P2000_ARS.htm" />
+  </book>
+  <book name="About Reports" url="Framemaker_Files/24-10685-25/Ch3/About_Reports.htm" >
+    <item name="Standard Reports" url="Framemaker_Files/24-10685-25/Ch3/Standard_Reports.htm" />
+    <item name="Custom Reports" url="Framemaker_Files/24-10685-25/Ch3/Custom_Reports.htm" />
+    <item name="Running Versus Scheduling Reports" url="Framemaker_Files/24-10685-25/Ch3/Running_Versus_Scheduling_Reports.htm" />
+    <item name="Report Format" url="Framemaker_Files/24-10685-25/Ch3/Report_Format.htm" />
+    <item name="Choosing a Data Source" url="Framemaker_Files/24-10685-25/Ch3/Choosing_a_Data_Source.htm" />
+    <item name="Text Fields" url="Framemaker_Files/24-10685-25/Ch3/Text_Fields.htm" />
+    <item name="Daily or Weekly Scheduled Reports" url="Framemaker_Files/24-10685-25/Ch3/Daily_or_Weekly_Scheduled_Reports.htm" />
+    <item name="Sharing A Report" url="Framemaker_Files/24-10685-25/Ch3/Sharing_A_Report.htm" />
+    <item name="Report Appearance" url="Framemaker_Files/24-10685-25/Ch3/Report_Appearance.htm" />
+    <item name="Cancelling a Report" url="Framemaker_Files/24-10685-25/Ch3/Cancelling_a_Report.htm" />
+    <item name="Authorization (Menu Permissions)" url="Framemaker_Files/24-10685-25/Ch3/Authorization_Menu_Permissions.htm" />
+  </book>
+  <book name="Running and Scheduling Reports" url="Framemaker_Files/24-10685-25/Ch4/Running_and_Scheduling_Reports.htm" >
+    <item name="Running a Report" url="Framemaker_Files/24-10685-25/Ch4/Running_a_Report.htm" />
+    <item name="Scheduling a Report" url="Framemaker_Files/24-10685-25/Ch4/Scheduling_a_Report.htm" />
+    <item name="Modifying a Scheduled Report" url="Framemaker_Files/24-10685-25/Ch4/Modifying_a_Scheduled_Report.htm" />
+    <item name="Configuration Criteria" url="Framemaker_Files/24-10685-25/Ch4/Configuration_Criteria.htm" />
+  </book>
+</book>
+
+</tocdata>

@@ -1,0 +1,979 @@
+﻿/*----------------------------------------------------------------------------
+
+  (C) Copyright 2012 Johnson Controls, Inc.
+      Use or Copying of all or any part of this program, except as
+      permitted by License Agreement, is prohibited.
+
+------------------------------------------------------------------------------*/
+
+/* Region Shared */
+
+html
+{
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+.jci-body
+{
+    padding-top: 40px;
+    color: #333;
+    font-size: 14px;
+    font-family: "Trebuchet MS";
+    background-color: white;
+}
+
+.inner-centered-footer
+{
+    float: left;
+    position: relative;
+    left: -50%;
+    font-size: 12px;
+    line-height: 34px;
+    height: 34px;
+}
+
+.inner-centered-footer img{
+    vertical-align: sub;
+}
+
+.site-wrapper {
+    width: 90%;
+    margin: 0px auto;
+    margin-left:50px;
+}
+
+.content_wrapper 
+{
+    width: 85%;
+    margin: 0px auto;
+    height: 100%;
+}
+
+.jci-body > .navbar .nav > li > a {
+    color: rgb(240, 240, 240);
+}
+
+.jci-body .dropdown-menu li > a:hover,
+.jci-body .dropdown-menu .active > a,
+.jci-body .dropdown-menu .active > a:hover {
+  background-color:  #00a0df;
+}
+
+.jci-body .navbar-inverse .navbar-inner
+{
+    color: white;
+    padding-right: 0;
+    padding-left: 0;
+    -webkit-border-radius: 0;
+       -moz-border-radius: 0;
+            border-radius: 0;
+
+    border-color: rgb(8, 51, 143);
+    
+    background: rgb(35,71,140); /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzIzNDc4YyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwODMzOGYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top,  rgba(35,71,140,1) 0%, rgba(8,51,143,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(35,71,140,1)), color-stop(100%,rgba(8,51,143,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(35,71,140,1) 0%,rgba(8,51,143,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(35,71,140,1) 0%,rgba(8,51,143,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(35,71,140,1) 0%,rgba(8,51,143,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(35,71,140,1) 0%,rgba(8,51,143,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#23478c', endColorstr='#08338f',GradientType=0 ); /* IE6-8 */
+}
+
+.jci-body .navbar-inverse .nav li.dropdown.open > .dropdown-toggle, 
+.jci-body .navbar-inverse .nav li.dropdown.active > .dropdown-toggle, 
+.jci-body .navbar-inverse .nav li.dropdown.open.active > .dropdown-toggle {
+    color: white;
+    background: rgb(35,71,140); /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzIzNDc4YyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwODMzOGYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top,  rgba(35,71,140,1) 0%, rgba(8,51,143,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(35,71,140,1)), color-stop(100%,rgba(8,51,143,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(35,71,140,1) 0%,rgba(8,51,143,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(35,71,140,1) 0%,rgba(8,51,143,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(35,71,140,1) 0%,rgba(8,51,143,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(35,71,140,1) 0%,rgba(8,51,143,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#23478c', endColorstr='#08338f',GradientType=0 ); /* IE6-8 */
+}
+
+.jci-body .navbar-inverse .nav .active > a, .jci-body .navbar-inverse .nav .active > a:hover, .jci-body .navbar-inverse .nav .active > a:focus {
+    background-color: rgb(83, 103, 167);
+    -webkit-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.5);
+       -moz-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.5);
+            box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.5);
+}
+
+.green-button {
+	-moz-box-shadow:inset 0px 1px 0px 0px #a4e271;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #a4e271;
+	box-shadow:inset 0px 1px 0px 0px #a4e271;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, rgb(95,193,47)), color-stop(1, rgb(145,213,112)) );
+	background:-moz-linear-gradient( center top, rgb(95,193,47) 5%, rgb(145,213,112) 100% );
+	background-color:rgb(95,193,47);
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	border:1px solid rgb(145,213,112);
+	display:inline-block;
+	color:#ffffff;
+	font-size:15px;
+	font-weight:bold;
+	padding:4px 16px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #528009;
+}.green-button:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, rgb(145,213,112)), color-stop(1, rgb(95,193,47)) );
+	background:-moz-linear-gradient( center top, rgb(145,213,112) 5%, rgb(95,193,47) 100% );
+	background-color:rgb(145,213,112);
+}.green-button:active {
+	position:relative;
+	top:1px;
+}
+
+/*
+.report-input .badge {
+    background-color: rgb(99, 188, 70);
+}
+*/
+
+
+.report-input .bold-text {
+    font-weight: bold;    
+}
+
+.report-lists {
+    margin-top: 16px;
+    width: 55%;
+    min-width: 400px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.scheduled-reports {
+    margin-top: 16px;
+    width: 60%;
+    min-width: 500px;
+    max-width: 1000px;
+    margin: 0 auto;   
+}
+
+.schedule {
+    width: 30px;
+    margin-left: -30px;
+}
+
+.schedule .btn-mini {
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.scheduled-report-item 
+{
+    padding: 8px 0 8px 30px;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+.relative 
+{
+    position: relative;
+}
+
+.scheduled-reports .scheduled-report-item a,
+.scheduled-reports .scheduled-report-item a:hover,
+.scheduled-reports .scheduled-report-item a:visited,
+.scheduled-reports .padded a,
+.scheduled-reports .padded a:hover,
+.scheduled-reports .padded a:visited 
+{
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(8, 51, 143);
+}
+
+.site-wrapper h1 {
+    color: rgb(8, 51, 143);
+}
+
+.site-wrapper .v2  h1 {
+    margin: 0;
+    padding: 0;
+    line-height: 14pt;
+    font-size: 14pt;
+    vertical-align: text-top;
+}
+
+.site-wrapper a {
+    cursor: pointer;
+}
+
+.report-lists .well {
+    background-color: white;
+}
+
+.report-lists .nav-tabs
+{
+    border-bottom: 1px solid rgb(8, 51, 143);
+}
+
+.report-lists > .reports > .nav-tabs > .active > a,
+.report-lists > .reports > .nav-tabs > .active > a:hover 
+{
+    margin-top: 0;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border: 1px solid rgb(8, 51, 143);
+    background-color: rgb(8, 51, 143);
+    color: white;    
+}
+
+.report-lists .nav-tabs a
+{
+    margin-top: 2px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border: 1px solid rgb(2, 156, 221);
+    background-color: rgb(2, 156, 221);
+    color: white;
+}
+
+.report-lists .nav-tabs a:hover
+{
+    padding-top: 2px;
+    padding-bottom: 3px;
+    border: 1px solid #CCCCCC;
+    background-color: #CCCCCC;
+    color: black;
+}
+
+.report-item 
+{
+    width: 93%;
+    margin: 0 auto;
+    padding: 8px 0 8px 0;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+.report-lists .report-item a,
+.report-lists .report-item a:hover,
+.report-lists .report-item a:visited,
+.report-lists .padded a,
+.report-lists .padded a:hover,
+.report-lists .padded a:visited 
+{
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(8, 51, 143);
+}
+
+.report-runner {
+    overflow: hidden;
+}
+
+.outer-runner {
+    float: left;
+    position: relative;
+    left: 50%;    
+}
+
+.inner-runner {
+    float: left;
+    position: relative;
+    left: -50%;   
+}
+
+.login-partial div {
+    text-align: center;
+    color: white;
+}
+
+.login-partial a,
+.login-partial a:hover,
+.login-partial a:visited 
+{
+    color: white;
+}
+
+/* End Region Shared */
+
+#sitebody {
+    background-color: #efeeef;
+    padding-top: 40px;
+}
+
+.clear-fix:after {
+    content: ".";
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+header {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.center
+{
+    text-align: center;
+}
+
+.lsep
+{
+    padding: 0px 5px 0px 5px;
+    color: #888;
+    font-size: 110%;
+}
+
+#userInfo {
+    padding-top: 12px;
+}
+
+#productLogoSection {
+    text-align: left;
+}
+#newClientLogo,
+#clientLogo {
+    max-width: 280px;
+    max-height: 64px;
+}
+#clientLogoSection {
+    text-align: right;
+}
+
+#companyLogoSection {
+    float: right;
+}
+
+#companyLogo {
+    margin-top: 4px;
+    width: 70px;
+    height: 33px;
+}
+
+#settingsDropdown {
+    padding: 8px;
+}
+
+#systemStatus
+{
+    display: block;
+    padding: 9px 10px 11px;
+    line-height: 19px;
+    color: white;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.system-status-icon
+{
+    margin-right: 3px;
+}
+
+.preload-image
+{
+    width: 0px;
+    height: 0px;
+}
+/* Alarm List */
+#settingsButtonImage,
+.buttonIcon
+{
+    padding-right: 3px;
+    display:inline;
+    vertical-align:text-bottom;
+}
+
+#alarmManager button:enabled
+{
+    cursor: pointer;
+}
+
+.toolbar
+{
+    padding-bottom: 6px;
+}
+
+.scrolling
+{
+    overflow-y: auto;
+}
+
+.alarmList .scrolling
+{
+     max-height: 800px;
+}
+
+/*
+#alarmHistory
+{
+    height: 100px;
+}
+*/
+
+#loadingMessage {
+    margin-top: 6px;
+    margin-right: 7px;
+}
+
+.v2 #loadingMessage {
+    margin-top: 28px;
+    margin-left: 0px;
+}
+
+.scrollingReports
+{
+    max-height: 642px;
+    overflow-y: auto;
+    margin-bottom: 12px;
+}
+
+.list-header
+{
+    border:1px solid black;
+    padding: 3px 3px 3px 3px;
+    font-weight: bold;
+}
+
+.list-header a:link
+{
+    text-decoration: none;
+}
+
+.alarmList input[type=checkbox]
+{
+    cursor: pointer;
+}
+
+.item-selector
+{
+    width: 13px;
+}
+
+.list .item-selector
+{
+    padding-top: 3px;
+    padding-left: 3px;
+}
+
+.item-expander
+{
+    width:19px;
+}
+
+.toggle-expanded-button-container
+{
+    position: relative;
+}
+
+.toggle-expanded-button
+{
+    cursor: pointer;
+    position: absolute;
+    top: 6px;
+    left: 3px;
+}
+
+.toggle-expanded-button.up
+{
+    visibility: visible;
+}
+
+.expanded .toggle-expanded-button.up
+{
+    visibility: collapse;
+}
+
+.toggle-expanded-button.down
+{
+    visibility: collapse;
+}
+
+.expanded .toggle-expanded-button.down
+{
+    visibility: visible;
+}
+
+.item-pending
+{
+    width: 40px;
+}
+
+.list .item-pending
+{
+    padding-left: 19px;
+}
+
+.list-header .pending-indicator
+{
+    padding-top: 1px;
+    padding-left: 4px;
+    cursor: pointer;
+}
+
+.list .pending-indicator
+{
+    padding-top: 5px;
+    padding-left: 4px;
+}
+
+.entryList
+{
+    margin-top: 10px;
+    width: 460px;
+    font-size: 90%;
+}
+
+.alarmHistory .columnHeader {
+    font-weight: bold;
+}
+
+/*
+.history-timestamp {
+    width: 100px;
+}
+
+.history-status {
+    width: 70px;
+}
+
+.history-user {
+    width: 85px;
+}
+
+.history-state {
+    width: 70px;
+}
+
+.history-response {
+    width: 115px;
+}
+*/
+
+.sortNone
+{
+    display: none;
+}
+
+.sortAscending
+{
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+    vertical-align: text-top;
+    background-repeat: no-repeat;
+    background-image: url("images/glyphicons-halflings.png");
+    background-position: -288px -120px;
+}
+
+.sortDescending
+{
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+    vertical-align: text-top;
+    background-repeat: no-repeat;
+    background-image: url("images/glyphicons-halflings.png");
+    background-position: -313px -119px;
+}
+
+.sortSelector {
+    white-space: nowrap;
+    color: #999;
+    margin-top: 28px;
+}
+.sortSelector .btn-group {
+    display: inline-block;
+}
+.sortSelector .btn {
+    min-width: 85px;
+}
+
+/* Date columns */
+.item-occurred
+{
+    width: 120px;
+}
+
+.item-updated
+{
+    width: 135px;
+}
+
+.list .item-occurred,
+.list .item-priority,
+.list .item-status,
+.list .item-description,
+.list .item-updated,
+.list .item-show-details
+{
+    padding-top: 5px;
+}
+
+.item-acknowledge
+{
+}
+
+.item-priority
+{
+    width: 75px;
+}
+
+.priorityIcon
+{
+    margin-left: 15px;
+    height: 16px;
+}
+
+.item-status
+{
+    width: 110px;
+}
+
+.item-description
+{
+    width: 215px;
+}
+
+.item-details .response-actions
+{
+    text-align: right;
+    margin-right: 18px;
+}
+
+
+
+.item-details .span1 button
+{
+    margin-left: 18px;
+    margin-bottom: 10px;
+}
+
+#alarmManager .summary
+{
+   padding-left: 10px;
+   padding-top: 3px;
+}
+
+.alarm
+{
+    font-size:.8em;
+    border: 1px solid lightgray;
+    margin: 2px 0px 2px 0px;
+}
+
+#cxtHelp {
+    padding-bottom: 4px;
+}
+
+.reports
+{
+    margin-top: 18px;
+}
+
+.reports .padded
+{
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    padding: 8px;
+}
+
+.reportTitle
+{
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.reportDescription {
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.reports .scrollable {
+    height: 540px;
+}
+
+.reports .scrollable {
+    overflow-y: auto;
+}
+
+.reports > .nav-tabs > .active > a, 
+.reports > .nav-tabs > .active > a:hover 
+{
+    background-color: #ddd;
+}
+
+.run {
+     padding-right: 12px;
+}
+
+.services {
+    padding-bottom: 20px;
+}
+
+.report-input {
+    margin: 16px;
+}
+
+.report-input > .header 
+{
+    color: rgb(8, 51, 143);
+    padding: 8px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.report-input > .body {
+    padding: 8px 8px 0px 8px;
+}
+
+.report-input .parameters {
+    padding-bottom: 12px;
+}
+
+.report-input .output {
+    padding-bottom: 12px;
+}
+
+.report-input .output img{
+    width: 32px;
+    height: 32px;
+}
+
+fieldset legend {
+    display: none;
+}
+
+.report-input .column1 {
+    padding: 12px;
+    float: left;
+}
+
+.report-input .column2 {
+    padding: 12px;
+    float: left;
+}
+
+.report-input .description {
+    padding: 12px;
+}
+
+.report-input .output {
+    padding: 12px;
+}
+
+.report-input .timing {
+    padding: 12px;
+}
+
+.report-input .destination {
+    padding: 12px;
+}
+
+.report-input .data-source {
+    padding: 12px;
+}
+
+.report-input .radio {
+    margin-right: 24px;
+    display: block;
+    float: left;
+}
+
+.report-input .radio-label
+{
+    margin-top: 2px;
+    margin-left: 6px;
+}
+
+
+.datepicker {
+    /* Used to identify date pickers for jQuery UI */
+}
+
+.missing-report .alert 
+{
+    margin: 20px 0px 20px 0px;
+    padding: 20px;
+}
+
+.missing-report .error-message {
+    margin-bottom: 12px;
+}
+
+.color-picker {
+}
+
+.about-legal,
+.about-version-numbers {
+    text-align: center;
+}
+
+.about-version-label 
+{
+    font-weight: bold;
+    margin-right: 6px;
+}
+
+.about-version-number {
+    font-weight: normal;
+}
+
+.client-branding {
+/* ReSharper disable Html.PathError */
+    background-image: url("../CompanyLogo/CurrentLogo");
+/* ReSharper restore Html.PathError */
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 200px;
+    height: 100px;
+    margin: 0 auto 16px auto;
+}
+
+.product-branding
+{
+    background-image: url("../Images/P2000_logo_blue.png");
+    width: 239px;
+    height: 68px;
+    margin: 16px auto 16px auto;
+}
+
+#colorSettings img {
+    cursor: pointer;
+}
+
+#colorSettings {
+    padding-top: 20px;
+}
+
+#saveButton {
+    margin-left: 15px;
+}
+#message {
+    padding-top: 12px;
+}
+
+input[type=file] {
+    width: 280px;
+}
+
+.alert-hidden {
+  display: none;
+}
+
+.alert-heading {
+}
+
+#reportListError {
+  margin-top: 20px;
+  margin-bottom:20px;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #e80c4d;
+    font-weight: bold;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input[type="text"].input-validation-error,
+input[type="password"].input-validation-error {
+    border: 1px solid #e80c4d;
+}
+
+.validation-summary-errors {
+    color: #e80c4d;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+hgroup.title {
+    margin-bottom: 10px;
+}
+
+hgroup.title h1, hgroup.title h2 {
+    display: inline;
+}
+
+hgroup.title h2 {
+    font-weight: normal;
+    margin-left: 3px;
+}
+@-webkit-keyframes glow {
+  0% {
+    background-color:transparent;
+  }
+  60% {
+    background-color:rgba(255,0,0,0.6);
+    box-shadow: 0px 0px 10px 5px red;
+    color:white;
+  }
+  100% {
+    background-color:rgba(255,0,0,0.25);
+    box-shadow: 0px 0px 10px 5px red;
+    color:white;
+  }
+}
+@keyframes glow {
+  0% {
+    background-color:transparent;
+  }
+  60% {
+    background-color:rgba(255,0,0,0.6);
+    box-shadow: 0px 0px 10px 5px red;
+    color:white;
+  }
+  100% {
+    background-color:rgba(255,0,0,0.25);
+    box-shadow: 0px 0px 10px 5px red;
+    color:white;
+  }
+}
+
+.pulse  
+{
+  -webkit-animation-name: glow;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-name: glow;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+
+.alerts{
+    list-style: none;
+}
+
+.key {
+    font-weight: bold;
+}
+
+.jci-body .navbar {
+    min-width: 800px;
+}

@@ -1,0 +1,30 @@
+﻿@*----------------------------------------------------------------------------
+
+(C) Copyright 2013 Johnson Controls, Inc.
+Use or Copying of all or any part of this program, except as
+permitted by License Agreement, is prohibited.
+
+------------------------------------------------------------------------------*@
+
+<div class="note-details-close">
+    <a data-bind="click: closeDetailsClick">@Resources.NoteDetailsClose</a>
+</div>
+
+<div class="note-details-heading">
+    <span>@Resources.NoteDetailsNote</span>
+</div>
+<div class="note-details-text">
+    <span data-bind="text: text"></span>
+</div>
+<div class="note-details-heading">
+    <span>@Resources.NoteDetailsTimeEntered</span>
+</div>
+<div class="note-details-text">
+    <span data-bind="text: timestampDateTimeString"></span>
+</div>
+<div class="note-details-heading">
+    <span>@Resources.NoteDetailsAttachedBy</span>
+</div>
+<div class="note-details-text">
+    <span data-bind="text: createdBy"></span>
+</div>

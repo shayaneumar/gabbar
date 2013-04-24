@@ -1,0 +1,50 @@
+@*----------------------------------------------------------------------------
+
+(C) Copyright 2012 Johnson Controls, Inc.
+Use or Copying of all or any part of this program, except as
+permitted by License Agreement, is prohibited.
+
+------------------------------------------------------------------------------*@
+
+@using JohnsonControls.BuildingSecurity
+@model ReportsModel
+
+@{
+    ViewBag.Title = Model.Title;
+    ViewBag.HelpLink = Html.GetLocalizedHelpLink(ReportsModel.HelpLink);
+}
+
+<div class="report-lists">
+    <div>
+        <h1>@Model.Title</h1>
+    </div>
+            @if (User.IsInRole(PermissionNames.CanRunReports) || User.IsInRole(PermissionNames.CanScheduleReports))
+            {
+                <div class="tabbable reports">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#canned" data-toggle="tab">@Resources.ReportsIndexViewStandardTabTitle</a></li>
+                        <li><a href="#custom" data-toggle="tab">@Resources.ReportsIndexViewCustomTabTitle</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="canned">
+                            @foreach (var r in Model.CannedReports)
+                            {
+                                <div class="report-item">
+                                    @Html.ActionLink(r.Name, Model.LinkAction, "Reports", new {reportId = r.Id}, null)
+                                    <div>@r.Description</div>
+                                </div>
+                            }
+                        </div>
+                        <div class="tab-pane" id="custom">
+                            @foreach (var r in Model.CustomReports)
+                            {
+                                <div class="report-item">
+                                        @Html.ActionLink(r.Name, Model.LinkAction, "Reports", new {reportId = r.Id}, null)
+                                        <div>@r.Description</div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+</div>

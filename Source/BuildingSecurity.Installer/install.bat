@@ -1,0 +1,1 @@
+msiexec /i "%~dp0bin\Release\BuildingSecurity.Installer.msi" /lv "%~dp0log.txt" P2000_SERVER_IP_ADDRESS="10.40.205.133" CERT_EXPORT_PATH="C:\Program Files (x86)\Johnson Controls\P2000Certs\P2000WebUI.crt"

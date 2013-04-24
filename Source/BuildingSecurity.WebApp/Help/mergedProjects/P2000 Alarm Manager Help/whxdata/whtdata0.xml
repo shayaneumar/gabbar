@@ -1,0 +1,40 @@
+﻿<?xml version='1.0' encoding='utf-8' ?>
+<!-- saved from url=(0014)about:internet -->
+<tocdata>
+<book name="P2000 Alarm Manager Online Help" >
+  <book name="Introduction" url="Framemaker_Files/24-10685-9/Chp1/Introduction.htm" >
+    <item name="About the P2000 Alarm Manager" url="Framemaker_Files/24-10685-9/Chp1/About_the_P2000_Alarm_Manager.htm" />
+    <item name="Audience" url="Framemaker_Files/24-10685-9/Chp1/Audience.htm" />
+    <item name="Important Terms" url="Framemaker_Files/24-10685-9/Chp1/Important_Terms.htm" />
+    <item name="Guide Summary" url="Framemaker_Files/24-10685-9/Chp1/Guide_Summary.htm" />
+    <item name="Guide Conventions" url="Framemaker_Files/24-10685-9/Chp1/Guide_Conventions.htm" />
+  </book>
+  <book name="Understanding the P2000 Alarm Manager" url="Framemaker_Files/24-10685-9/Chp2/Understanding_the_P2000_Alarm_Manager.htm" >
+    <item name="About P2000 Alarms" url="Framemaker_Files/24-10685-9/Chp2/About_P2000_Alarms.htm" />
+    <book name="Alarm Life Cycle" url="Framemaker_Files/24-10685-9/Chp2/Alarm_Life_Cycle.htm" >
+      <item name="Alarm Life Cycle Scenario" url="Framemaker_Files/24-10685-9/Chp2/Alarm_Life_Cycle_Scenario.htm" />
+    </book>
+    <item name="Alarm Types" url="Framemaker_Files/24-10685-9/Chp2/Alarm_Types.htm" />
+    <book name="Alarm Visibility and Notification" url="Framemaker_Files/24-10685-9/Chp2/Alarm_Visibility_and_Notification.htm" >
+      <item name="Alarm Color and Sound Indicators" url="Framemaker_Files/24-10685-9/Chp2/Alarm_Color_and_Sound_Indicators.htm" />
+      <item name="Alarm States" url="Framemaker_Files/24-10685-9/Chp2/Alarm_States.htm" />
+      <item name="Alarm Escalation" url="Framemaker_Files/24-10685-9/Chp2/Alarm_Escalation.htm" />
+    </book>
+    <item name="Alarm History" url="Framemaker_Files/24-10685-9/Chp2/Alarm_History.htm" />
+    <item name="Authorization (Menu Permissions)" url="Framemaker_Files/24-10685-9/Chp2/Authorization_Menu_Permissions.htm" />
+  </book>
+  <book name="Configuring the P2000 Alarm Manager" url="Framemaker_Files/24-10685-9/Chp3/Configuring_the_P2000_Alarm_Manager.htm" >
+    <item name="Configuring Alarm Display Options" url="Framemaker_Files/24-10685-9/Chp3/Configuring_Alarm_Display_Options.htm" />
+    <item name="The Time Zone Setting" url="Framemaker_Files/24-10685-9/Chp3/The_Time_Zone_Setting.htm" />
+  </book>
+  <book name="Using the P2000 Alarm Manager" url="Framemaker_Files/24-10685-9/Chp4/Using_the_P2000_Alarm_Manager.htm" >
+    <item name="Viewing Alarms and Alarm History" url="Framemaker_Files/24-10685-9/Chp4/Viewing_Alarms_and_Alarm_History.htm" />
+    <item name="Acknowledging Alarms" url="Framemaker_Files/24-10685-9/Chp4/Acknowledging_Alarms.htm" />
+    <item name="Responding to Alarms" url="Framemaker_Files/24-10685-9/Chp4/Responding_to_Alarms.htm" />
+    <item name="Completing Alarms" url="Framemaker_Files/24-10685-9/Chp4/Completing_Alarms.htm" />
+    <item name="Removing Alarms" url="Framemaker_Files/24-10685-9/Chp4/Removing_Alarms.htm" />
+  </book>
+  <item name="Troubleshooting" url="Framemaker_Files/24-10685-9/AppxA/Troubleshooting.htm" />
+</book>
+
+</tocdata>

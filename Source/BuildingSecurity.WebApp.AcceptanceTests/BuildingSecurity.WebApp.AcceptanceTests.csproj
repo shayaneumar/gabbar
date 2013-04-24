@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{630EE808-2C93-4B68-B2F8-1390FAE399CE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BuildingSecurity.WebApp.AcceptanceTests</RootNamespace>
+    <AssemblyName>BuildingSecurity.WebApp.AcceptanceTests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Debug\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Release\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="BuildingSecurity.WebApp.SpecFlowTests.dll.nunit">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Features\AlarmDisplayOptions\PriorityRanges.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PriorityRanges.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\CaseManagement\AddNote.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AddNote.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\CaseManagement\CloseCase.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CloseCase.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\CaseManagement\CreateCase.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CreateCase.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\CaseManagement\Dashboard.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Dashboard.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\CaseManagement\EditCaseMetadata.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>EditCaseMetadata.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\CaseManagement\ListAllCases.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ListAllCases.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\CaseManagement\ListOpenCases.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ListOpenCases.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\CaseManagement\LiveUpdatingofCaseList.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>LiveUpdatingofCaseList.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\CaseManagement\LiveUpdatingOfCaseView.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>LiveUpdatingOfCaseView.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\CaseManagement\ReopenCase.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ReopenCase.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\CaseManagement\ViewCaseMetadata.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ViewCaseMetadata.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\HomeScreen\HomeScreen.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>HomeScreen.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Reporting\AlarmActivityReport.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AlarmActivityReport.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Simulator\UseSimulatorSetting.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UseSimulatorSetting.feature.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Features\SessionManagement\Signin.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Signin.feature.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="ArtOfTest.WebAii, Culture=neutral" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
+    <Reference Include="nunit.framework, Version=2.6.1.12217, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NUnit.2.6.1\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=104.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.104.1\lib\net4\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="TechTalk.SpecFlow">
+      <HintPath>..\packages\SpecFlow.1.9.0\lib\net35\TechTalk.SpecFlow.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ContextHelpers\CaseContext.cs" />
+    <Compile Include="BrowserDriver\FormExtensions.cs" />
+    <Compile Include="ContextHelpers\ViewedCaseContext.cs" />
+    <Compile Include="EnvironmentConfiguration.cs" />
+    <Compile Include="Events.cs" />
+    <Compile Include="Features\AlarmDisplayOptions\PriorityRanges.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PriorityRanges.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\CaseManagement\AddNote.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AddNote.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\CaseManagement\CloseCase.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CloseCase.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\CaseManagement\CreateCase.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreateCase.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\CaseManagement\Dashboard.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dashboard.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\CaseManagement\EditCaseMetadata.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EditCaseMetadata.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\CaseManagement\ListAllCases.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListAllCases.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\CaseManagement\ListOpenCases.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListOpenCases.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\CaseManagement\LiveUpdatingofCaseList.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LiveUpdatingofCaseList.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\CaseManagement\LiveUpdatingOfCaseView.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LiveUpdatingOfCaseView.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\CaseManagement\ReopenCase.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReopenCase.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\CaseManagement\ViewCaseMetadata.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ViewCaseMetadata.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\HomeScreen\HomeScreen.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HomeScreen.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Reporting\AlarmActivityReport.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AlarmActivityReport.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Simulator\UseSimulatorSetting.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UseSimulatorSetting.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Steps\AlarmDisplayOptions.cs" />
+    <Compile Include="Steps\CaseManagement.cs" />
+    <Compile Include="Util\ElementExtensions.cs" />
+    <Compile Include="Steps\Downloads.cs" />
+    <Compile Include="Steps\HttpErrors.cs" />
+    <Compile Include="Steps\Navigation.cs" />
+    <Compile Include="Steps\SessionManagement.cs" />
+    <Compile Include="Features\SessionManagement\Signin.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Signin.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Steps\TextOutput.cs" />
+    <Compile Include="Steps\UserInput.cs" />
+    <Compile Include="Tags\AsNewUser.cs" />
+    <Compile Include="Util\CaseClient.cs" />
+    <Compile Include="Util\ObjectExtension.cs" />
+    <Compile Include="Util\Scripting.cs" />
+    <Compile Include="Util\Simulator.cs" />
+    <Compile Include="Util\Transform.cs" />
+    <Compile Include="WebBrowser.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JohnsonControls.BuildingSecurity.Pseudo.Client\JohnsonControls.BuildingSecurity.Pseudo.Client.csproj">
+      <Project>{61A13BB1-0311-4B78-B4A5-DF2D8CB4F1AD}</Project>
+      <Name>JohnsonControls.BuildingSecurity.Pseudo.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JohnsonControls.BuildingSecurity\JohnsonControls.BuildingSecurity.csproj">
+      <Project>{2e986667-407a-4b1b-b5a6-4bacf481da01}</Project>
+      <Name>JohnsonControls.BuildingSecurity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JohnsonControls.Core\JohnsonControls.Core.csproj">
+      <Project>{2d6a836c-c3a4-4109-a9ab-cb274fa5ada1}</Project>
+      <Name>JohnsonControls.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

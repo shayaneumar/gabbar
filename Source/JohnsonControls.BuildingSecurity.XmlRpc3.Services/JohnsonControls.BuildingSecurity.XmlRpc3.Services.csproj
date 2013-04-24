@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ED69EE95-A9AB-4EA8-B904-A98810D70F94}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JohnsonControls.BuildingSecurity.XmlRpc3.Services</RootNamespace>
+    <AssemblyName>JohnsonControls.BuildingSecurity.XmlRpc3.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>..\Monkeypaw.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>..\Monkeypaw.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CookComputing.XmlRpcV2">
+      <HintPath>..\packages\xmlrpcnet.2.5.0\lib\net20\CookComputing.XmlRpcV2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SharedAssemblyInfo.cs">
+      <Link>SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="AlarmDetailsFilter.cs" />
+    <Compile Include="AlarmDetailsReply.cs" />
+    <Compile Include="AlarmDetailsRequest.cs" />
+    <Compile Include="AlarmFilter.cs" />
+    <Compile Include="AlarmActionFilter.cs" />
+    <Compile Include="AlarmActionReply.cs" />
+    <Compile Include="AlarmActionReplyWrapper.cs" />
+    <Compile Include="AlarmActionRequest.cs" />
+    <Compile Include="AlarmActionResponse.cs" />
+    <Compile Include="AlarmGetResponseTextListRequest.cs" />
+    <Compile Include="AlarmGetResponseTextListReply.cs" />
+    <Compile Include="ApplicationPreferenceService.cs" />
+    <Compile Include="Caching\CachingApplicationPreferences.cs" />
+    <Compile Include="IMessageProcessingService.cs" />
+    <Compile Include="InMemoryApplicationSettings.cs" />
+    <Compile Include="ISystemInformationService.cs" />
+    <Compile Include="ITypedApplicationPreference.cs" />
+    <Compile Include="HeartbeatMessageReceivedEventArgs.cs" />
+    <Compile Include="ITypedSystemInformationService.cs" />
+    <Compile Include="P2000GetSystemInfoReply.cs" />
+    <Compile Include="P2000GetSystemInfoReplyWrapper.cs" />
+    <Compile Include="P2000VersionReply.cs" />
+    <Compile Include="P2000VersionReplyWrapper.cs" />
+    <Compile Include="RealTimeHeartbeatMessage.cs" />
+    <Compile Include="Filter\MultipleCVAlarmGuidFilter.cs" />
+    <Compile Include="AlarmHistory.cs" />
+    <Compile Include="AlarmIdSequenceTuple.cs" />
+    <Compile Include="AlarmMessage.cs" />
+    <Compile Include="AlarmMessageReceivedEventArgs.cs" />
+    <Compile Include="AlarmResponseTextFilter.cs" />
+    <Compile Include="AlarmService.cs" />
+    <Compile Include="AlarmGetListExRequest.cs" />
+    <Compile Include="AlarmGetListExReply.cs" />
+    <Compile Include="Message.cs" />
+    <Compile Include="RealTimeAlarmMessage.cs" />
+    <Compile Include="Filter\AlarmGuidFilter.cs" />
+    <Compile Include="Filter\AlarmSiteNameFilter.cs" />
+    <Compile Include="Filter\AlarmTypeNameFilter.cs" />
+    <Compile Include="Filter\CurrentValueFilter.cs" />
+    <Compile Include="Filter\ItemNameFilter.cs" />
+    <Compile Include="Filter\OperatorNameFilter.cs" />
+    <Compile Include="Filter\PartitionFilter.cs" />
+    <Compile Include="IApplicationPreference.cs" />
+    <Compile Include="MessageBase.cs" />
+    <Compile Include="MessageDecode.cs" />
+    <Compile Include="AlarmMessageDetails.cs" />
+    <Compile Include="MessageProcessingService.cs" />
+    <Compile Include="P2000AlarmGetListExReplyWrapper.cs" />
+    <Compile Include="P2000AlarmGetListExRequestWrapper.cs" />
+    <Compile Include="P2000AlarmDetailsRequestWrapper.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="IAlarmService.cs" />
+    <Compile Include="ISessionManagementService.cs" />
+    <Compile Include="ITypedAlarmService.cs" />
+    <Compile Include="ITypedSessionManagement.cs" />
+    <Compile Include="P2000AlarmDetailsReplyWrapper.cs" />
+    <Compile Include="AlarmActionRequestWrapper.cs" />
+    <Compile Include="P2000LoginReplyWrapper.cs" />
+    <Compile Include="P2000AlarmGetResponseTextListReply.cs" />
+    <Compile Include="P2000AlarmGetResponseTextListRequest.cs" />
+    <Compile Include="P2000LoginReply.cs" />
+    <Compile Include="Parameters.cs" />
+    <Compile Include="Partition.cs" />
+    <Compile Include="Paging.cs" />
+    <Compile Include="Permission.cs" />
+    <Compile Include="PreferenceType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResponseText.cs" />
+    <Compile Include="HeartbeatMessage.cs" />
+    <Compile Include="SessionInfo.cs" />
+    <Compile Include="SessionManagementService.cs" />
+    <Compile Include="SortKey.cs" />
+    <Compile Include="SortOrder.cs" />
+    <Compile Include="SystemInformationService.cs" />
+    <Compile Include="UserDetails.cs" />
+    <Compile Include="P2000ReturnStructure.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JohnsonControls.Core\JohnsonControls.Core.csproj">
+      <Project>{2D6A836C-C3A4-4109-A9AB-CB274FA5ADA1}</Project>
+      <Name>JohnsonControls.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JohnsonControls.XmlRpc\JohnsonControls.XmlRpc.csproj">
+      <Project>{4AF3B7F8-837A-4FEC-BF1F-F182285C409D}</Project>
+      <Name>JohnsonControls.XmlRpc</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDictionary Include="..\CustomDictionary.xml">
+      <Link>CustomDictionary.xml</Link>
+    </CodeAnalysisDictionary>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Overview</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="N:\Techpubs\P2000 5.0\Archive Report Server\ARS User Manual\Ch1.fm" />
+ <link rel="stylesheet" href="../../../RHStyleMapping.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\..\RHStyleMapping.css" type="text/css" />
+
+ <script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("P2000 Archive Report Server\nIntroduction\nOverview");
+addButton("show",BTN_TEXT,"Mostrar","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../../index.htm");
+
+		autoSync(0);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+<table style="border-collapse: separate; border-collapse: separate;" cellspacing="0" 
+		 width="100%" bgcolor="#70AF42" border="1">
+	<col style="width: 100%;" />
+	<tr>
+		<td style="vertical-align: middle;">
+  <p style="margin-top: 0pt; 
+												 line-height: 200%; margin-bottom: 0pt; 
+												 font-family: Arial, sans-serif; 
+												 font-weight: bold; font-size: 11pt; 
+												 color: #ffffff; font-variant: normal; 
+												 text-transform: none; 
+												 letter-spacing: normal; 
+												 text-decoration: none; ">P2000 
+		 Web User Interface Help</p></td>
+	</tr>
+ </table>
+<script type="text/javascript" language="javascript">//<![CDATA[
+document.write("<p  style=\"text-align:left;\" class=\"breadcrumbs\">");
+AddMasterBreadcrumbs("../../../index.htm", "breadcrumbs", " | ", "Home", "Introduction.htm");
+document.write("<a class=\"breadcrumbs\" href=\"Introduction.htm\">P2000 Archive Report Server<\/a>  |  <a class=\"breadcrumbs\" href=\"Introduction.htm\">Introduction<\/a>  |  Overview<\/p>");
+//]]></script>
+
+ <h1><a name="XREF_12567_Overview"></a>Overview</h1>
+ <p class="Body">The P2000&nbsp;ARS archives data and generates detailed reports from that archived data. It provides the reporting tools essential for reacting to alarms, transactions, and audit messages, as well as mustering and guard tour information. It also supports the long-term archiving of data that may be required for government and regulatory compliance.</p>
+ <p class="Body"><a name="IX_P2000_Server"></a><a name="IX_Microsoft_SQL_Server_2012"></a><a name="IX_Microsoft_Windows_Server"></a>The P2000&nbsp;ARS is installed on a <span class="Italic">standalone</span>&#160;Microsoft®&nbsp;Windows® Server 2008 system with a Microsoft&nbsp;SQL Server™ 2012, eliminating the impact to system performance of generating reports on a P2000&nbsp;Server. Using a standalone system also allows system components, such as data storage and memory, to be easily upgraded.</p>
+ <p class="Body">A P2000&nbsp;ARS gathers live data from one or more P2000 v3.12 Servers; it can generate reports from that data and archive the data for up to 30 years.</p>
+ 
+<p class="SpecialNote"><span class="Bold">Note:     </span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;</font></span>While a P2000&nbsp;ARS can gather live data from multiple P2000 v3.12 Servers at one time, a P2000 v3.12 Server can send live data to only one P2000&nbsp;ARS at a time.</p>
+
+ <p class="Body">A P2000&nbsp;ARS can store database backups made from P2000&nbsp;Servers (versions 3.12, 3.11, 3.10, and 3.8) and from a P2000 v3.12 ARS. Database backups can be restored by a P2000&nbsp;ARS and reports generated from the restored data.</p>
+ 
+<p class="SpecialNote"><span class="Bold">Note:     </span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;</font></span>Reports can be generated against the from only one restored database backup at a time; restored databases cannot be combined.</p>
+
+ <p class="Body">The P2000&nbsp;ARS provides a Web-based interface for running and scheduling reports. You can run and schedule reports from virtually anywhere using the P2000 Web UI.</p>
+ <p class="Body"><a name="IX_SQL_Server_Reporting"></a>The P2000&nbsp;ARS uses Microsoft SQL Server Reporting Services (SSRS) to create reports, providing a wide range of report types and export formats. It also uses SQL Server Integration Services (SSIS) for data migration tasks.</p>
+ <table style="border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px;" 
+		 cellspacing="0" width="100%">
+	<col style="width: 16.87%;" />
+	<col style="width: 58.505%;" />
+	<col style="width: 24.625%;" />
+	<tr style="height: 5px;">
+		<td colspan="3" style="border-bottom: Solid 1px #143d75; vertical-align: Top;">
+  <p 
+			 style="margin-top: 18px;">&#160;</p></td>
+		
+	</tr>
+	<tr style="height: 38px;">
+		<td style="vertical-align: Top;">
+  <p style="margin-top: 4.5pt;"><a 
+		 href="http://www.johnsoncontrols.com" target="_blank" title="Johnson Controls Web Site"><img src="../../../jci_logo_color_small.png" alt="jci_logo_color_small.png" style="border: none;" border="0" /></a></p></td>
+		<td style="vertical-align: Top;">
+  <p style="text-align: center; 
+											 margin-top: 20px;"><span style="color: #ff0000; 
+		 font-weight: bold;"><font color="red" ><b>Preliminary – 
+		 This information may change.</b></font></span></p></td>
+		<td style="vertical-align: Top;">
+  <p style="text-align: center; 
+											 margin-top: 12px;">© 2012 
+		 Johnson Controls, Inc.<br />
+		<a title="Online Product Literature" href="http://cgproducts.johnsoncontrols.com/default.aspx?topframe.aspx&amp;0" 
+			 target="_blank" style="text-decoration: none; ">Product Documentation</a></p></td>
+	</tr>
+ </table>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

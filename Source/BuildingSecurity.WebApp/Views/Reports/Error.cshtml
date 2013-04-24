@@ -1,0 +1,42 @@
+﻿@*----------------------------------------------------------------------------
+
+(C) Copyright 2012 Johnson Controls, Inc.
+Use or Copying of all or any part of this program, except as
+permitted by License Agreement, is prohibited.
+
+------------------------------------------------------------------------------*@
+@{
+    ViewBag.Title = Resources.ReportsErrorViewPageTitle;
+    ViewBag.HelpLink = Html.GetLocalizedHelpLink("~/Help/index_csh.htm#0,withnavpane=true");
+}
+
+@model ReportsErrorModel
+
+@section Scripts
+{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            "use strict";
+            
+            $("#errorMessage").fadeIn(jci.fadeSpeeds.slow());
+        });
+    </script>
+}
+
+<div>
+    <div>
+        <h1>@Resources.ReportsErrorViewPageTitle</h1>
+    </div>
+</div>
+
+<div id="reportListError">
+    <div id="errorMessage" class='alert alert-error alert-hidden'>@Model.ErrorMessage</div>
+    @if (Model.CanViewSystemSetup)
+    {
+        @Html.ActionLink(Resources.ConfigureNow, "Index", "ReportServerConfiguration")
+    }
+    else
+    {
+        <span>@Resources.PleaseContactYourSystemAdministrator</span>
+    }
+</div>

@@ -1,0 +1,31 @@
+﻿@*----------------------------------------------------------------------------
+
+(C) Copyright 2012 Johnson Controls, Inc.
+Use or Copying of all or any part of this program, except as
+permitted by License Agreement, is prohibited.
+
+------------------------------------------------------------------------------*@
+
+@model MissingReportModel
+
+@{
+    ViewBag.Title = Model.Title;
+    ViewBag.HelpLink = Html.GetLocalizedHelpLink("~/Help/index_csh.htm#0,withnavpane=true");
+}
+
+<section class="missing-report">
+    <div class="alert alert-error">
+        <div>
+            <h5>@Resources.ReportsViewErrorLabel</h5>
+        </div>
+        <div class="error-message">
+            @Model.Error
+        </div>
+        <div>
+            <h5>@Resources.ReportsViewRequestedReportLabel</h5>
+        </div>
+        <div>
+            @Model.ReportId
+        </div>
+    </div>
+</section>

@@ -1,0 +1,36 @@
+bootstrap: Apache 2.0
+jquery-ui: MIT
+jquery: MIT
+Glyphicons Free: Creative Commons 3.0
+Castle.Core: Apache 2.0
+jQuery.UI.i18n: MIT
+jQuery.Validation: MIT
+knockoutjs: MIT
+MVC4:
+Razor2.0: 
+Microsoft.AspNet.WebApi:
+Microsoft.AspNet.WebApi.Client:
+Microsoft.AspNet.WebApi.WebHost: 
+Microsoft.AspNet.WebPages:
+Microsoft.jQuery.Unobtrusive.Ajax: ???Expired??? see: http://nuget.org/packages/Microsoft.jQuery.Unobtrusive.Ajax
+Microsoft.jQuery.Unobtrusive.Validation:???Expired??? see: http://nuget.org/packages/Microsoft.jQuery.Unobtrusive.Validation
+Microsoft.Net.Http:
+Microsoft.Web.Infrastructure:
+Modernizr: MIT
+Newtonsoft.Json: MIT
+Ninject: Apache 2.0
+ninject.extensions.conventions: MS-PL (Could have picked Apache 2.0)
+Ninject.Extensions.Factory: MS-PL (Could have picked Apache 2.0)
+Ninject.MVC3: MS-PL (Could have picked Apache 2.0)
+Ninject.Web: MS-PL (Could have picked Apache 2.0)
+Ninject.Web.Common: MS-PL (Could have picked Apache 2.0)
+SignalR.Hosting.AspNet: Apache 2.0
+SignalR.Hosting.Common: Apache 2.0
+SignalR.Js: Apache 2.0
+SignalR.Server: Apache 2.0
+WebActivator: MS-PL
+xmlrpcnet: MIT
+JetBrains.Annotations : Apache 2.0
+
+===I don't think we have to redistribute this one:
+Wix: Ms-RL

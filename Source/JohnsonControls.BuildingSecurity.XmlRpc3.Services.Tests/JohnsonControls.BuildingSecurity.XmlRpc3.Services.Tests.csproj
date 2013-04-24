@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{28CC03F4-8B3E-4BD1-B8B5-D9D5C2C0F04B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JohnsonControls.BuildingSecurity.XmlRpc3.Services</RootNamespace>
+    <AssemblyName>JohnsonControls.BuildingSecurity.XmlRpc3.Services.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CookComputing.XmlRpcV2">
+      <HintPath>..\packages\xmlrpcnet.2.5.0\lib\net20\CookComputing.XmlRpcV2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
+      <Visible>False</Visible>
+    </CodeAnalysisDependentAssemblyPaths>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AlarmActionReplyWrapperTest.cs" />
+    <Compile Include="AlarmActionRequestWrapperTest.cs" />
+    <Compile Include="AlarmGetResponseTextListReplyTest.cs" />
+    <Compile Include="AlarmGetResponseTextListRequestTest.cs" />
+    <Compile Include="AlarmResponseTextFilterTest.cs" />
+    <Compile Include="AlarmServiceTest.cs" />
+    <Compile Include="Configuration.cs" />
+    <Compile Include="ApplicationPreferenceServiceTest.cs" />
+    <Compile Include="P2000AlarmDetailsReplyWrapperTest.cs" />
+    <Compile Include="P2000AlarmDetailsRequestWrapperTest.cs" />
+    <Compile Include="P2000AlarmGetListExReplyWrapperTest.cs" />
+    <Compile Include="P2000AlarmGetListExRequestWrapperTest.cs" />
+    <Compile Include="P2000AlarmGetResponseTextListRequestTest.cs" />
+    <Compile Include="P2000AlarmGetResponseTextListReplyTest.cs" />
+    <Compile Include="P2000LoginReplyTest.cs" />
+    <Compile Include="P2000LoginReplyWrapperTest.cs" />
+    <Compile Include="P2000ReturnStructureTest.cs" />
+    <Compile Include="PagingTest.cs" />
+    <Compile Include="PermissionTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResponseTextTest.cs" />
+    <Compile Include="SessionManagementServiceTest.cs" />
+    <Compile Include="SortKeyTest.cs" />
+    <Compile Include="SortOrderTest.cs" />
+    <Compile Include="UserDetailsTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JohnsonControls.BuildingSecurity.XmlRpc3.Services\JohnsonControls.BuildingSecurity.XmlRpc3.Services.csproj">
+      <Project>{ED69EE95-A9AB-4EA8-B904-A98810D70F94}</Project>
+      <Name>JohnsonControls.BuildingSecurity.XmlRpc3.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JohnsonControls.Core\JohnsonControls.Core.csproj">
+      <Project>{2D6A836C-C3A4-4109-A9AB-CB274FA5ADA1}</Project>
+      <Name>JohnsonControls.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JohnsonControls.TestExtensions\JohnsonControls.TestExtensions.csproj">
+      <Project>{DD344F18-2838-4B3C-9118-3D6BBC683DA5}</Project>
+      <Name>JohnsonControls.TestExtensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JohnsonControls.XmlRpc\JohnsonControls.XmlRpc.csproj">
+      <Project>{4AF3B7F8-837A-4FEC-BF1F-F182285C409D}</Project>
+      <Name>JohnsonControls.XmlRpc</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,96 @@
+﻿@*----------------------------------------------------------------------------
+
+(C) Copyright 2012 Johnson Controls, Inc.
+Use or Copying of all or any part of this program, except as
+permitted by License Agreement, is prohibited.
+
+------------------------------------------------------------------------------*@
+
+@using JohnsonControls.BuildingSecurity
+@model ReportServerConfigurationModel
+
+@{
+    ViewBag.Title = Resources.ReportServerViewTitle;
+    ViewBag.HelpLink = Html.GetLocalizedHelpLink("~/Help/index_csh.htm#1005,withnavpane=true");
+}
+
+@section Scripts
+{
+    <script type="text/javascript"  >
+        $(function () {
+            var messageText = "@Model.MessageText";
+            var messageType = "@Model.MessageType";
+
+            jci.message.display("message", messageText, messageType);
+            
+            $("#Server").focus();
+            window.updateComposite();
+        });
+
+        window.validate = function () {
+            jci.message.display("message", "@Resources.ReportServerViewValidatingConfiguration", jci.alertType.info);
+        };
+
+        window.updateComposite = function () {
+            var scheme = (($("#UseSsl").attr("checked") !== undefined) ? "https://" : "http://");
+            var server = $("#Server").attr("value");
+
+            $("#WebServiceUrl").attr("value", scheme + server + "/" + $("#WebServiceVirtualDirectory").attr("value"));
+        };
+    </script>
+}
+
+<div>
+    <div>
+        <h1>@ViewBag.Title</h1>
+    </div>
+    <div>
+        @Resources.ReportServerViewInstructions
+    </div>
+</div>
+<br/>
+@using (Html.BeginForm((string)ViewBag.FormAction, "ReportServerConfiguration"))
+{
+    @Html.AntiForgeryToken()
+    <fieldset>
+        <legend>@Resources.ReportServerViewLegend</legend>
+
+        <label for="UseSsl">
+            @Html.CheckBoxFor(m => m.UseSsl, new { @onchange = "window.updateComposite()" })
+            <span>@Resources.ReportServerModelUseSslLabel</span>
+        </label>
+
+        @Html.LabelFor(m => m.Server)
+        @Html.TextBoxFor(m => m.Server, new { @onkeyup = "window.updateComposite()" })
+        @Html.ValidationMessageFor(m => m.Server)
+
+        @Html.LabelFor(m => m.WebServiceVirtualDirectory)
+        @Html.TextBoxFor(m => m.WebServiceVirtualDirectory, new { @onkeyup = "window.updateComposite()" })
+        @Html.ValidationMessageFor(m => m.WebServiceVirtualDirectory)
+
+        @Html.LabelFor(m => m.WebServiceUrl)
+        @Html.TextBoxFor(m => m.WebServiceUrl, new { @readonly = "true" })
+
+        @Html.LabelFor(m => m.Domain)
+        @Html.TextBoxFor(m => m.Domain)
+        @Html.ValidationMessageFor(m => m.Domain)
+
+        @Html.LabelFor(m => m.UserName)
+        @Html.TextBoxFor(m => m.UserName)
+        @Html.ValidationMessageFor(m => m.UserName)
+
+        @Html.LabelFor(m => m.Password)
+        @Html.PasswordFor(m => m.Password, new { value = Model.Password, @class="selectOnFocus" })
+        @Html.ValidationMessageFor(m => m.Password)
+
+        <br/>
+        <br/>
+
+        @if (HttpContext.Current.User.IsInRole(PermissionNames.CanEditReportsServerSettings))
+        {
+            <button type="submit" name="submitButton" onclick="window.validate()" value="TestConfiguration" class="btn">@Resources.ReportServerViewTestConfigurationButtonText</button>
+            <button type="submit" name="submitButton" onclick="window.validate()" value="Save" class="btn btn-primary">@Resources.ReportServerViewSubmitButtonText</button>
+        }
+        <div id="message" class="row" style="height: 70px; margin-left:0px"></div>
+    </fieldset>
+}

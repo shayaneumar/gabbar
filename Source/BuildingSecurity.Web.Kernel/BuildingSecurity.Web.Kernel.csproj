@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F842A84E-9D38-425E-BDFE-28AEE3819A9F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BuildingSecurity.Web</RootNamespace>
+    <AssemblyName>BuildingSecurity.Web.Kernel</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;IN_MEMORY_SETTINGS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\Monkeypaw.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.0.1.10\lib\net40\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Extensions.Conventions">
+      <HintPath>..\packages\Ninject.Extensions.Conventions.3.0.0.11\lib\net40\Ninject.Extensions.Conventions.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web">
+      <HintPath>..\packages\Ninject.Web.3.0.0.5\lib\net40-full\Ninject.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Common">
+      <HintPath>..\packages\Ninject.Web.Common.3.0.0.7\lib\net40-full\Ninject.Web.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="WebActivator">
+      <HintPath>..\packages\WebActivator.1.5.1\lib\net40\WebActivator.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SharedAssemblyInfo.cs">
+      <Link>SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="BootLoader.cs" />
+    <Compile Include="IBootLoader.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDictionary Include="..\CustomDictionary.xml">
+      <Link>CustomDictionary.xml</Link>
+      <SubType>Designer</SubType>
+    </CodeAnalysisDictionary>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BuildingSecurity.Reporting\BuildingSecurity.Reporting.csproj">
+      <Project>{70EDDE33-397D-4A53-A497-4E735B1C21DD}</Project>
+      <Name>BuildingSecurity.Reporting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JohnsonControls.BuildingSecurity.Pseudo.Client\JohnsonControls.BuildingSecurity.Pseudo.Client.csproj">
+      <Project>{61A13BB1-0311-4B78-B4A5-DF2D8CB4F1AD}</Project>
+      <Name>JohnsonControls.BuildingSecurity.Pseudo.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JohnsonControls.BuildingSecurity.XmlRpc3.Client\JohnsonControls.BuildingSecurity.XmlRpc3.Client.csproj">
+      <Project>{8A354004-18FA-47A7-B49E-CC88A16FBF2E}</Project>
+      <Name>JohnsonControls.BuildingSecurity.XmlRpc3.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JohnsonControls.BuildingSecurity.XmlRpc3.Services\JohnsonControls.BuildingSecurity.XmlRpc3.Services.csproj">
+      <Project>{ED69EE95-A9AB-4EA8-B904-A98810D70F94}</Project>
+      <Name>JohnsonControls.BuildingSecurity.XmlRpc3.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JohnsonControls.BuildingSecurity\JohnsonControls.BuildingSecurity.csproj">
+      <Project>{2E986667-407A-4B1B-B5A6-4BACF481DA01}</Project>
+      <Name>JohnsonControls.BuildingSecurity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JohnsonControls.Core\JohnsonControls.Core.csproj">
+      <Project>{2D6A836C-C3A4-4109-A9AB-CB274FA5ADA1}</Project>
+      <Name>JohnsonControls.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JohnsonControls.XmlRpc\JohnsonControls.XmlRpc.csproj">
+      <Project>{4AF3B7F8-837A-4FEC-BF1F-F182285C409D}</Project>
+      <Name>JohnsonControls.XmlRpc</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

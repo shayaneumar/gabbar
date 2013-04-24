@@ -1,0 +1,7 @@
+﻿@if (Request.IsAuthenticated) {
+    <p>
+        @string.Format(Resources.LogOnPartialGreetingFormat, ViewBag.FullName)
+        <br/>
+        <a href='@Html.GetLocalizedHelpLink("~/Help/index_csh.htm#0,withnavpane=true")' target="help">@Resources.SiteHelpTitle</a><span class="lsep">|</span>@Html.ActionLink(Resources.LogOnPartialLogOffLinkText, "LogOff", "Account")
+    </p>
+}

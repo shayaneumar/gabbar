@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:iis="http://schemas.microsoft.com/wix/IIsExtension"
+     xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+
+  <Fragment>
+    <!-- Include default property values -->
+    <?include ConfigurationInitialize.wxi ?>
+
+    <DirectoryRef Id="WEBSITEDIRECTORY">
+      <!-- Configuring Application Pool -->
+      <Component Id="WebAppPool_Component" Guid="{48787A7C-9D48-4CC3-8D58-ADEAFD88C122}" KeyPath="yes">
+        <iis:WebAppPool Id="WebAppPool_AppPool"
+          Name="[WEB_APP_NAME]"
+          Identity="networkService"
+          ManagedPipelineMode="integrated"
+          ManagedRuntimeVersion="v4.0" />
+      </Component>
+
+      <!-- Configure Virtual Directory -->
+      <Component Id="WebApp_Component" Guid="{751DEB01-ECC1-48ff-869A-65BCEE9E0528}" KeyPath="yes" >
+        <iis:WebVirtualDir Id="WebApp_WebVirtualDir"
+          Alias="[VIRTUAL_DIR_VAL]"
+          Directory="WEBSITEDIRECTORY"
+          WebSite="DefaultWebSite2">
+          <!-- Configure Web Site Authentication -->
+          <iis:WebDirProperties Id="WebApp_WebDirProperties"
+            AnonymousAccess="yes"
+            BasicAuthentication="no"
+            WindowsAuthentication="yes" />
+          <iis:WebApplication Id="WebApp_WebApplication"
+            Name="[VIRTUAL_DIR_VAL]"
+            WebAppPool="WebAppPool_AppPool"
+            Isolation="high" />
+        </iis:WebVirtualDir>
+      </Component>
+    </DirectoryRef>
+    
+    <!-- Install to default web site -->
+    <iis:WebSite Id="DefaultWebSite2" Description='Default Web Site'>
+      <iis:WebAddress Id="AllUnassigned" Port="80" />
+    </iis:WebSite>
+    
+    <ComponentGroup Id="IssConfiguration">
+      <ComponentRef Id="WebApp_Component" />
+      <ComponentRef Id="WebAppPool_Component" />
+    </ComponentGroup>
+  </Fragment>
+</Wix>

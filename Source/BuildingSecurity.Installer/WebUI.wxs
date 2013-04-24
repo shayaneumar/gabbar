@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <!-- WebUI -->
+    <UI Id="WebUI">
+      <!-- Use the FeatureTree version of the CustomizeDlg (display Tree of features with options to install on disk, when required, or not available) -->
+      <UIRef Id="WixUI_FeatureTree" />
+      
+      <!-- Enable option to localize Product.wxs output and MSI -->
+      <UIRef Id="WixUI_ErrorProgressText" />
+
+      <!-- Make reference to the custom dialogs defined in WebUI.wxs, so they are available for button events from WixUI dialogs -->
+      <DialogRef Id="IisSetupDlg" />
+      <DialogRef Id="P2000ServerSettingsDlg" />
+
+      <!-- Inject built-in WixUI dialog for License Agreement -->
+      <Publish Dialog="LicenseAgreementDlg" Control="Next"
+        Event="NewDialog" Value="IisSetupDlg"
+        Order="3">LicenseAccepted = "1"</Publish>
+
+      <!-- Inject built-in WixUI dialog for Custom Setup -->
+      <Publish Dialog="CustomizeDlg" Control="Back"
+        Event="NewDialog" Value="P2000ServerSettingsDlg"
+        Order="6">1</Publish>
+    </UI>
+  </Fragment>
+</Wix>

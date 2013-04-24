@@ -1,0 +1,432 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Afghanistan Standard Time" xml:space="preserve">
+    <value>(GMT+04:30) Kabul</value>
+  </data>
+  <data name="Alaskan Standard Time" xml:space="preserve">
+    <value>(GMT-09:00) Alaska</value>
+  </data>
+  <data name="Arab Standard Time" xml:space="preserve">
+    <value>(GMT+03:00) Kuwait, Riyadh</value>
+  </data>
+  <data name="Arabian Standard Time" xml:space="preserve">
+    <value>(GMT+04:00) Abu Dhabi, Muscat</value>
+  </data>
+  <data name="Arabic Standard Time" xml:space="preserve">
+    <value>(GMT+03:00) Baghdad</value>
+  </data>
+  <data name="Argentina Standard Time" xml:space="preserve">
+    <value>(GMT-03:00) Buenos Aires</value>
+  </data>
+  <data name="Atlantic Standard Time" xml:space="preserve">
+    <value>(GMT-04:00) Atlantic Time (Canada)</value>
+  </data>
+  <data name="AUS Central Standard Time" xml:space="preserve">
+    <value>(GMT+09:30) Darwin</value>
+  </data>
+  <data name="AUS Eastern Standard Time" xml:space="preserve">
+    <value>(GMT+10:00) Canberra, Melbourne, Sydney</value>
+  </data>
+  <data name="Azerbaijan Standard Time" xml:space="preserve">
+    <value>(GMT+04:00) Baku</value>
+  </data>
+  <data name="Azores Standard Time" xml:space="preserve">
+    <value>(GMT-01:00) Azores</value>
+  </data>
+  <data name="Canada Central Standard Time" xml:space="preserve">
+    <value>(GMT-06:00) Saskatchewan</value>
+  </data>
+  <data name="Cape Verde Standard Time" xml:space="preserve">
+    <value>(GMT-01:00) Cape Verde Is.</value>
+  </data>
+  <data name="Caucasus Standard Time" xml:space="preserve">
+    <value>(GMT+04:00) Yerevan</value>
+  </data>
+  <data name="Cen. Australia Standard Time" xml:space="preserve">
+    <value>(GMT+09:30) Adelaide</value>
+  </data>
+  <data name="Central America Standard Time" xml:space="preserve">
+    <value>(GMT-06:00) Central America</value>
+  </data>
+  <data name="Central Asia Standard Time" xml:space="preserve">
+    <value>(GMT+06:00) Astana, Dhaka</value>
+  </data>
+  <data name="Central Brazilian Standard Time" xml:space="preserve">
+    <value>(GMT-04:00) Manaus</value>
+  </data>
+  <data name="Central Europe Standard Time" xml:space="preserve">
+    <value>(GMT+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague</value>
+  </data>
+  <data name="Central European Standard Time" xml:space="preserve">
+    <value>(GMT+01:00) Sarajevo, Skopje, Warsaw, Zagreb</value>
+  </data>
+  <data name="Central Pacific Standard Time" xml:space="preserve">
+    <value>(GMT+11:00) Magadan, Solomon Is., New Caledonia</value>
+  </data>
+  <data name="Central Standard Time" xml:space="preserve">
+    <value>(GMT-06:00) Central Time (US &amp; Canada)</value>
+  </data>
+  <data name="Central Standard Time (Mexico)" xml:space="preserve">
+    <value>(GMT-06:00) Guadalajara, Mexico City, Monterrey</value>
+  </data>
+  <data name="China Standard Time" xml:space="preserve">
+    <value>(GMT+08:00) Beijing, Chongqing, Hong Kong, Urumqi</value>
+  </data>
+  <data name="Dateline Standard Time" xml:space="preserve">
+    <value>(GMT-12:00) International Date Line West</value>
+  </data>
+  <data name="E. Africa Standard Time" xml:space="preserve">
+    <value>(GMT+03:00) Nairobi</value>
+  </data>
+  <data name="E. Australia Standard Time" xml:space="preserve">
+    <value>(GMT+10:00) Brisbane</value>
+  </data>
+  <data name="E. Europe Standard Time" xml:space="preserve">
+    <value>(GMT+02:00) Minsk</value>
+  </data>
+  <data name="E. South America Standard Time" xml:space="preserve">
+    <value>(GMT-03:00) Brasilia</value>
+  </data>
+  <data name="Eastern Standard Time" xml:space="preserve">
+    <value>(GMT-05:00) Eastern Time (US &amp; Canada)</value>
+  </data>
+  <data name="Egypt Standard Time" xml:space="preserve">
+    <value>(GMT+02:00) Cairo</value>
+  </data>
+  <data name="Ekaterinburg Standard Time" xml:space="preserve">
+    <value>(GMT+05:00) Ekaterinburg</value>
+  </data>
+  <data name="Fiji Standard Time" xml:space="preserve">
+    <value>(GMT+12:00) Fiji, Kamchatka, Marshall Is.</value>
+  </data>
+  <data name="FLE Standard Time" xml:space="preserve">
+    <value>(GMT+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius</value>
+  </data>
+  <data name="Georgian Standard Time" xml:space="preserve">
+    <value>(GMT+03:00) Tbilisi</value>
+  </data>
+  <data name="GMT Standard Time" xml:space="preserve">
+    <value>(GMT) Greenwich Mean Time : Dublin, Edinburgh, Lisbon, London</value>
+  </data>
+  <data name="Greenland Standard Time" xml:space="preserve">
+    <value>(GMT-03:00) Greenland</value>
+  </data>
+  <data name="Greenwich Standard Time" xml:space="preserve">
+    <value>(GMT) Monrovia, Reykjavik</value>
+  </data>
+  <data name="GTB Standard Time" xml:space="preserve">
+    <value>(GMT+02:00) Athens, Bucharest, Istanbul</value>
+  </data>
+  <data name="Hawaiian Standard Time" xml:space="preserve">
+    <value>(GMT-10:00) Hawaii</value>
+  </data>
+  <data name="India Standard Time" xml:space="preserve">
+    <value>(GMT+05:30) Chennai, Kolkata, Mumbai, New Delhi</value>
+  </data>
+  <data name="Iran Standard Time" xml:space="preserve">
+    <value>(GMT+03:30) Tehran</value>
+  </data>
+  <data name="Israel Standard Time" xml:space="preserve">
+    <value>(GMT+02:00) Jerusalem</value>
+  </data>
+  <data name="Jordan Standard Time" xml:space="preserve">
+    <value>(GMT+02:00) Amman</value>
+  </data>
+  <data name="Korea Standard Time" xml:space="preserve">
+    <value>(GMT+09:00) Seoul</value>
+  </data>
+  <data name="Mauritius Standard Time" xml:space="preserve">
+    <value>(GMT+04:00) Port Louis</value>
+  </data>
+  <data name="Mid-Atlantic Standard Time" xml:space="preserve">
+    <value>(GMT-02:00) Mid-Atlantic</value>
+  </data>
+  <data name="Middle East Standard Time" xml:space="preserve">
+    <value>(GMT+02:00) Beirut</value>
+  </data>
+  <data name="Montevideo Standard Time" xml:space="preserve">
+    <value>(GMT-03:00) Montevideo</value>
+  </data>
+  <data name="Morocco Standard Time" xml:space="preserve">
+    <value>(GMT) Casablanca</value>
+  </data>
+  <data name="Mountain Standard Time" xml:space="preserve">
+    <value>(GMT-07:00) Mountain Time (US &amp; Canada)</value>
+  </data>
+  <data name="Mountain Standard Time (Mexico)" xml:space="preserve">
+    <value>(GMT-07:00) Chihuahua, La Paz, Mazatlan</value>
+  </data>
+  <data name="Myanmar Standard Time" xml:space="preserve">
+    <value>(GMT+06:30) Yangon (Rangoon)</value>
+  </data>
+  <data name="N. Central Asia Standard Time" xml:space="preserve">
+    <value>(GMT+06:00) Almaty, Novosibirsk</value>
+  </data>
+  <data name="Namibia Standard Time" xml:space="preserve">
+    <value>(GMT+02:00) Windhoek</value>
+  </data>
+  <data name="Nepal Standard Time" xml:space="preserve">
+    <value>(GMT+05:45) Kathmandu</value>
+  </data>
+  <data name="New Zealand Standard Time" xml:space="preserve">
+    <value>(GMT+12:00) Auckland, Wellington</value>
+  </data>
+  <data name="Newfoundland Standard Time" xml:space="preserve">
+    <value>(GMT-03:30) Newfoundland</value>
+  </data>
+  <data name="North Asia East Standard Time" xml:space="preserve">
+    <value>(GMT+08:00) Irkutsk, Ulaan Bataar</value>
+  </data>
+  <data name="North Asia Standard Time" xml:space="preserve">
+    <value>(GMT+07:00) Krasnoyarsk</value>
+  </data>
+  <data name="Pacific SA Standard Time" xml:space="preserve">
+    <value>(GMT-04:00) Santiago</value>
+  </data>
+  <data name="Pacific Standard Time" xml:space="preserve">
+    <value>(GMT-08:00) Pacific Time (US &amp; Canada)</value>
+  </data>
+  <data name="Pacific Standard Time (Mexico)" xml:space="preserve">
+    <value>(GMT-08:00) Tijuana, Baja California</value>
+  </data>
+  <data name="Pakistan Standard Time" xml:space="preserve">
+    <value>(GMT+05:00) Islamabad, Karachi</value>
+  </data>
+  <data name="Romance Standard Time" xml:space="preserve">
+    <value>(GMT+01:00) Brussels, Copenhagen, Madrid, Paris</value>
+  </data>
+  <data name="Russian Standard Time" xml:space="preserve">
+    <value>(GMT+03:00) Moscow, St. Petersburg, Volgograd</value>
+  </data>
+  <data name="SA Eastern Standard Time" xml:space="preserve">
+    <value>(GMT-03:00) Georgetown</value>
+  </data>
+  <data name="SA Pacific Standard Time" xml:space="preserve">
+    <value>(GMT-05:00) Bogota, Lima, Quito, Rio Branco</value>
+  </data>
+  <data name="SA Western Standard Time" xml:space="preserve">
+    <value>(GMT-04:00) La Paz</value>
+  </data>
+  <data name="Samoa Standard Time" xml:space="preserve">
+    <value>(GMT-11:00) Midway Island, Samoa</value>
+  </data>
+  <data name="SE Asia Standard Time" xml:space="preserve">
+    <value>(GMT+07:00) Bangkok, Hanoi, Jakarta</value>
+  </data>
+  <data name="Singapore Standard Time" xml:space="preserve">
+    <value>(GMT+08:00) Kuala Lumpur, Singapore</value>
+  </data>
+  <data name="South Africa Standard Time" xml:space="preserve">
+    <value>(GMT+02:00) Harare, Pretoria</value>
+  </data>
+  <data name="Sri Lanka Standard Time" xml:space="preserve">
+    <value>(GMT+05:30) Sri Jayawardenepura</value>
+  </data>
+  <data name="Taipei Standard Time" xml:space="preserve">
+    <value>(GMT+08:00) Taipei</value>
+  </data>
+  <data name="Tasmania Standard Time" xml:space="preserve">
+    <value>(GMT+10:00) Hobart</value>
+  </data>
+  <data name="Tokyo Standard Time" xml:space="preserve">
+    <value>(GMT+09:00) Osaka, Sapporo, Tokyo</value>
+  </data>
+  <data name="Tonga Standard Time" xml:space="preserve">
+    <value>(GMT+13:00) Nuku'alofa</value>
+  </data>
+  <data name="US Eastern Standard Time" xml:space="preserve">
+    <value>(GMT-05:00) Indiana (East)</value>
+  </data>
+  <data name="US Mountain Standard Time" xml:space="preserve">
+    <value>(GMT-07:00) Arizona</value>
+  </data>
+  <data name="Venezuela Standard Time" xml:space="preserve">
+    <value>(GMT-04:30) Caracas</value>
+  </data>
+  <data name="Vladivostok Standard Time" xml:space="preserve">
+    <value>(GMT+10:00) Vladivostok</value>
+  </data>
+  <data name="W. Australia Standard Time" xml:space="preserve">
+    <value>(GMT+08:00) Perth</value>
+  </data>
+  <data name="W. Central Africa Standard Time" xml:space="preserve">
+    <value>(GMT+01:00) West Central Africa</value>
+  </data>
+  <data name="W. Europe Standard Time" xml:space="preserve">
+    <value>(GMT+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna</value>
+  </data>
+  <data name="West Asia Standard Time" xml:space="preserve">
+    <value>(GMT+05:00) Tashkent</value>
+  </data>
+  <data name="West Pacific Standard Time" xml:space="preserve">
+    <value>(GMT+10:00) Guam, Port Moresby</value>
+  </data>
+  <data name="Yakutsk Standard Time" xml:space="preserve">
+    <value>(GMT+09:00) Yakutsk</value>
+  </data>
+  <data name="Armenian Standard Time" xml:space="preserve">
+    <value>(GMT+04:00) Yerevan</value>
+  </data>
+  <data name="Bahia Standard Time" xml:space="preserve">
+    <value>(GMT-03:00) Salvador</value>
+  </data>
+  <data name="Bangladesh Standard Time" xml:space="preserve">
+    <value>(GMT+06:00) Dhaka</value>
+  </data>
+  <data name="Kaliningrad Standard Time" xml:space="preserve">
+    <value>(GMT+03:00) Kaliningrad, Minsk</value>
+  </data>
+  <data name="Kamchatka Standard Time" xml:space="preserve">
+    <value>(GMT+12:00) Petropavlovsk-Kamchatsky - Old</value>
+  </data>
+  <data name="Magadan Standard Time" xml:space="preserve">
+    <value>(GMT+12:00) Magadan</value>
+  </data>
+  <data name="Mexico Standard Time" xml:space="preserve">
+    <value>(GMT-06:00) Guadalajara, Mexico City, Monterrey - Old</value>
+  </data>
+  <data name="Mexico Standard Time 2" xml:space="preserve">
+    <value>(GMT-07:00) Chihuahua, La Paz, Mazatlan - Old</value>
+  </data>
+  <data name="Paraguay Standard Time" xml:space="preserve">
+    <value>(GMT-04:00) Asuncion</value>
+  </data>
+  <data name="Syria Standard Time" xml:space="preserve">
+    <value>(GMT+02:00) Damascus</value>
+  </data>
+  <data name="Turkey Standard Time" xml:space="preserve">
+    <value>(GMT+02:00) Istanbul</value>
+  </data>
+  <data name="Ulaanbaatar Standard Time" xml:space="preserve">
+    <value>(GMT+08:00) Ulaanbaatar</value>
+  </data>
+  <data name="UTC" xml:space="preserve">
+    <value>(GMT) Coordinated Universal Time</value>
+  </data>
+  <data name="UTC+12" xml:space="preserve">
+    <value>(GMT+12:00) Coordinated Universal Time+12</value>
+  </data>
+  <data name="UTC-02" xml:space="preserve">
+    <value>(GMT-02:00) Coordinated Universal Time-02</value>
+  </data>
+  <data name="UTC-11" xml:space="preserve">
+    <value>(GMT-11:00) Coordinated Universal Time-11</value>
+  </data>
+</root>

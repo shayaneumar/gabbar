@@ -1,0 +1,237 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Changing_the_Time_Zone_Setting</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="Z:\Techpubs\P2000 5.0\Alarm Manager\24-10685-9 Rev. -\Chp3.fm" />
+ <link rel="stylesheet" href="../../../RHStyleMapping.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\..\RHStyleMapping.css" type="text/css" />
+
+ <script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("P2000 Alarm Manager\nConfiguring the P2000 Alarm Manager\nChanging the Time Zone Setting");
+addButton("show",BTN_TEXT,"Mostrar","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../../index.htm");
+
+		autoSync(0);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+<table style="border-collapse: separate; border-collapse: separate;" cellspacing="0" 
+		 width="100%" bgcolor="#70AF42" border="1">
+	<col style="width: 100%;" />
+	<tr>
+		<td style="vertical-align: middle;">
+  <p style="margin-top: 0pt; 
+												 line-height: 200%; margin-bottom: 0pt; 
+												 font-family: Arial, sans-serif; 
+												 font-weight: bold; font-size: 11pt; 
+												 color: #ffffff; font-variant: normal; 
+												 text-transform: none; 
+												 letter-spacing: normal; 
+												 text-decoration: none; ">P2000 
+		 Web User Interface Help</p></td>
+	</tr>
+ </table>
+<script type="text/javascript" language="javascript">//<![CDATA[
+document.write("<p  style=\"text-align:left;\" class=\"breadcrumbs\">");
+AddMasterBreadcrumbs("../../../index.htm", "breadcrumbs", " | ", "Home", "../Chp1/Introduction.htm");
+document.write("<a class=\"breadcrumbs\" href=\"../Chp1/Introduction.htm\">P2000 Alarm Manager<\/a>  |  <a class=\"breadcrumbs\" href=\"Configuring_the_P2000_Alarm_Manager.htm\">Configuring the P2000 Alarm Manager<\/a>  |  Changing the Time Zone Setting<\/p>");
+//]]></script>
+
+ <h1><a name="IX_Alarm_Time_Stamp"></a><a name="IX_time_zone_setting"></a><a name="IX_changing"></a><a name="XREF_21549_Changing_the_Time"></a>Changing the Time Zone Setting</h1>
+ <p class="Body" style="letter-spacing : 0.00em;">The P2000 Alarm Manager records the date and time each alarm occurs and displays it according to your local time zone settings in the Alarm Manager application. For example, if the Web server is located at a site that follows Central Time (UTC-06:00), and your Alarm Manager time zone settings are set to Pacific Time (UTC-08:00), the alarms that occurred at 10:00 PM Central Time appear as 8:00 PM when viewed on the client computer configured for Pacific Time. See <a href="#XREF_16262_P2000_Alarm">P2000 Alarm Manager Time Zones Settings</a> for other examples.</p>
+ <p class="TableTitle"><a name="XREF_16262_P2000_Alarm"></a>P2000 Alarm Manager Time Zones Settings</p>
+ <table width="100%">
+  <tr>
+  <td>
+ <table class="Table" style="width: 6in; float: alignleft; " cellspacing="0px" align="left">
+  <tr style=" height : 30.00pt;" class="t1st">
+  <td style="width : 75.931pt; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="TableColumnHeading">Time Zone Setting <br />(at Web server)<a name="FTB_0"></a><a href="#FTH_0"><sup>1</sup></a></p>
+</td>
+  <td style="width : 75.376pt; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="TableColumnHeading">Alarm Time Stamp</p>
+</td>
+  <td style="width : 82.598pt; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="TableColumnHeading">Time Zone Setting <br />(at client)<a name="FTB_1"></a><a href="#FTH_1"><sup>2</sup></a></p>
+</td>
+  <td style="width : 82.598pt; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="TableColumnHeading">Alarm Time Stamp (displayed at client)</p>
+</td>
+</tr>
+  <tr style=" height : 26.00pt;" class="t2Row">
+  <td style="width : 75.931pt; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="TableCell">Eastern <br />(UTC-05:00)</p>
+</td>
+  <td style="width : 75.376pt; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="TableCell">10/12/2012 <br /><span class="Bold">10:30:00</span> AM</p>
+</td>
+  <td style="width : 82.598pt; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="TableCell">Pacific<br />(UTC-08:00)</p>
+</td>
+  <td style="width : 82.598pt; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="TableCell">10/12/2012<span class="Bold">&#160;<br />07:30:00</span> AM</p>
+</td>
+</tr>
+  <tr style=" height : 26.00pt;" class="t1Row">
+  <td style="width : 75.931pt; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="TableCell">Central <br />(UTC-06:00)</p>
+</td>
+  <td style="width : 75.376pt; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="TableCell">10/12/2012 <br /><span class="Bold">08:30:00</span> AM</p>
+</td>
+  <td style="width : 82.598pt; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="TableCell">Eastern <br />(UTC-05:00)</p>
+</td>
+  <td style="width : 82.598pt; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="TableCell">10/12/2012 <br /><span class="Bold">07:30:00</span> AM</p>
+</td>
+</tr>
+  <tr style=" height : 26.00pt;" class="t2Row">
+  <td style="width : 75.931pt; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="TableCell">Pacific<br />(UTC-08:00)</p>
+</td>
+  <td style="width : 75.376pt; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="TableCell">10/12/2012 <br /><span class="Bold">09:30:00</span> AM</p>
+</td>
+  <td style="width : 82.598pt; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="TableCell">Central <br />(UTC-06:00)</p>
+</td>
+  <td style="width : 82.598pt; vertical-align : top;padding-left: 6.00pt; padding-top: 3.00pt; padding-right: 6.00pt; padding-bottom: 3.00pt;">
+  <p class="TableCell">10/12/2012 <br /><span class="Bold">11:30:00</span> AM</p>
+</td>
+</tr>
+ </table>
+</td></tr>
+ </table>
+ <table width="100%">
+  <tr>
+  <td>
+ <table style="float: alignleft; margin-left: 0.00pt; margin-bottom: 16.00pt; margin-top: 6.00pt; width: 316.50pt;" align="left">
+  <tr>
+  <td>
+  <p class="TableFootnote"><a name="FTH_0"></a><sup><a href="#FTB_0">1</a></sup>Operating system time zone setting</p>
+  <p class="TableFootnote"><a name="FTH_1"></a><sup><a href="#FTB_1">2</a></sup>P2000 Alarm Manager time zone setting</p>
+</td></tr>
+ </table></td></tr>
+ </table>
+ <p class="TableTitle"></p>
+ 
+<p class="SpecialNote"><span class="Bold">Note:     </span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;</font></span>The default P2000 Alarm Manager time zone setting, regardless of the local operating system’s time zone setting, matches the Web server’s time zone setting. For example, if you connect from a client computer set for Pacific Time to a Web server set for Central Time, the client Alarm Manager displays the alarms, by default, in Central Time.</p>
+
+ <p class="Body" style="letter-spacing : 0.00em;">You can change the P2000 Alarm Manager time zone setting, if desired.</p>
+ <p class="StepTitle">To change the time zone setting:</p>
+ <p class="Step">1.<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Click the <span class="Bold">Settings</span> button. The Time Zone drop-down list appears.</p>
+ <p class="Step">2.<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Select a new time zone from the drop-down list.</p>
+ <p class="StepText">The Alarm Manager page refreshes to display the alarms with updated time stamps based on the new time zone selected.</p>
+ <table style="border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px;" 
+		 cellspacing="0" width="100%">
+	<col style="width: 16.87%;" />
+	<col style="width: 58.505%;" />
+	<col style="width: 24.625%;" />
+	<tr style="height: 5px;">
+		<td colspan="3" style="border-bottom: Solid 1px #143d75; vertical-align: Top;">
+  <p 
+			 style="margin-top: 18px;">&#160;</p></td>
+		
+	</tr>
+	<tr style="height: 38px;">
+		<td style="vertical-align: Top;">
+  <p style="margin-top: 4.5pt;"><a 
+		 href="http://www.johnsoncontrols.com" target="_blank" title="Johnson Controls Web Site"><img src="../../../jci_logo_color_small.png" alt="jci_logo_color_small.png" style="border: none;" border="0" /></a></p></td>
+		<td style="vertical-align: Top;">
+  <p style="text-align: center; 
+											 margin-top: 20px;"><span style="color: #ff0000; 
+		 font-weight: bold;"><font color="red" ><b>Preliminary – 
+		 This information may change.</b></font></span></p></td>
+		<td style="vertical-align: Top;">
+  <p style="text-align: center; 
+											 margin-top: 12px;">© 2012 
+		 Johnson Controls, Inc.<br />
+		<a title="Online Product Literature" href="http://cgproducts.johnsoncontrols.com/default.aspx?topframe.aspx&amp;0" 
+			 target="_blank" style="text-decoration: none; ">Product Documentation</a></p></td>
+	</tr>
+ </table>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

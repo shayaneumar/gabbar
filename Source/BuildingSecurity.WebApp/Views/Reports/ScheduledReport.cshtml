@@ -1,0 +1,82 @@
+﻿@*----------------------------------------------------------------------------
+
+(C) Copyright 2012 Johnson Controls, Inc.
+Use or Copying of all or any part of this program, except as
+permitted by License Agreement, is prohibited.
+
+------------------------------------------------------------------------------*@
+@{
+    ViewBag.Title = Resources.ReportScheduledViewPageTitle;
+    ViewBag.HelpLink = Html.GetLocalizedHelpLink("~/Help/index_csh.htm#1003,withnavpane=true");
+}
+
+@model ReportSchedulerModel
+
+<div class="report-runner clear-fix">
+    <div class="outer-runner">
+        <div class="inner-runner">
+            <div>
+                <div>
+                    <h1>@Resources.ReportScheduledViewPageTitle</h1>
+                </div>
+                <div>@string.Format(Resources.ReportScheduledViewInstructions, Model.ReportName, Model.Description)</div>
+            </div>
+
+            <div class="report-input">
+                <div class="header">
+                    @Resources.ReportScheduledViewHeaderTitle
+                </div>
+                <div class="body">
+                    <div>
+                        <h4>@Model.Description</h4>
+                    </div>
+                    <hr/>
+                    <div class="clearfix">
+                        <div class="column1">
+                            @foreach (var reportParameter in Model.Parameters.ReportParameterContainers[ReportParameterContainer.Column1])
+                            {
+                                @Html.LabeledParameterField(reportParameter, true)
+                            }
+                        </div>
+                        <div class="column2">
+                            @foreach (var reportParameter in Model.Parameters.ReportParameterContainers[ReportParameterContainer.Column2])
+                            {
+                                @Html.LabeledParameterField(reportParameter, true)
+                            }
+                        </div>
+                    </div>
+                    <hr/>
+                    <div>
+                        <h4>@Resources.ReportScheduledViewFileFormatTitle</h4>
+                    </div>
+                    <div class="output">
+                        <div class="float-left"><img src="@Url.Content(Model.ReportOutputTypeIconPath)" alt="@Resources.ReportScheduledViewOutputFormat" /></div>
+                        <div class="float-left">@Model.ReportOutputTypeLabel</div>
+                    </div>
+                    <br/>
+                    <hr/>
+                    <div>
+                        <h4>@Resources.ReportScheduledViewDateRangeTitle</h4>
+                    </div>
+                    <div>
+                        @Model.DateRangeText
+                    </div>
+                    <hr/>
+                    <div>
+                        <h4>@Resources.ReportScheduledViewReportDeliveryTitle</h4>
+                    </div>
+                    <div>
+                        @Model.DeliverySettingsText
+                    </div>
+                    <br/>
+                    @Html.ActionLink(Resources.ReportScheduledViewModifyButtonTitle, "ModifyScheduled", "Reports", new { scheduleId = Model.ScheduleId, reportId = Model.ReportId }, new { @class = "btn" })
+                    <br/><br/>
+                </div>               
+            </div>
+            
+            @Html.ActionLink(Resources.ReportScheduledViewRunScheduleTitle, "Index", "Reports", new { listAction = BuildingSecurity.Web.App.Controllers.ReportListAction.Schedule }, null)
+        </div>
+    </div>
+</div>
+
+

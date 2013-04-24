@@ -1,0 +1,82 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:Boolean x:Key="/Default/CodeInspection/ExcludedFiles/FileMasksToSkip/=AssemblyInfo_002Ecs/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeInspection/ExcludedFiles/FileMasksToSkip/=bootstrap_002A_002Ecss/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeInspection/ExcludedFiles/FileMasksToSkip/=bootstrap_002A_002Ejs/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeInspection/ExcludedFiles/FileMasksToSkip/=jquery_002D_002A_002Ejs/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeInspection/ExcludedFiles/FileMasksToSkip/=jquery_002E_002A_002Ejs/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeInspection/ExcludedFiles/FileMasksToSkip/=knockout_002D_002A_002Ejs/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeInspection/ExcludedFiles/FileMasksToSkip/=modernizr_002D_002A_002Ejs/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeInspection/ExcludedFiles/FileMasksToSkip/=require_002Ejs/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeInspection/ExcludedFiles/FileMasksToSkip/=_002A_002ETests_005C_002A/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeInspection/ExcludedFiles/FileMasksToSkip/=_002A_002ETests_005C_002A/@EntryIndexRemoved">True</s:Boolean>
+	
+	
+	
+	
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip/=6C1982A4_002DD9C3_002D4A99_002D87AB_002DD9E8BABE5C2F_002Fd_003AContent_002Ff_003Abootstrap_002Dresponsive_002Ecss/@EntryIndexedValue">6C1982A4-D9C3-4A99-87AB-D9E8BABE5C2F/d:Content/f:bootstrap-responsive.css</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip/=6C1982A4_002DD9C3_002D4A99_002D87AB_002DD9E8BABE5C2F_002Fd_003AContent_002Ff_003Abootstrap_002Dresponsive_002Emin_002Ecss/@EntryIndexedValue">6C1982A4-D9C3-4A99-87AB-D9E8BABE5C2F/d:Content/f:bootstrap-responsive.min.css</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip/=6C1982A4_002DD9C3_002D4A99_002D87AB_002DD9E8BABE5C2F_002Fd_003AContent_002Ff_003Abootstrap_002Ecss/@EntryIndexedValue">6C1982A4-D9C3-4A99-87AB-D9E8BABE5C2F/d:Content/f:bootstrap.css</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip/=6C1982A4_002DD9C3_002D4A99_002D87AB_002DD9E8BABE5C2F_002Fd_003AContent_002Ff_003Abootstrap_002Emin_002Ecss/@EntryIndexedValue">6C1982A4-D9C3-4A99-87AB-D9E8BABE5C2F/d:Content/f:bootstrap.min.css</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip/=6C1982A4_002DD9C3_002D4A99_002D87AB_002DD9E8BABE5C2F_002Fd_003AHelp/@EntryIndexedValue">6C1982A4-D9C3-4A99-87AB-D9E8BABE5C2F/d:Help</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip/=6C1982A4_002DD9C3_002D4A99_002D87AB_002DD9E8BABE5C2F_002Fd_003AHelp_002Des/@EntryIndexedValue">6C1982A4-D9C3-4A99-87AB-D9E8BABE5C2F/d:Help-es</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip/=6C1982A4_002DD9C3_002D4A99_002D87AB_002DD9E8BABE5C2F_002Fd_003AScripts_002Ff_003Abootstrap_002Ejs/@EntryIndexedValue">6C1982A4-D9C3-4A99-87AB-D9E8BABE5C2F/d:Scripts/f:bootstrap.js</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip/=6C1982A4_002DD9C3_002D4A99_002D87AB_002DD9E8BABE5C2F_002Fd_003AScripts_002Ff_003Abootstrap_002Emin_002Ejs/@EntryIndexedValue">6C1982A4-D9C3-4A99-87AB-D9E8BABE5C2F/d:Scripts/f:bootstrap.min.js</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip/=6C1982A4_002DD9C3_002D4A99_002D87AB_002DD9E8BABE5C2F_002Fd_003AScripts_002Ff_003Adate_002Ejs/@EntryIndexedValue">6C1982A4-D9C3-4A99-87AB-D9E8BABE5C2F/d:Scripts/f:date.js</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip/=6C1982A4_002DD9C3_002D4A99_002D87AB_002DD9E8BABE5C2F_002Fd_003AScripts_002Ff_003Ajquery_002D1_002E8_002E0_002Dvsdoc_002Ejs/@EntryIndexedValue">6C1982A4-D9C3-4A99-87AB-D9E8BABE5C2F/d:Scripts/f:jquery-1.8.0-vsdoc.js</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip/=6C1982A4_002DD9C3_002D4A99_002D87AB_002DD9E8BABE5C2F_002Fd_003AScripts_002Ff_003Ajquery_002D1_002E8_002E0_002Ejs/@EntryIndexedValue">6C1982A4-D9C3-4A99-87AB-D9E8BABE5C2F/d:Scripts/f:jquery-1.8.0.js</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip/=6C1982A4_002DD9C3_002D4A99_002D87AB_002DD9E8BABE5C2F_002Fd_003AScripts_002Ff_003Ajquery_002Dui_002D1_002E8_002E23_002Ejs/@EntryIndexedValue">6C1982A4-D9C3-4A99-87AB-D9E8BABE5C2F/d:Scripts/f:jquery-ui-1.8.23.js</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip/=6C1982A4_002DD9C3_002D4A99_002D87AB_002DD9E8BABE5C2F_002Fd_003AScripts_002Ff_003Ajquery_002EminiColors_002Ejs/@EntryIndexedValue">6C1982A4-D9C3-4A99-87AB-D9E8BABE5C2F/d:Scripts/f:jquery.miniColors.js</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip/=6C1982A4_002DD9C3_002D4A99_002D87AB_002DD9E8BABE5C2F_002Fd_003AScripts_002Ff_003Ajquery_002EsignalR_002D0_002E5_002E2_002Ejs/@EntryIndexedValue">6C1982A4-D9C3-4A99-87AB-D9E8BABE5C2F/d:Scripts/f:jquery.signalR-0.5.2.js</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip/=6C1982A4_002DD9C3_002D4A99_002D87AB_002DD9E8BABE5C2F_002Fd_003AScripts_002Ff_003Ajquery_002Eunobtrusive_002Dajax_002Ejs/@EntryIndexedValue">6C1982A4-D9C3-4A99-87AB-D9E8BABE5C2F/d:Scripts/f:jquery.unobtrusive-ajax.js</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip/=6C1982A4_002DD9C3_002D4A99_002D87AB_002DD9E8BABE5C2F_002Fd_003AScripts_002Ff_003Ajquery_002Evalidate_002Dvsdoc_002Ejs/@EntryIndexedValue">6C1982A4-D9C3-4A99-87AB-D9E8BABE5C2F/d:Scripts/f:jquery.validate-vsdoc.js</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip/=6C1982A4_002DD9C3_002D4A99_002D87AB_002DD9E8BABE5C2F_002Fd_003AScripts_002Ff_003Ajquery_002Evalidate_002Ejs/@EntryIndexedValue">6C1982A4-D9C3-4A99-87AB-D9E8BABE5C2F/d:Scripts/f:jquery.validate.js</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip/=6C1982A4_002DD9C3_002D4A99_002D87AB_002DD9E8BABE5C2F_002Fd_003AScripts_002Ff_003Ajquery_002Evalidate_002Emin_002Ejs/@EntryIndexedValue">6C1982A4-D9C3-4A99-87AB-D9E8BABE5C2F/d:Scripts/f:jquery.validate.min.js</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip/=6C1982A4_002DD9C3_002D4A99_002D87AB_002DD9E8BABE5C2F_002Fd_003AScripts_002Ff_003Ajquery_002Evalidate_002Eunobtrusive_002Ejs/@EntryIndexedValue">6C1982A4-D9C3-4A99-87AB-D9E8BABE5C2F/d:Scripts/f:jquery.validate.unobtrusive.js</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip/=6C1982A4_002DD9C3_002D4A99_002D87AB_002DD9E8BABE5C2F_002Fd_003AScripts_002Ff_003Ajquery_002Evalidate_002Eunobtrusive_002Emin_002Ejs/@EntryIndexedValue">6C1982A4-D9C3-4A99-87AB-D9E8BABE5C2F/d:Scripts/f:jquery.validate.unobtrusive.min.js</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip/=6C1982A4_002DD9C3_002D4A99_002D87AB_002DD9E8BABE5C2F_002Fd_003AScripts_002Ff_003Aknockout_002D2_002E1_002E0_002Edebug_002Ejs/@EntryIndexedValue">6C1982A4-D9C3-4A99-87AB-D9E8BABE5C2F/d:Scripts/f:knockout-2.1.0.debug.js</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip/=6C1982A4_002DD9C3_002D4A99_002D87AB_002DD9E8BABE5C2F_002Fd_003AScripts_002Ff_003Aknockout_002D2_002E1_002E0_002Ejs/@EntryIndexedValue">6C1982A4-D9C3-4A99-87AB-D9E8BABE5C2F/d:Scripts/f:knockout-2.1.0.js</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip/=6C1982A4_002DD9C3_002D4A99_002D87AB_002DD9E8BABE5C2F_002Fd_003AScripts_002Ff_003Aknockout_002Edebug_002Ejs/@EntryIndexedValue">6C1982A4-D9C3-4A99-87AB-D9E8BABE5C2F/d:Scripts/f:knockout.debug.js</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip/=6C1982A4_002DD9C3_002D4A99_002D87AB_002DD9E8BABE5C2F_002Fd_003AScripts_002Ff_003Aknockout_002Ejs/@EntryIndexedValue">6C1982A4-D9C3-4A99-87AB-D9E8BABE5C2F/d:Scripts/f:knockout.js</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip/=6C1982A4_002DD9C3_002D4A99_002D87AB_002DD9E8BABE5C2F_002Fd_003AScripts_002Ff_003Amodernizr_002D2_002E0_002E6_002Ddevelopment_002Donly_002Ejs/@EntryIndexedValue">6C1982A4-D9C3-4A99-87AB-D9E8BABE5C2F/d:Scripts/f:modernizr-2.0.6-development-only.js</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip/=6C1982A4_002DD9C3_002D4A99_002D87AB_002DD9E8BABE5C2F_002Fd_003AScripts_002Ff_003Amodernizr_002D2_002E5_002E3_002Ejs/@EntryIndexedValue">6C1982A4-D9C3-4A99-87AB-D9E8BABE5C2F/d:Scripts/f:modernizr-2.5.3.js</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip/=6C1982A4_002DD9C3_002D4A99_002D87AB_002DD9E8BABE5C2F_002Fd_003AScripts_002Ff_003ARoboHelp_005FCSH_002Ejs/@EntryIndexedValue">6C1982A4-D9C3-4A99-87AB-D9E8BABE5C2F/d:Scripts/f:RoboHelp_CSH.js</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip/=8A354004_002D18FA_002D47A7_002DB49E_002DCC88A16FBF2E_002Ff_003AP2000Enum_002Ede_002DDE_002Eresx/@EntryIndexedValue">8A354004-18FA-47A7-B49E-CC88A16FBF2E/f:P2000Enum.de-DE.resx</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip/=8A354004_002D18FA_002D47A7_002DB49E_002DCC88A16FBF2E_002Ff_003AP2000Enum_002Eresx/@EntryIndexedValue">8A354004-18FA-47A7-B49E-CC88A16FBF2E/f:P2000Enum.resx</s:String>
+	
+	
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip/=DD344F18_002D2838_002D4B3C_002D9118_002D3D6BBC683DA5_002Ff_003ACompareObjects_002Ecs/@EntryIndexedValue">DD344F18-2838-4B3C-9118-3D6BBC683DA5/f:CompareObjects.cs</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=49092986_002D4B9E_002D4DDE_002DB3F6_002D9331CDDAA2D7/@EntryIndexedValue">ExplicitlyExcluded</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=6C1982A4_002DD9C3_002D4A99_002D87AB_002DD9E8BABE5C2F_002Fd_003AHelp/@EntryIndexedValue">ExplicitlyExcluded</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=6C1982A4_002DD9C3_002D4A99_002D87AB_002DD9E8BABE5C2F_002Fd_003AHelp_002Des/@EntryIndexedValue">ExplicitlyExcluded</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=DD344F18_002D2838_002D4B3C_002D9118_002D3D6BBC683DA5_002Ff_003ACompareObjects_002Ecs/@EntryIndexedValue">ExplicitlyExcluded</s:String>
+	<s:String x:Key="/Default/CodeInspection/Highlighting/InspectionSeverities/=DeclarationIsEmpty/@EntryIndexedValue">DO_NOT_SHOW</s:String>
+	<s:String x:Key="/Default/CodeInspection/Highlighting/InspectionSeverities/=ImplicitlyCapturedClosure/@EntryIndexedValue">SUGGESTION</s:String>
+	<s:String x:Key="/Default/CodeInspection/Highlighting/InspectionSeverities/=MemberCanBeMadeStatic_002EGlobal/@EntryIndexedValue">WARNING</s:String>
+	<s:String x:Key="/Default/CodeInspection/Highlighting/InspectionSeverities/=MemberCanBeMadeStatic_002ELocal/@EntryIndexedValue">WARNING</s:String>
+	<s:String x:Key="/Default/CodeInspection/Highlighting/InspectionSeverities/=NotOverridenInSpecificCulture/@EntryIndexedValue">SUGGESTION</s:String>
+	<s:String x:Key="/Default/CodeInspection/Highlighting/InspectionSeverities/=RedundantArgumentName/@EntryIndexedValue">DO_NOT_SHOW</s:String>
+	<s:String x:Key="/Default/CodeInspection/Highlighting/InspectionSeverities/=RedundantUnits/@EntryIndexedValue">DO_NOT_SHOW</s:String>
+	<s:String x:Key="/Default/CodeInspection/Highlighting/InspectionSeverities/=RequiresFallbackColor/@EntryIndexedValue">DO_NOT_SHOW</s:String>
+	<s:String x:Key="/Default/CodeInspection/Highlighting/InspectionSeverities/=SuggestUseVarKeywordEverywhere/@EntryIndexedValue">DO_NOT_SHOW</s:String>
+	<s:String x:Key="/Default/CodeInspection/Highlighting/InspectionSeverities/=SuggestUseVarKeywordEvident/@EntryIndexedValue">HINT</s:String>
+	<s:String x:Key="/Default/CodeStyle/CodeCleanup/Profiles/=HeaderUpdater/@EntryIndexedValue">&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;Profile name="HeaderUpdater"&gt;&lt;CSUpdateFileHeader&gt;True&lt;/CSUpdateFileHeader&gt;&lt;/Profile&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/CodeCleanup/Profiles/=SilentCleanUp/@EntryIndexedValue">&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;Profile name="SilentCleanUp"&gt;&lt;CSOptimizeUsings&gt;&lt;OptimizeUsings&gt;True&lt;/OptimizeUsings&gt;&lt;EmbraceInRegion&gt;False&lt;/EmbraceInRegion&gt;&lt;RegionName&gt;&lt;/RegionName&gt;&lt;/CSOptimizeUsings&gt;&lt;/Profile&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/CodeCleanup/SilentCleanupProfile/@EntryValue">SilentCleanUp</s:String>
+	<s:Boolean x:Key="/Default/CodeStyle/CodeFormatting/JavaScriptCodeFormatting/JavaScriptFormatSpaces/SPACE_BEFORE_METHOD_PARENTHESES/@EntryValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeStyle/CodeFormatting/JavaScriptCodeFormatting/JavaScriptFormatSpaces/SPACE_BEFORE_METHOD_PARENTHESES_ANONYMOUS/@EntryValue">True</s:Boolean>
+	<s:String x:Key="/Default/CodeStyle/FileHeader/FileHeaderText/@EntryValue">----------------------------------------------------------------------------&#xD;
+&#xD;
+  (C) Copyright $CREATED_YEAR$ - $CURRENT_YEAR$ Johnson Controls, Inc.&#xD;
+      Use or Copying of all or any part of this program, except as&#xD;
+      permitted by License Agreement, is prohibited.&#xD;
+&#xD;
+------------------------------------------------------------------------------&#xD;
+</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/Abbreviations/=CV/@EntryIndexedValue">CV</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/JavaScriptNaming/UserRules/=JS_005FFUNCTION/@EntryIndexedValue">&lt;Policy Inspect="False" Prefix="" Suffix="" Style="aaBb" /&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/JavaScriptNaming/UserRules/=JS_005FLOCAL_005FVARIABLE/@EntryIndexedValue">&lt;Policy Inspect="False" Prefix="" Suffix="" Style="aaBb" /&gt;</s:String>
+	<s:Int64 x:Key="/Default/Environment/UnitTesting/ParallelProcessesCount/@EntryValue">2</s:Int64>
+	<s:Boolean x:Key="/Default/Environment/UnitTesting/SaveSessionState/@EntryValue">False</s:Boolean>
+	<s:String x:Key="/Default/FilterSettingsManager/AttributeFilterXml/@EntryValue">&lt;data /&gt;</s:String>
+	<s:String x:Key="/Default/FilterSettingsManager/CoverageFilterXml/@EntryValue">&lt;data&gt;&lt;IncludeFilters /&gt;&lt;ExcludeFilters /&gt;&lt;/data&gt;</s:String>
+</wpf:ResourceDictionary>

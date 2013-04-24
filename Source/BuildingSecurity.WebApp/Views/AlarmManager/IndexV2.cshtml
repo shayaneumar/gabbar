@@ -1,0 +1,197 @@
+﻿@*----------------------------------------------------------------------------
+
+(C) Copyright 2012 Johnson Controls, Inc.
+Use or Copying of all or any part of this program, except as
+permitted by License Agreement, is prohibited.
+
+------------------------------------------------------------------------------*@
+@model ActiveAlarmsModel
+@{
+    ViewBag.Title = Resources.ActiveViewTitle;
+    ViewBag.HelpLink = Html.GetLocalizedHelpLink("~/Help/index_csh.htm#1001,withnavpane=true");
+}
+@section Scripts
+{
+    <script src="@Url.Content("~/ViewModels/AlarmManager/AlarmDisplayOptions.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/ViewModels/AlarmManager/HistoryEntry.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/ViewModels/AlarmManager/Alarm.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/ViewModels/AlarmManager/AlarmManagerViewModel.js")" type="text/javascript"></script>
+}
+<link href="~/Content/Alarms.css" rel="stylesheet" type="text/css" />
+<div class="alarm-content clear-fix v2">
+    <div class="clear-fix" id="alarmManagerHeading">
+        <div class="float-left">
+            <h1>@Resources.ActiveViewInstructions</h1>
+        </div>
+
+        <div class="alarmTotals float-left">
+            <div class="queued" data-bind="visible: showNewAlarmCount">
+                @Html.Raw(string.Format(Resources.ActiveViewAlarmListNewAlarmsFormat, "<span class=\"number\" id=\"queued\" data-bind=\"text: queuedNewAlarmCount\"></span>"))
+            </div>
+            <div class="pending">
+                @Html.Raw(string.Format(Resources.AlarmManagerPendingAlarmsFormat, "<span class=\"number\" id=\"pending\" data-bind=\"text: numberOfPendingAlarms\"></span>"))
+            </div>@Resources.AlarmManagerTotalsSeparator
+            <div class="total">
+                @Html.Raw(string.Format(Resources.AlarmManagerTotalAlarmsFormat, "<span class=\"number\" id=\"total\" data-bind=\"text: numberOfAlarms\"></span>"))
+            </div>
+        </div>
+        <div class="sortSelector float-right">
+            <div class="btn-group">
+                <button class="btn" data-bind="css:{'active':isSortedByTime}, click: sortByTime">Time</button>
+                <button class="btn" data-bind="css:{'active':isSortedByPending}, click: sortByPending">Pending</button>
+            </div>
+        </div>
+        <div class="label label-info float-right" id="loadingMessage" data-bind="visible: isLoading">
+            @string.Format(Resources.ActiveViewAlarmListLoadingMessage)
+        </div>
+    </div>
+    <div id="alarmManager" class="v2">
+        <div class="alarmList">
+            <div class="list">
+                <div class="accordion scrolling" data-bind="attr: {'id': alarmListId},template: { foreach: displayedAlarms }">
+                    <div class="alarm accordion-group" data-bind="attr: {'id': id}">
+                        <div class="accordion-heading clear-fix" data-bind="css: {'expanded': isExpanded}">
+                            <div class="header-row clear-fix bold-text" data-bind="style: { 'backgroundColor': highStatusStateColorBackground}, css: {'high-status-state-text': isHighStatusState}">
+                                <div class="description column">
+                                    <span data-bind="text: sourceStateDescription, css : {'in-alarm' : isAlarmStateAlarm}"></span>
+                                    <span data-bind="text: alarmStateDescriptionDispaly"></span>
+                                    <span data-bind="visible: isInstructionAvailable, attr: {'title': instructions}">
+                                         <img alt="info" src="~/Images/info_new.png" />
+                                    </span>
+                                </div>
+                                <div class="left-side shaped column" style="border: thin solid" data-bind="attr:{ title: priority }, style: { 'backgroundColor': priorityColorBackground, 'border': priorityColor }, css: {'high-status-state-background': isHighStatusState}">
+                                    <div class="layer-one-v2 shaped layer-v2 gradient">
+                                        <div class="shaped layer-v2 gradient">
+                                            <span data-bind="style: { 'visibility': setHighStatusStateVisible }">
+                                                <img alt="exclamation" src="~/Images/exclamation.png" />
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="right-side-v2 column">
+                                    <div class="column-right" data-bind="css: {'high-status-state-text': isHighStatusState}">
+                                        <span data-bind="text: messageDisplayDateTimeString, attr:{ title: messageDateTimeString }"></span>
+                                    </div>
+                                    <div class="item-action column"></div>
+                                </div>
+                            </div>
+                            <div class="header-body">
+                                <div class="repsonse-row clear-fix">
+                                    <div class="float-left response-input">
+                                        <span class="bold-text" data-bind="text: description"></span>
+                                    </div>
+                                    <div class="float-right">
+                                        <button class="btn btn-mini btn-primary" data-bind="click: $root.acknowledgeAlarmClicked, enable: isPending, visible: isAcknowledgeVisible" data-action="Acknowledge">
+                                            @Resources.ActiveViewAcknowledgeItemTitle
+                                        </button>
+                                        <button class="btn btn-mini" data-bind="click: $root.completeAlarmClicked, enable: isCompletable, visible: isCompleteVisible, css : {'btn-success': isCompletable}" data-action="Complete">
+                                            @Resources.ActiveViewCompleteItemTitle
+                                        </button>
+                                        <button class="btn btn-mini btn-info" data-bind="click: $root.removeAlarmClicked, enable: isRemovable,  visible: isRemoveVisible" data-action="Complete">
+                                            @Resources.ActiveViewRemoveItemTitle
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="input-append">
+                                    <input data-bind="attr: {'id': responseTextId, 'data-source': $root.definedResponsesArray}, event: {keypress: $root.onResponseInputKeypress}, value: enteredResponse, valueUpdate: 'afterkeydown', enable: isRespondable"
+                                           class="input-xlarge v2" type="text" maxlength="255" placeholder="@Resources.ActiveViewAddNote" data-provide="typeahead" data-items="4" />
+                                    <button class="btn" data-bind="attr: {'id': enterResponseButtonId}, click: $root.respondToAlarmClicked, enable: isValidResponse"
+                                            data-action="RespondTo">
+                                        @Resources.AlarmManagerViewSubmitAResponse
+                                    </button>
+                                </div>
+                                <div class="clear-fix action-row">
+                                    <div>
+                                        <a data-toggle="collapse" data-bind="data-target: detailsId, attr: {'href': detailsIdSelector}, visible: !isExpanded()">
+                                            @Resources.AlarmManagerViewShowHistoryText &gt;&gt;
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a data-toggle="collapse" data-bind="data-target: detailsId, attr: {'href': detailsIdSelector}, visible: isExpanded">
+                                            &lt;&lt; @Resources.AlarmManagerViewHideHistoryText
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-details collapse" data-bind="attr: {'id': detailsId}, event: {show: $root.detailsShow, shown: detailsShown, hide: $root.detailsHide}, css: {'in' : isExpanded()}">
+                            <span class="float-left labelsLabel">@Resources.AlarmManagerAlarmInfo</span>
+                            <ul class="float-left labels v2">
+                                <li class="float-left escalation" data-bind="visible: isEscalationVisible, text: escalation, css: {'hidden' : isEscalationVisible}, attr: {'title': '@Resources.AlarmManagerToolTipEscalation'}"></li>
+                                <li class="float-left" data-bind="text: site, attr: {'title': '@Resources.AlarmManagerToolTipSite'}"></li>
+                                <li class="float-left" data-bind="text: category, attr: {'title': '@Resources.AlarmManagerToolTipCategory'}"></li>
+                            </ul>
+                            <div class="entryList">
+                                <div class="history-entry clear-fix column-heading">
+                                    <span class="history-timestamp column">@Resources.ActiveViewAlarmHistoryTimeStamp</span>
+                                    <span class="history-status column">@Resources.ActiveViewAlarmHistoryAlarmStatus</span>
+                                    <span class="history-user column">@Resources.ActiveViewAlarmHistoryUser</span>
+                                    <span class="history-state column">@Resources.ActiveViewAlarmHistoryState</span>
+                                    <span class="history-response column">@Resources.ActiveViewAlarmHistoryResponse</span>
+                                </div>
+                                <div class="list">
+                                    <div id="alarmHistory" class="scrolling" data-bind="foreach: historyEntries">
+                                        <div class="history-entry clear-fix">
+                                            <div class="history-timestamp column">
+                                                <span data-bind="text: timestamp"></span>
+                                            </div>
+                                            <div class="history-status column">
+                                                <span data-bind="text: alarmStatus"></span>
+                                            </div>
+                                            <div class="history-user column">
+                                                <span data-bind="text: operatorName"></span>
+                                            </div>
+                                            <div class="history-state column">
+                                                <span data-bind="text: alarmState"></span>
+                                            </div>
+                                            <div class="history-response column">
+                                                <span data-bind="text: response"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script language="javascript">
+    //
+    // Initialize the page view model after the page is loaded and ready
+    ///
+    function alarmAddedHandler(params) {
+        var offset = 0;
+
+        if (params.height !== undefined && params.height > 0) {
+            // .alarmList .accordion-group margin-bottom = 12
+            offset = params.height;
+        }
+        else if (params.expanded !== undefined) {
+            // Constants optimized for IE9
+            offset = params.expanded ? 243 : 103;
+        }
+        
+        if ($(".scrolling")[0].scrollTop > 5) {
+            $(".scrolling")[0].scrollTop = $(".scrolling")[0].scrollTop + offset;
+        }
+    };
+
+    function pendingChangedHandler(difference) {
+        if (difference > 0) {
+            $("#pending").addClass("pulse");
+            setTimeout(function () { $("#pending").removeClass("pulse"); }, 500);
+        }
+    };
+
+    $(document).ready(function () {
+        "use strict";
+        var viewModel = new AlarmManagerViewModel({ freezeWhenExpanded: false, autoExpand: true }, { alarmAdded: alarmAddedHandler, pendingChanged: pendingChangedHandler });
+
+        ko.applyBindings(viewModel);
+        viewModel.enableDelayedLoading();
+    });
+</script>

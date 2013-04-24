@@ -1,0 +1,224 @@
+@*----------------------------------------------------------------------------
+
+(C) Copyright 2012 Johnson Controls, Inc.
+Use or Copying of all or any part of this program, except as
+permitted by License Agreement, is prohibited.
+
+------------------------------------------------------------------------------*@
+
+@using System.Threading
+@using JohnsonControls.BuildingSecurity
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta charset="utf-8" />
+        <title>@string.Format(Resources.LayoutPageTitleFormat, ViewBag.Title, Resources.ProductName)</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href="@System.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/Content/css")" rel="stylesheet" type="text/css" />
+        <link href="@System.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/Content/themes/base/css")" rel="stylesheet" type="text/css" />
+        <link href="@System.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/Cases/css")" rel="stylesheet" type="text/css" />
+        <script src="@System.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/Scripts/js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/signalr/hubs")" type="text/javascript"></script>
+        <script src="@Url.Content("~/Scripts/johnson.controls.js")" type="text/javascript"></script>
+        <meta name="viewport" content="width=device-width" />
+        <!--[if gte IE 9]>
+          <style type="text/css">
+            .gradient {
+               filter: none;
+            }
+          </style>
+        <![endif]-->
+        <script type="text/html" id="part-templates">
+            <div class="templates">
+                @RenderSection("PartTemplates", false)
+            </div>
+        </script>
+    </head>
+    <body class="jci-body">
+        <!-- Allows JS to extract a csrf token, to be included in all JS posts. -->
+        <form id="__csrfprevention" action="#">@AntiForgery.GetHtml()</form>
+        <!-- Navbar
+            ================================================== -->
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="site-wrapper">
+                    <ul class="nav">
+                        <li style="margin-top: 8px; margin-right: 12px;">
+                            <img width="88" height="24" alt="P2000 Product Logo" src="~/Images/p2000_small_logo_white.png" />
+                        </li>
+                        @if (HttpContext.Current.User.IsInRole(PermissionNames.CanViewAlarmManager))
+                        {
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">@Resources.SiteMenuHomeTitle<b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        @Html.ActionLink("A", "Index", "AlarmManager", new { area = "" }, null)
+                                    </li>
+                                    <li>
+                                        @Html.ActionLink("B", "IndexV2", "AlarmManager", new { area = "" }, null)
+                                    </li>
+                                </ul>
+                            </li>
+                        }
+                        @if (HttpContext.Current.User.IsInRole(PermissionNames.CanViewCaseManager))
+                        {
+                            <li id="cases">
+                                @Html.ActionLink(@Resources.SiteMenuCaseManagerTitle, "Index", "Cases", new { area = "cases" }, null)
+                            </li>
+                        }
+                        @if (HttpContext.Current.User.IsInRole(PermissionNames.CanRunReports)
+                            || HttpContext.Current.User.IsInRole(PermissionNames.CanScheduleReports)
+                            || HttpContext.Current.User.IsInRole(PermissionNames.CanViewScheduledReports))
+                        {
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">@Resources.SiteMenuInvestigateTitle<b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    @if (HttpContext.Current.User.IsInRole(PermissionNames.CanRunReports))
+                                    {
+                                        <li>@Html.ActionLink(Resources.SiteMenuInvestigateRunTitle, "Index", "Reports", new { area = "" }, null)</li>
+                                    }
+                                    
+                                    @if (HttpContext.Current.User.IsInRole(PermissionNames.CanScheduleReports))
+                                    {
+                                        <li>@Html.ActionLink(Resources.SiteMenuInvestigateScheduleTitle, "Index", "Reports", new {area = "", listAction = BuildingSecurity.Web.App.Controllers.ReportListAction.Schedule}, null) </li>
+                                    }
+                            
+                                    @if (HttpContext.Current.User.IsInRole(PermissionNames.CanViewScheduledReports))
+                                    {
+                                        <li>@Html.ActionLink(Resources.SiteMenuInvestigateManageTitle, "Scheduled", "Reports", new { area = "" }, null)</li>
+                                    }
+                                </ul>
+                            </li>
+                        }
+                        @if (HttpContext.Current.User.IsInRole(PermissionNames.CanViewReportsServerSettings)
+                       || HttpContext.Current.User.IsInRole(PermissionNames.CanViewAlarmDisplayOptions)
+                       || HttpContext.Current.User.IsInRole(PermissionNames.CanEditSystemSettings))
+                        {
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">@Resources.SiteMenuSystemSetupTitle<b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    @if (HttpContext.Current.User.IsInRole(PermissionNames.CanViewReportsServerSettings))
+                                    {
+                                        <li class="divider"></li>
+                                        <li class="nav-header">@Resources.SiteMenuSystemSetupReportsAdministrationTitle</li>
+                                        <li>@Html.ActionLink(Resources.SystemSetupMenuReportServerTitle, "Index", "ReportServerConfiguration", new {area = ""}, null)</li>
+                                    }
+                                    @if (HttpContext.Current.User.IsInRole(PermissionNames.CanViewAlarmDisplayOptions))
+                                    {
+                                        <li class="divider"></li>
+                                        <li class="nav-header">@Resources.SiteMenuSystemSetupAlarmManagerAdministrationTitle</li>
+                                        <li>@Html.ActionLink(Resources.AlarmDisplayOptionsViewPageTitle, "Index", "AlarmDisplayOptions", new {area = ""}, null)</li>
+                                    }
+                                </ul>
+                            </li>
+                        }
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">@Resources.SiteHelpTitle<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href='@ViewBag.HelpLink' target="help">@Resources.SiteHelpContentsTitle</a></li>
+                                <li><a href="#aboutDialog" role="button" data-toggle="modal">@Resources.SiteAboutTitle</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav pull-right">
+                        @*systemStatus is being set to display of none because at this point in time we can not guarantee ko.applyBindings
+                        will be called, and the if we add the hidden class to these elements it will be overridden.
+                        We should look at away to ensure ko will always be initialized correctly.*@
+                        <li id="systemStatus" data-bind="visible:jci.isActiveConnectionRequired()" style="display: none">
+                            <div data-bind="visible:jci.connectionStatus() !== jci.connectionStatuses.connected, attr: { title:getDisconnectReason(jci.connectionStatus()) }">
+                                <i class="icon-warning-sign icon-white system-status-icon"></i>@Resources.SystemStatusDisconnected
+                                <time data-bind="text:jci.lastContactWithP2000().toLocaleTimeString()"/>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">@ViewBag.FullName<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink(Resources.LogOnPartialLogOffLinkText, "LogOff", "Account", new {area = ""}, null)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="site-wrapper">
+            <section>
+                @RenderBody()
+            </section>
+        </div>
+
+        <div id="aboutDialog" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="aboutDialogLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 id="aboutDialogLabel">About</h3>
+            </div>
+            <div class="modal-body">
+                <section id="branding">
+                    <div class="product-branding"></div>
+                </section>
+                <section class="about-version-numbers">
+                    <span class="about-version-label">@Resources.VersionWebUI</span><span class="about-version-number">@typeof(Resources).Assembly.GetName().Version</span><br/>
+                    <span class="about-version-label">@Resources.VersionP2000</span><span class="about-version-number">@ViewBag.VersionP2000</span><br/>
+                </section>
+                <section class='about-legal'>
+                    <a href="@Url.Content("~/Content/LegalNotices.txt")">@Resources.LegalNotices</a>
+                </section>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">@Resources.AboutClose</button>
+            </div>
+        </div>
+
+        <div class="preload-image icon-white" ></div>
+        <script type="text/javascript">
+            applicationPath = "@Request.ApplicationPath",
+            currentUser = "@User.Identity.Name.ToLowerInvariant()";
+
+            define('applicationPath', [], function () { return applicationPath[applicationPath.length - 1] === '/' ? applicationPath : applicationPath + '/'; } );
+            define('returnToSignin', ['applicationPath'], function (applicationPath) { return function () { window.location = applicationPath; }; });
+
+            require(['crossroads', 'jquery', 'context'], function (crossroads, $, context) {
+                $(context).bind("popstate", function () {
+                    crossroads.parse(context.location.pathname);
+                });
+            });
+
+            jci.returnToSignin = function () {
+                window.location = window.applicationPath;
+            };
+
+            jci.buildingSecurityClient.logOffMonitor();
+
+            function getDisconnectReason(connectionStatus) {
+                if (connectionStatus == jci.connectionStatuses.canNotReachP2000) {
+                    return "@Resources.SystemStatusCanNotReachP2000";
+                } else if (connectionStatus == jci.connectionStatuses.canNotReachWebServer) {
+                    return "@Resources.SystemStatusCanNotReachWebServer";
+                } else if (connectionStatus == jci.connectionStatuses.noNetworkConnection) {
+                    return "@Resources.SystemStatusNoNetworkConnection";
+                }
+                return "";
+            }
+
+            $(document).ready(function () {
+                "use strict";
+                var nameSpacedBeforeUnloadEvent = jci.events.beforeUnload() + ".channelCleanup";
+
+                function handleBeforeUnload() {
+                    jci.buildingSecurityClient.unsubscribeFromAllChannels();
+                };
+
+                $(window).one(nameSpacedBeforeUnloadEvent, handleBeforeUnload);
+            });
+
+            $(function () {
+                $(".datepicker").datepicker();
+                $.datepicker.setDefaults(
+                        $.extend($.datepicker.regional[jci.localization.getJqueryUserLanguage('@Thread.CurrentThread.CurrentCulture.Name')]));
+            });
+</script>
+        @RenderSection("Scripts", false) @*Per Page Scripts*@
+    </body>
+</html>

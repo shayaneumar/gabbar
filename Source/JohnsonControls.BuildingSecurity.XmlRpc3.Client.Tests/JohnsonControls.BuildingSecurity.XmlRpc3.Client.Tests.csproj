@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{783EB5E5-D963-407D-A476-83B8DBCDBB58}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JohnsonControls.BuildingSecurity.XmlRpc3.Client</RootNamespace>
+    <AssemblyName>JohnsonControls.BuildingSecurity.XmlRpc3.Client.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Moq">
+      <HintPath>..\packages\Moq.4.0.10827\lib\NET40\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AspNetMvc.4.0.20126.16343\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
+      <Visible>False</Visible>
+    </CodeAnalysisDependentAssemblyPaths>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AlarmMessageExtensionTest.cs" />
+    <Compile Include="BuildingSecurityClientTest.cs" />
+    <Compile Include="PartitionExtensionTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JohnsonControls.BuildingSecurity.XmlRpc3.Client\JohnsonControls.BuildingSecurity.XmlRpc3.Client.csproj">
+      <Project>{8A354004-18FA-47A7-B49E-CC88A16FBF2E}</Project>
+      <Name>JohnsonControls.BuildingSecurity.XmlRpc3.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JohnsonControls.BuildingSecurity.XmlRpc3.Services\JohnsonControls.BuildingSecurity.XmlRpc3.Services.csproj">
+      <Project>{ED69EE95-A9AB-4EA8-B904-A98810D70F94}</Project>
+      <Name>JohnsonControls.BuildingSecurity.XmlRpc3.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JohnsonControls.BuildingSecurity\JohnsonControls.BuildingSecurity.csproj">
+      <Project>{2E986667-407A-4B1B-B5A6-4BACF481DA01}</Project>
+      <Name>JohnsonControls.BuildingSecurity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JohnsonControls.Core\JohnsonControls.Core.csproj">
+      <Project>{2D6A836C-C3A4-4109-A9AB-CB274FA5ADA1}</Project>
+      <Name>JohnsonControls.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JohnsonControls.TestExtensions\JohnsonControls.TestExtensions.csproj">
+      <Project>{DD344F18-2838-4B3C-9118-3D6BBC683DA5}</Project>
+      <Name>JohnsonControls.TestExtensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JohnsonControls.XmlRpc\JohnsonControls.XmlRpc.csproj">
+      <Project>{4AF3B7F8-837A-4FEC-BF1F-F182285C409D}</Project>
+      <Name>JohnsonControls.XmlRpc</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

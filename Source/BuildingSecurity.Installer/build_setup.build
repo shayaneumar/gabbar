@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="BuildAll"
+         xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <!-- Reference Microsoft.Web.Publishing.Tasks.dll, used to transform the Web.config with Web.Release.config -->
+  <UsingTask TaskName="TransformXml" AssemblyFile="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v11.0\Web\Microsoft.Web.Publishing.Tasks.dll"/>
+
+  <!-- Define Constants -->
+  <PropertyGroup>
+    <ProjectPath>..\BuildingSecurity.WebApp\</ProjectPath>
+    <Configuration>Release</Configuration>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <PublishF>bin\Publish</PublishF>
+    <PublishPath>$(ProjectPath)$(PublishF)</PublishPath>
+    <MsiOut>bin\$(Configuration)\BuildingSecurity.Installer.msi</MsiOut>
+    <WebSiteContentCode>WebSiteContent.wxs</WebSiteContentCode>
+    <WebSiteContentObject>WebSiteContent.wixobj</WebSiteContentObject>
+    <WixPath>$(WIX)bin\</WixPath>
+  </PropertyGroup>
+
+  <!-- Define group of temporary files for Site Content -->
+  <ItemGroup>
+    <WebSiteContent Include="$(WebSiteContentCode)" />
+  </ItemGroup>
+
+  <!-- Define group of Web Configs -->
+  <ItemGroup>
+    <WebConfigs Include="$(PublishPath)\Web.config" />
+    <WebConfigs Include="$(PublishPath)\Web.Release.config" />
+    <WebConfigs Include="$(PublishPath)\Web.Debug.config" />
+    <WebConfigs Include="$(PublishPath)\packages.config" />
+  </ItemGroup>
+
+  <!-- Define group of WIX input files -->
+  <ItemGroup>
+    <WixCode Include="IisConfiguration.wxs" />
+    <WixCode Include="Product.wxs" />
+    <WixCode Include="$(WebSiteContentCode)" />
+    <WixCode Include="WindowsUI.wxs" />
+    <WixCode Include="WebUI.wxs" />
+  </ItemGroup>
+
+  <!-- Define group of WIX output files from CANDLE -->
+  <ItemGroup>
+    <WixObject Include="IisConfiguration.wixobj" />
+    <WixObject Include="Product.wixobj" />
+    <WixObject Include="$(WebSiteContentObject)" />
+    <WixObject Include="WindowsUI.wixobj" />
+    <WixObject Include="WebUI.wixobj" />
+  </ItemGroup>
+
+  <!-- Define the target 'Build' as specified in the DefaultTargets attribute of the <Project> -->
+  <Target Name="Build">
+    <!-- Compile the all custom actions -->
+    <MSBuild
+      Projects="BuildingSecurity.Installer.sln"
+      Targets="ReBuild"
+      Properties="Configuration=$(Configuration);OutDir=$(MSBuildProjectDirectory)\bin\CustomActions\" />
+    <!-- Compile the solution -->
+    <MSBuild
+      Projects="..\BuildingSecurity.sln"
+      Targets="ReBuild"
+      Properties="Configuration=$(Configuration)" />
+
+  </Target>
+
+
+  <!-- Define target to CreateInstaller (passed within the call to MSBuild) -->
+  <Target Name="CreateInstaller">
+    <!-- Remove the publish folder to ensure everything will be re-compiled -->
+    <RemoveDir Directories="$(PublishPath)\" ContinueOnError="false" RemovedDirectories="true" />
+
+    <!-- Build the Web Application -->
+    <MSBuild
+      Projects="$(ProjectPath)BuildingSecurity.WebApp.csproj"
+      Targets="ResolveReferences;_CopyWebApplication"
+      Properties="OutDir=$(PublishF)\bin\;WebProjectOutputDir=$(PublishF)\;Configuration=$(Configuration);_ResolveReferenceDependencies=true" />
+
+    <!-- Delete debug and setup web.configs to prevent HEAT from harvesting it -->
+    <Delete Files="@(WebConfigs)" />
+
+    <!-- Delete all wix objects which remain from previous build -->
+    <Delete Files="@(WixObject)" />
+
+    <!-- Delete all other temporary files -->
+    <Delete Files="@(WebSiteContent)" />
+
+    <Exec Command='del $(PublishPath)\bin\BuildingSecurity.WebApp.pdb' ContinueOnError="false" WorkingDirectory="." />
+
+    <!-- Create directories for Globalization resources -->
+    <!-- EXCLUDE UNTIL TRANSLATED RESOURCES ARE PROVIDED
+    <Exec Command='md $(PublishPath)\bin\es' ContinueOnError="false" WorkingDirectory="." />
+    -->
+    
+    <!-- Copy Globalization resources from WebApp\bin to publish\bin -->
+    <!-- EXCLUDE UNTIL TRANSLATED RESOURCES ARE PROVIDED
+    <Exec Command='xcopy $(ProjectPath)bin\es $(PublishPath)\bin\es' ContinueOnError="false" WorkingDirectory="." />
+    -->
+
+    <!-- Execute HEAT to Harvest all content of published result into WebSiteContent.wxs -->
+    <Exec
+      Command='"$(WixPath)heat" dir $(PublishPath)\ -dr WEBSITEDIRECTORY -ke -srd -cg WebContent -var var.publishDir -gg -out $(WebSiteContentCode)'
+      ContinueOnError="false"
+      WorkingDirectory="." />
+
+    <!-- After the files have been harvested, copy the setup web.config as regular web.config to the publish location -->
+    <Copy
+      SourceFiles="$(ProjectPath)Web.config"
+      DestinationFiles="$(PublishPath)\Web.config"
+      ContinueOnError="false" />
+
+    <!-- Apply transformation from Web.BuildConfiguration.config to web.config -->
+    <TransformXml Source="$(ProjectPath)Web.config"
+                  Transform="$(ProjectPath)Web.$(Configuration).config"
+                  Destination="$(PublishPath)\Web.config"
+                  Condition="true"
+                  StackTrace="false" />
+
+    <!-- Execute CANDLE to create the installer -->
+    <Exec
+      Command='"$(WixPath)candle" -ext WixIISExtension -ext WixUtilExtension -ext WiXNetFxExtension -dpublishDir=$(PublishPath) -dResourcePath=.\Resources @(WixCode, &apos; &apos;)'
+      ContinueOnError="false"
+      WorkingDirectory="."  />
+
+    <!-- Execute LIGHT to create the MSI -->
+    <Exec
+      Command='"$(WixPath)light" -ext WixUIExtension -ext WixIISExtension -ext WixUtilExtension -ext WiXNetFxExtension -out $(MsiOut) @(WixObject, &apos; &apos;) -sw1076'
+      ContinueOnError="false"
+      WorkingDirectory="." />
+
+    <!-- Display a message -->
+    <Message Text="Install package has been created." />
+  </Target>
+
+  <!-- Define target to IncludePackages (passed within the call to MSBuild) C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\ -->
+  <Target Name="IncludePackages">
+    <GenerateBootstrapper ApplicationFile="BuildingSecurity.Installer.msi"
+                          ApplicationName="P2000 Web Application"
+                          BootstrapperItems="@(BootstrapperFile)"
+                          ComponentsLocation="Relative"
+                          CopyComponents="True"
+                          OutputPath="$(OutputPath)"
+                          Path="$(registry:HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft SDKs\Windows\v8.0A@InstallationFolder)Bootstrapper"
+                          ApplicationRequiresElevation="true" />
+  </Target>
+
+  <!-- Define target to DeleteTmpFiles (passed within the call to MSBuild) -->
+  <Target Name="DeleteTmpFiles">
+    <RemoveDir Directories="$(PublishPath)\" ContinueOnError="false" />
+    <Delete Files="@(WebConfigs);@(WixObject);@(WebSiteContent)" />
+  </Target>
+
+  <Target Name="BuildAll" DependsOnTargets="Build;CreateInstaller;IncludePackages;DeleteTmpFiles">
+  </Target>
+</Project>

@@ -1,0 +1,112 @@
+﻿@*----------------------------------------------------------------------------
+
+(C) Copyright 2012 Johnson Controls, Inc.
+Use or Copying of all or any part of this program, except as
+permitted by License Agreement, is prohibited.
+
+------------------------------------------------------------------------------*@
+@using JohnsonControls.BuildingSecurity
+@{
+    ViewBag.Title = Resources.AlarmDisplayOptionsViewPageTitle;
+    ViewBag.HelpLink = Html.GetLocalizedHelpLink("~/Help/index_csh.htm#1006,withnavpane=true");
+}
+
+@section Scripts
+{
+    <script type="text/javascript">
+        window.errorMessages = {
+            saveFailedMessage: "@Resources.AlarmDisplayOptionsSaveFailedMessage",
+            loadFailedMessage: "@Resources.AlarmDisplayOptionsLoadFailedMessage"
+        };
+    </script>
+    <link href="@Url.Content("~/Content/LimitedColorPicker/LimitedColorPicker.css")" type="text/css" rel="Stylesheet" />
+    <script src="@Url.Content("~/Scripts/LimitedColorPicker.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/ViewModels/AlarmDisplayOptions/AlarmDisplayRange.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/ViewModels/AlarmDisplayOptions/AlarmDisplayOptionsViewModel.js")" type="text/javascript"></script>
+}
+
+<div class="clear-fix">
+    <div class="float-left">
+        <h1>@Resources.AlarmDisplayOptionsViewTitle</h1>
+    </div>
+</div>
+
+<form action="#" id="prioritySettings" data-bind="submit: submitChanges">
+    @Html.AntiForgeryToken()
+    <div id="colorSettings">
+        <fieldset>
+            <legend></legend>
+            <div class="row">
+                <div class="span8 offset2">
+                    
+                    <div id="header" class="row">
+                        <div class="span3"><h4>@Resources.AlarmDisplayOptionsPriorityRangeTitle</h4></div>
+                        <div class="span1"><h4>@Resources.AlarmDisplayOptionsColorTitle</h4></div>
+                        <div class="span4"><h4>@Resources.AlarmDisplayOptionsSoundTitle</h4></div>
+                    </div>
+
+                    <div id="displayOptions" data-bind="foreach: displayRanges">
+                        <div class="row">
+                            <hr/>
+                            
+                            <div class="span3">
+                                <div class="row-fluid">
+                                    <div class="span3">
+                                        <span data-bind="text: lowerLimit"></span>
+                                    </div>
+                                    <div class="span2">
+                                        to
+                                    </div>
+                                    <div class="span7">
+                                        <input class="span7" type="number" min="0" max="255" step="1" data-bind="value: upperLimit, visible: isUpperLimitAdjustable, attr: { max:maxUpperLimit, min:minLowerLimit }" />
+                                        <span data-bind="text: upperLimit, visible: isUpperLimitFixed"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span1">
+                                <div class="color-picker" tabindex="0">
+                                    <div class="color-display"></div>
+                                    <input type="hidden" data-bind="value: color" data-type="color"/>
+                                    <ul class="color-options" >
+                                        <li class="color-option" data-color="#32DE9B"></li>
+                                        <li class="color-option" data-color="#36B6F8"></li>
+                                        <li class="color-option" data-color="#F3F150"></li>
+                                        <li class="color-option" data-color="#FE973F"></li>
+                                        <li class="color-option" data-color="#E3150E"></li>
+                                        <li class="color-option" data-color="" style="background-image: url(@Url.Content("~/Content/LimitedColorPicker/clear.png"))"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <img src="~/Images/speaker.png" alt="speaker"
+                                     data-bind="click: $root.playSelectedAudio, enable: $root.audioLoaded, visible : Modernizr.audio"/>
+                                <select data-bind="options: $root.availableAudioAlerts, value: audioAlertId, optionsText: 'name', optionsValue: 'id'"></select>
+                            </div>
+                        </div>
+                    </div>
+                    @if (HttpContext.Current.User.IsInRole(PermissionNames.CanEditAlarmDisplayOptions))
+                    {
+                        <div class="row">
+                            <div>
+                                <hr/>
+                                <div class="float-right" >
+                                    <button class="btn" type="button" data-bind="click: resetPreferences, enable: buttonsEnabled">@Resources.AlarmDisplayOptionsResetButtonTitle</button>
+                                    <button class="btn" name="restore defaults" type="button" data-bind="click: defaultPreferences">@Resources.AlarmDisplayOptionsResetToDefaultButton</button>
+                                    <button id="saveButton" name="save" class="btn btn-primary" type="submit" data-bind="enable: buttonsEnabled">@Resources.AlarmDisplayOptionsSaveButtonTitle</button>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    <div data-bind="attr: {'id': messageId}" class="row" style="height: 70px;"></div>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+</form>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#prioritySettings").submit(function() {
+            $("#saveButton").focus();
+        });
+    });
+</script>

@@ -1,0 +1,51 @@
+﻿@*----------------------------------------------------------------------------
+
+(C) Copyright 2012 Johnson Controls, Inc.
+Use or Copying of all or any part of this program, except as
+permitted by License Agreement, is prohibited.
+
+------------------------------------------------------------------------------*@
+@{
+    ViewBag.Title = Resources.ReportsScheduledViewPageTitle;
+    ViewBag.HelpLink = Html.GetLocalizedHelpLink("~/Help/index_csh.htm#1008,withnavpane=true");
+}
+
+@using JohnsonControls.BuildingSecurity
+@model ReportsScheduledModel
+
+<div class="scheduled-reports">   
+    <div>
+        <h1>@Resources.ReportsScheduledViewPageTitle</h1>
+    </div>
+
+    @foreach (var r in Model.ScheduledReports)
+    {
+        <div class="scheduled-report-item clear-fix">
+            <div>
+                @if (User.IsInRole(PermissionNames.CanDeleteScheduledReports))
+                {
+                    <div class="float-left relative schedule">
+                        @using (Html.BeginForm("DeleteScheduled", "Reports"))
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.Hidden("scheduleId", r.SubscriptionID)
+                            <button class="btn btn-danger btn-mini" type="submit" title="@Resources.ReportsScheduledDeleteButtonTitle"><i class="icon-remove icon-white"></i></button>
+                        }
+                    </div>
+                }
+
+                <div class="float-left relative">
+                    @if (User.IsInRole(PermissionNames.CanEditScheduledReports))
+                    {                       
+                        <span>@Html.ActionLink(r.Description, "ModifyScheduled", "Reports", new { scheduleId = r.SubscriptionID, reportId = r.Path }, null) - @r.Report</span>
+                    }
+                    else
+                    {
+                        <span class="reportTitle">@string.Format("{0} - {1}", r.Description, r.Report)</span>
+                    }
+                    <div>@r.Status</div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

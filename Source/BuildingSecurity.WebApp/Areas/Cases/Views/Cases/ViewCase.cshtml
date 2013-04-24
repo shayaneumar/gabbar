@@ -1,0 +1,73 @@
+﻿@*----------------------------------------------------------------------------
+
+(C) Copyright 2013 Johnson Controls, Inc.
+Use or Copying of all or any part of this program, except as
+permitted by License Agreement, is prohibited.
+
+------------------------------------------------------------------------------*@
+
+
+<ul data-bind="foreach: messages" class="row alerts">
+    <li class="alert" data-bind="text:$data.text, css: {'alert-error':$data.messageType==='error','alert-success':$data.messageType==='success'}"></li>
+</ul>
+
+<div id="case-details">
+    <div>
+        <div class="clear-fix">
+            <a class="pull-right collapsed" data-toggle="collapse" data-parent="#case-details" href="#case-details-list"><i class="icon-arrow-down"></i>Case Details</a>
+        </div>
+        <div id="case-details-list" class="case-details collapse">
+            <div class="row-fluid">
+                <div class="span6">
+                    <dl>
+                        <dt>@Resources.CaseIdLabel</dt><dd id="case-id" data-bind="text: id"></dd>
+                        <dt>@Resources.CaseOwnerLabel</dt><dd id="case-owner" data-bind="text: owner"></dd>
+                    </dl>
+                        <div data-bind="if: !isClosed()"><button class="btn" id="case-close" value ="closed" data-bind='click: caseStatusUpdateClick'>@Resources.CloseCaseButton</button></div>
+                        <div data-bind="if: isClosed()"><button class="btn" id="case-open" value ="open" data-bind='click: caseStatusUpdateClick'>@Resources.OpenCaseButton</button></div>
+                </div>
+                <div class="span6">
+                    <dl>
+                        <dt>@Resources.CaseCreatedByLabel</dt><dd id="case-created-by" data-bind="text: createdBy"></dd>
+                        <dt>@Resources.CaseCreatedDateTimeLabel</dt><dd id="case-created-date-time" data-bind="text: createdDateTime"></dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h2 id="case-title-container" data-bind="css: { 'editable': !isClosed() }, attr: { 'title': titleTooltip }, click: editCaseTitle">
+    <span id="case-title" data-bind="text: title"></span><span class="edit-icon" data-bind="visible: !isClosed()"><span class="icon-pencil"></span></span>
+</h2>
+
+<div class="create-note-container" data-bind="visible: !isClosed()">
+    <div>
+        <textarea id="case-note-entry" required autofocus placeholder="@Resources.CaseNoteTitle" maxlength="2000" data-bind="value: enteredNote, valueUpdate: 'afterkeydown'" />
+    </div>
+    <div class="create-note-button-container">
+        <button class="btn btn-primary" name="create" data-bind='click: createNoteClick, enable: isValidNote'>@Resources.AddCaseNoteButton</button>
+    </div>
+</div>
+
+<ol class="case-history-table" data-bind="foreach: notes.sort(function (left, right) { return left.timestampUtcMilliseconds() == right.timestampUtcMilliseconds() ? 0 : (left.timestampUtcMilliseconds() < right.timestampUtcMilliseconds() ? 1 : -1); })">
+    <li class="header-row clear-fix case-history-row" data-bind="click:viewCaseNoteClick">
+        <div class="column case-history-resizable-columns">
+            <div class="case-history-text column">
+                <span class="case-history-type-icon">
+                    <i class="icon-pencil"></i>
+                </span>
+                <span data-bind="text: textAsSingleLine"></span>
+            </div>
+        </div>
+        <div class="column case-history-fixed-columns">
+            <div class="case-history-username column">
+                <span data-bind="text: createdBy"></span>
+            </div>
+            <div class="case-history-timestamp column">
+                <span data-bind="text: timestampDisplay, attr:{ title: timestampDateTimeString }"></span>
+            </div>
+        </div>
+    </li>
+</ol>
+

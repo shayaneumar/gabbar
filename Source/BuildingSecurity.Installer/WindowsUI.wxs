@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <UI>
+      <!-- IIS Settings dialog definition -->
+      <Dialog Id="IisSetupDlg" Width="370" Height="270" Title="IIS Settings - [ProductName]" NoMinimize="yes">
+        <!-- Input Parameter for Virtual Directory -->
+        <Control Id="VirtualDirLabel" Type="Text" X="45" Y="73" Width="100" Height="15" TabSkip="no" Text="&amp;Virtual Directory:" />
+        <Control Id="VirtualDirEdit" Type="Edit" X="45" Y="85" Width="220" Height="18" Property="VIRTUAL_DIR_VAL" Text="{80}" />
+
+        <!-- Input Parameter for Application Pool -->
+        <Control Id="PoolNameLabel" Type="Text" X="45" Y="105" Width="100" Height="15" TabSkip="no" Text="&amp;Pool name:" />
+        <Control Id="PoolNameEdit" Type="Edit" X="45" Y="117" Width="220" Height="18" Property="WEB_APP_NAME" Text="{80}" />
+
+        <!-- Input Parameter for Setup SSL binding in IIS -->
+        <Control Id="SetupSsl" Type="CheckBox" X="45" Y="137" Width="220" Height="17" Property="SETUP_SSL" CheckBoxValue="1" Text="Setup SSL/TLS binding in IIS" />
+
+        <!-- Input Parameter for Certificate Export path -->
+        <Control Id="CertificateExportPathLabel" Type="Text" X="45" Y="154" Width="100" Height="15" TabSkip="no" Text="&amp;Certificate export path:" />
+        <Control Id="CertificateExportPathEdit" Type="Edit" X="45" Y="166" Width="220" Height="18" Property="CERT_EXPORT_PATH" Text="{254}">
+          <Condition Action="enable" >SETUP_SSL = 1</Condition>
+          <Condition Action="disable"><![CDATA[SETUP_SSL<>1]]></Condition>
+        </Control>
+
+        <!-- Back button -->
+        <Control Id="Back" Type="PushButton" X="180" Y="243" Width="56" Height="17" Text="&amp;Back">
+          <Publish Event="NewDialog" Value="LicenseAgreementDlg">1</Publish>
+        </Control>
+        
+        <!-- Next button -->
+        <Control Id="Next" Type="PushButton" X="236" Y="243" Width="56" Height="17" Default="yes" Text="&amp;Next">
+          <Publish Event="NewDialog" Value="P2000ServerSettingsDlg"></Publish>
+        </Control>
+        
+        <!-- Cancel button -->
+        <Control Id="Cancel" Type="PushButton" X="304" Y="243" Width="56" Height="17" Cancel="yes" Text="Cancel">
+          <Publish Event="SpawnDialog" Value="CancelDlg">1</Publish>
+        </Control>
+
+        <!-- Display BannerBitmap -->
+        <Control Id="BannerBitmap" Type="Bitmap" X="0" Y="0" Width="370" Height="44" TabSkip="no" Text="WixUI_Bmp_Banner" />
+
+        <!-- Display Description -->
+        <Control Id="Description" Type="Text" X="25" Y="23" Width="280" Height="15" Transparent="yes" NoPrefix="yes">
+          <Text>Please enter IIS configuration</Text>
+        </Control>
+
+        <!-- Display Line between Input Parameters and Navigation Buttons -->
+        <Control Id="BottomLine" Type="Line" X="0" Y="234" Width="370" Height="0" />
+
+        <!-- Display Title -->
+        <Control Id="Title" Type="Text" X="15" Y="6" Width="200" Height="15" Transparent="yes" NoPrefix="yes">
+          <Text>{\WixUI_Font_Title}IIS Settings</Text>
+        </Control>
+
+        <!-- Display Line between BannerBitmap and Input Parameters -->
+        <Control Id="BannerLine" Type="Line" X="0" Y="44" Width="370" Height="0" />
+      </Dialog>
+
+      <!-- P2000 Server Settings dialog definition -->
+      <Dialog Id="P2000ServerSettingsDlg" Width="370" Height="270" Title="P2000 Server Settings - [ProductName]" NoMinimize="yes">
+        <!-- Input Parameter for P2000 Server Address -->
+        <Control Id="P2000ServerIpLabel" Type="Text" X="45" Y="73" Width="150" Height="15" TabSkip="no" Text="&amp;P2000 Server (IP Address or Host Name):" />
+        <Control Id="P2000ServerIpEdit" Type="Edit" X="45" Y="85" Width="220" Height="18" Property="P2000_SERVER_IP_ADDRESS" Text="{400}" />
+        
+        <!-- Input Parameter for Domain -->
+        <Control Id="P2000ServerRpcPortLabel" Type="Text" X="45" Y="105" Width="150" Height="15" TabSkip="no" Text="&amp;RPC Port:" />
+        <Control Id="P2000ServerRpcPortEdit" Type="Edit" X="45" Y="117" Width="220" Height="18" Property="P2000_SERVER_RPC_PORT" Text="{400}" />
+
+        <!-- Back button -->
+        <Control Id="Back" Type="PushButton" X="180" Y="243" Width="56" Height="17" Text="&amp;Back">
+          <Publish Event="NewDialog" Value="IisSetupDlg">1</Publish>
+        </Control>
+
+        <!-- Next button -->
+        <Control Id="Next" Type="PushButton" X="236" Y="243" Width="56" Height="17" Default="yes" Text="&amp;Next">
+          <Publish Event="NewDialog" Value="CustomizeDlg">1</Publish>
+        </Control>
+
+        <!-- Cancel button -->
+        <Control Id="Cancel" Type="PushButton" X="304" Y="243" Width="56" Height="17" Cancel="yes" Text="Cancel">
+          <Publish Event="SpawnDialog" Value="CancelDlg">1</Publish>
+        </Control>
+
+        <!-- Display BannerBitmap -->
+        <Control Id="BannerBitmap" Type="Bitmap" X="0" Y="0" Width="370" Height="44" TabSkip="no" Text="WixUI_Bmp_Banner" />
+
+        <!-- Display Description -->
+        <Control Id="Description" Type="Text" X="25" Y="23" Width="280" Height="15" Transparent="yes" NoPrefix="yes">
+          <Text>Please enter P2000 Server configuration</Text>
+        </Control>
+
+        <!-- Display Line between Input Parameters and Navigation Buttons -->
+        <Control Id="BottomLine" Type="Line" X="0" Y="234" Width="370" Height="0" />
+
+        <!-- Display Title -->
+        <Control Id="Title" Type="Text" X="15" Y="6" Width="200" Height="15" Transparent="yes" NoPrefix="yes">
+          <Text>{\WixUI_Font_Title}P2000 Server Settings</Text>
+        </Control>
+
+        <!-- Display Line between BannerBitmap and Input Parameters -->
+        <Control Id="BannerLine" Type="Line" X="0" Y="44" Width="370" Height="0" />
+      </Dialog>
+    </UI>
+  </Fragment>
+</Wix>

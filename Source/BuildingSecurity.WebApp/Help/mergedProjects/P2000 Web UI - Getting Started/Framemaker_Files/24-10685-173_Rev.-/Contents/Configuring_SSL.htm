@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Configuring SSL</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="N:\Techpubs\P2000 5.0\Web UI\24-10685-173 Rev.-\Contents.fm" />
+ <link rel="stylesheet" href="../../../RHStyleMapping.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\..\RHStyleMapping.css" type="text/css" />
+
+ <script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("P2000 Web UI - Getting Started\nConfiguring SSL");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../../index.htm", "", ">", "Home", "Getting_Started.htm");
+document.write("<a href=\"Getting_Started.htm\">P2000 Web UI - Getting Started<\/a> > Configuring SSL<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../../index.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+<table style="border-collapse: separate; border-collapse: separate;" cellspacing="0" 
+		 width="100%" bgcolor="#70AF42" border="1">
+	<col style="width: 100%;" />
+	<tr>
+		<td style="vertical-align: middle;">
+  <p style="margin-top: 0pt; 
+												 line-height: 200%; margin-bottom: 0pt; 
+												 font-family: Arial, sans-serif; 
+												 font-weight: bold; font-size: 11pt; 
+												 color: #ffffff; font-variant: normal; 
+												 text-transform: none; 
+												 letter-spacing: normal; 
+												 text-decoration: none; ">P2000 
+		 Web User Interface Help</p></td>
+	</tr>
+ </table>
+<script type="text/javascript" language="javascript">//<![CDATA[
+document.write("<p  style=\"text-align:left;\" class=\"breadcrumbs\">");
+AddMasterBreadcrumbs("../../../index.htm", "breadcrumbs", " | ", "Home", "Getting_Started.htm");
+document.write("<a class=\"breadcrumbs\" href=\"Getting_Started.htm\">P2000 Web UI - Getting Started<\/a>  |  Configuring SSL<\/p>");
+//]]></script>
+
+ <h1><a name="IX_Secure_Communications"></a><a name="IX_SLL_Configuration"></a><a name="XREF_56331_Configuring_SLL"></a>Configuring SSL</h1>
+ <p class="Body">Communications between the P2000 Web UI and clients can be encrypted using <span class="FM_SC61741">Secure Sockets Layer (SSL), a protocol designed to </span>prevent certain data security risks. You should establish secure communications to the web server <span style="font-weight : bold; "><b>before</b></span> using Web UI for the first time.</p>
+ <p class="Body">Secure communications are achieved through the use of certificates and encryption keys.&#160;</p>
+ <p class="Body">To establish encrypted communications between the P2000 Web UI and clients., you will use a self-signed SSL certificate file, <span class="MenuItem">P2000WebUI.crt</span>. You can select to create this file on the P2000 server or on an external drive during the P2000 software installation.&#160;Following this, you need to distribute the public SSL key to all clients from which you plan to access the web server.</p>
+ 
+<p class="SpecialNote"><span class="Bold">Note:     </span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;</font></span>A different procedure is required to secure communication between the P2000 Web UI and the P2000 Archive Report Server (ARS). For details, see <a href="Communications_with_the_P2000_ARS.htm#XREF_33878_Communications">Communications with the P2000 ARS</a>.</p>
+
+ <p style="text-align  : center; margin-top  : 0.000pt; margin-bottom : 12.000pt; font-family : Arial; font-size  : 3.0pt;"></p>
+ <div align="left"><img alt="Contents00005.jpg" style="width : 316.799pt; height : 219.484pt; " id="image0" src="Contents00005.jpg" />
+ </div>
+ <p style="text-align  : center; margin-top  : 0.000pt; margin-bottom : 12.000pt; font-family : Arial; font-size  : 3.0pt;">&nbsp;</p>
+ <p class="FigureTitle">Overview of SSL Self Signed Certificate Implementation</p>
+ 
+<p class="SpecialImportant"><span class="Bold">Important:   </span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;</font></span>For security reasons, do not distribute the pubic key for the SSL certificate over the network.</p>
+
+ <p class="StepTitle">To distribute the public SSL key:</p>
+ <p class="Step">1.<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Copy the public key for the SSL certificate, <span class="MenuItem">P</span><span class="MenuItem">2000WebUI.crt</span>, from the following location on the web server (the server where you installed the P2000 Web UI) to a flash drive:</p>
+ <p class="StepText">C:\Program Files (x86)\Johnson Controls</p>
+ 
+<p class="SpecialNote"><span class="Bold">Note:     </span><span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;</font></span>Some systems use “Program Files” instead of “Program Files (x86).”</p>
+
+ <p class="Step">2.<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Transfer the file to the client computer.</p>
+ <p class="BodyIndent">Once the public key is on the client computer, you need to install it. The procedure depends on the browser you are using. Use the following instructions as general guidelines.</p>
+ <p class="StepTitle">To install SSL certificate in Internet Explorer®, Safari®, or Chrome:</p>
+ <p class="Step">1.<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Double-click the public key file <span class="MenuItem">P2000WebUI.crt</span>&#160;to open it.</p>
+ <p class="Step">2.<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Follow prompts to install it into a trusted key store.</p>
+ <p class="Step">3.<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>When prompted for location, select&#160;the following store on the local machine: <span class="MenuItem">Trusted Root Certification&#160;Authorities</span>.</p>
+ <p class="Step">4.<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Follow prompts to complete the installation.</p>
+ <p class="StepTitle">To install SSL in Firefox:</p>
+ <p class="Step">1.<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Start Firefox and go to <span class="MenuItem">Options</span>&gt;<span class="MenuItem">Options</span>.</p>
+ <p class="Step">2.<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>In the Options window, click <span class="MenuItem">Advanced</span>&#160;and then click <span class="MenuItem">Encryption</span>.</p>
+ <p class="Step">3.<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Click View <span class="MenuItem">Certificates</span>. The Certificate Manager window opens.</p>
+ <p class="Step">4.<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Under <span class="MenuItem">Servers</span> tab, click <span class="MenuItem">Import...</span></p>
+ <p class="Step">5.<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Select your certificate&#160;and click <span class="MenuItem">Open</span>.</p>
+ <p class="Step">6.<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>In the Certificate Manager window, find the certificate you just imported (it is not yet trusted). Select it from the list and click <span class="MenuItem">Edit</span>&#160;<span class="MenuItem">Trust...</span>&#160;</p>
+ <p class="Step">7.<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>In the Edit Website Certificate Trust Settings window, select <span class="MenuItem">Trust&#160;the authenticity of this certificate</span>. Click <span class="MenuItem">OK</span>.</p>
+ <p class="Step">8.<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Close all the windows.</p>
+ <table style="border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px;" 
+		 cellspacing="0" width="100%">
+	<col style="width: 16.87%;" />
+	<col style="width: 58.505%;" />
+	<col style="width: 24.625%;" />
+	<tr style="height: 5px;">
+		<td colspan="3" style="border-bottom: Solid 1px #143d75; vertical-align: Top;">
+  <p 
+			 style="margin-top: 18px;">&#160;</p></td>
+		
+	</tr>
+	<tr style="height: 38px;">
+		<td style="vertical-align: Top;">
+  <p style="margin-top: 4.5pt;"><a 
+		 href="http://www.johnsoncontrols.com" target="_blank" title="Johnson Controls Web Site"><img src="../../../jci_logo_color_small.png" alt="jci_logo_color_small.png" style="border: none;" border="0" /></a></p></td>
+		<td style="vertical-align: Top;">
+  <p style="text-align: center; 
+											 margin-top: 20px;">&#160;</p></td>
+		<td style="vertical-align: Top;">
+  <p style="text-align: center; 
+											 margin-top: 12px;">© 2013 
+		 Johnson Controls, Inc.<br />
+		<a title="Online Product Literature" href="http://cgproducts.johnsoncontrols.com/default.aspx?topframe.aspx&amp;0" 
+			 target="_blank" style="text-decoration: none; ">Product Documentation</a></p></td>
+	</tr>
+ </table>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

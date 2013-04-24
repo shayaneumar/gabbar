@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Alarm_Life_Cycle</title>
+
+ <meta name="generator" content="Adobe RoboHelp 9" />
+ <meta name="Originator" content="ImportMif" />
+ <meta name="OriginalFile" content="Z:\Techpubs\P2000 5.0\Alarm Manager\24-10685-9 Rev. -\Chp2.fm" />
+ <link rel="stylesheet" href="../../../RHStyleMapping.css" type="text/css" />
+
+ <link rel="stylesheet" href="..\..\..\RHStyleMapping.css" type="text/css" />
+
+ <script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="../../../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../../../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../../whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../../../whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("P2000 Alarm Manager\nUnderstanding the P2000 Alarm Manager\nAlarm Life Cycle");
+addButton("show",BTN_TEXT,"Mostrar","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../../index.htm");
+
+		autoSync(0);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+<table style="border-collapse: separate; border-collapse: separate;" cellspacing="0" 
+		 width="100%" bgcolor="#70AF42" border="1">
+	<col style="width: 100%;" />
+	<tr>
+		<td style="vertical-align: middle;">
+  <p style="margin-top: 0pt; 
+												 line-height: 200%; margin-bottom: 0pt; 
+												 font-family: Arial, sans-serif; 
+												 font-weight: bold; font-size: 11pt; 
+												 color: #ffffff; font-variant: normal; 
+												 text-transform: none; 
+												 letter-spacing: normal; 
+												 text-decoration: none; ">P2000 
+		 Web User Interface Help</p></td>
+	</tr>
+ </table>
+<script type="text/javascript" language="javascript">//<![CDATA[
+document.write("<p  style=\"text-align:left;\" class=\"breadcrumbs\">");
+AddMasterBreadcrumbs("../../../index.htm", "breadcrumbs", " | ", "Home", "../Chp1/Introduction.htm");
+document.write("<a class=\"breadcrumbs\" href=\"../Chp1/Introduction.htm\">P2000 Alarm Manager<\/a>  |  <a class=\"breadcrumbs\" href=\"Understanding_the_P2000_Alarm_Manager.htm\">Understanding the P2000 Alarm Manager<\/a>  |  Alarm Life Cycle<\/p>");
+//]]></script>
+
+ <h1><a name="IX_Sequence_of_Alarm_Actions"></a><a name="IX_Life_Cycle_Alarms"></a><a name="IX_Alarm_Life_Cycle"></a><a name="XREF_40683_Alarm_Life_Cycle"></a>Alarm Life Cycle</h1>
+ <p class="Body">Alarms display in P2000 Alarm Manager as they occur (in real time). The life cycle of each alarm can vary, and operators may have differing permission levels to perform certain actions, but the path an alarm takes follows this general sequence:</p>
+ 
+<p class="BodyBullet">●<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span class="Bold">Alarm Generation and Visibility</span>&#160;– With proper permissions, as defined in P2000, Security Operators can view alarms in the Alarm Manager and immediately identify the source of the alarm and the date and time the incident occurred.</p>
+
+ 
+<p class="BodyBullet">●<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span class="Bold">Alarm Acknowledgement and Investigation</span>&#160;– Security Operators can acknowledge an alarm so that they can investigate the cause and later respond to the alarm.</p>
+
+ 
+<p class="BodyBullet">●<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span class="Bold">Alarm Response</span>&#160;– Security Operators can record one or more responses describing how they have responded to the alarm. Operators can enter free text or select a response from a list of saved responses.</p>
+
+ 
+<p class="BodyBullet">●<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span class="Bold">Alarm Completion</span>&#160;– Security Operators can complete an alarm that meets certain criteria (see <a href="#XREF_66181_Alarm_Life_Cycle">Alarm Life Cycle</a>), enabling them to indicate that the alarm has been resolved.</p>
+
+ 
+<p class="BodyBullet">●<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span class="Bold">Alarm Removal</span>&#160;– Security Operators can remove an alarm under certain conditions (see <a href="#XREF_66181_Alarm_Life_Cycle">Alarm Life Cycle</a>), so that they are not distracted by completed alarms in the alarm queue.</p>
+
+ <p class="Body" style="letter-spacing : 0.00em;">To perform some of the alarm actions as illustrated in <a href="#XREF_66181_Alarm_Life_Cycle">Alarm Life Cycle</a>, note the following conditions:</p>
+ 
+<p class="BodyBullet">●<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>Acknowledgement may be required for the alarm, as defined in P2000.</p>
+
+ 
+<p class="BodyBullet">●<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>A response may be required for the alarm, as defined in P2000.</p>
+
+ 
+<p class="BodyBullet">●<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>To complete an alarm, it must be in a completion state (for example, Secure, N/A, or an alarm from a remote site).</p>
+
+ 
+<p class="BodyBullet">●<span style='word-spacing:normal; font:6.0pt "Times New Roman"'><font size="1" style="font-size:6pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span>You must have proper permissions configured in P2000 to perform a particular action on an alarm.</p>
+
+ <p class="FigureInsert"></p>
+ <div align="center"><img alt="alarm_flow_chart_new2.png" style="width : 327.360pt; height : 445.267pt; " id="image0" src="alarm_flow_chart_new2.png" />
+ </div>
+ <p class="FigureInsert">&nbsp;</p>
+ <p class="FigureTitle"><a name="XREF_66181_Alarm_Life_Cycle"></a>Alarm Life Cycle</p>
+ <table style="border-left-width: 0px; border-right-width: 0px; border-bottom-width: 0px;" 
+		 cellspacing="0" width="100%">
+	<col style="width: 16.87%;" />
+	<col style="width: 58.505%;" />
+	<col style="width: 24.625%;" />
+	<tr style="height: 5px;">
+		<td colspan="3" style="border-bottom: Solid 1px #143d75; vertical-align: Top;">
+  <p 
+			 style="margin-top: 18px;">&#160;</p></td>
+		
+	</tr>
+	<tr style="height: 38px;">
+		<td style="vertical-align: Top;">
+  <p style="margin-top: 4.5pt;"><a 
+		 href="http://www.johnsoncontrols.com" target="_blank" title="Johnson Controls Web Site"><img src="../../../jci_logo_color_small.png" alt="jci_logo_color_small.png" style="border: none;" border="0" /></a></p></td>
+		<td style="vertical-align: Top;">
+  <p style="text-align: center; 
+											 margin-top: 20px;"><span style="color: #ff0000; 
+		 font-weight: bold;"><font color="red" ><b>Preliminary – 
+		 This information may change.</b></font></span></p></td>
+		<td style="vertical-align: Top;">
+  <p style="text-align: center; 
+											 margin-top: 12px;">© 2012 
+		 Johnson Controls, Inc.<br />
+		<a title="Online Product Literature" href="http://cgproducts.johnsoncontrols.com/default.aspx?topframe.aspx&amp;0" 
+			 target="_blank" style="text-decoration: none; ">Product Documentation</a></p></td>
+	</tr>
+ </table>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

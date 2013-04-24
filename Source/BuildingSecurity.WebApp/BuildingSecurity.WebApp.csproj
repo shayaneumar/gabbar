@@ -1,0 +1,1965 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6C1982A4-D9C3-4A99-87AB-D9E8BABE5C2F}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BuildingSecurity.WebApp</RootNamespace>
+    <AssemblyName>BuildingSecurity.WebApp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <JSLintSkip>\Scripts\bootstrap.js|\Scripts\bootstrap.min.js|\Scripts\jquery-1.8.0-vsdoc.js|\Scripts\jquery-1.8.0.js|\Scripts\jquery-1.8.0.min.js|\Scripts\jquery-ui-1.8.23.js|\Scripts\jquery-ui-1.8.23.min.js|\Scripts\jquery-ui-i18n.min.js|\Scripts\jquery-ui-i18n.js|\Scripts\jquery.signalR-0.5.2.js|\Scripts\jquery.signalR-0.5.2.min.js|\Scripts\jquery.unobtrusive-ajax.js|\Scripts\jquery.unobtrusive-ajax.min.js|\Scripts\jquery.validate-vsdoc.js|\Scripts\jquery.validate.js|\Scripts\jquery.validate.min.js|\Scripts\jquery.validate.unobtrusive.js|\Scripts\jquery.validate.unobtrusive.min.js|\Scripts\knockout-2.1.0.debug.js|\Scripts\knockout-2.1.0.js|\Scripts\modernizr-2.5.3.js|\Scripts\require.js|\Help\|\Help-es\|\Scripts\lib\</JSLintSkip>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>..\Monkeypaw.ruleset</CodeAnalysisRuleSet>
+    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>..\Monkeypaw.ruleset</CodeAnalysisRuleSet>
+    <DebugSymbols>true</DebugSymbols>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\packages\Castle.Core.3.0.0.4001\lib\net40-client\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.8\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.0.1.10\lib\net40\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Extensions.Conventions">
+      <HintPath>..\packages\Ninject.Extensions.Conventions.3.0.0.11\lib\net40\Ninject.Extensions.Conventions.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Extensions.Factory">
+      <HintPath>..\packages\Ninject.Extensions.Factory.3.0.1.0\lib\net40\Ninject.Extensions.Factory.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Common">
+      <HintPath>..\packages\Ninject.Web.Common.3.0.0.7\lib\net40-full\Ninject.Web.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc">
+      <HintPath>..\packages\Ninject.MVC3.3.0.0.6\lib\net40-full\Ninject.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="SignalR">
+      <HintPath>..\packages\SignalR.Server.0.5.2\lib\net40\SignalR.dll</HintPath>
+    </Reference>
+    <Reference Include="SignalR.Hosting.AspNet">
+      <HintPath>..\packages\SignalR.Hosting.AspNet.0.5.2\lib\net40\SignalR.Hosting.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="SignalR.Hosting.Common">
+      <HintPath>..\packages\SignalR.Hosting.Common.0.5.2\lib\net40\SignalR.Hosting.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Net.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.Web.Optimization.1.0.0-beta\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivator">
+      <HintPath>..\packages\WebActivator.1.5.1\lib\net40\WebActivator.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SharedAssemblyInfo.cs">
+      <Link>SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Areas\Cases\CasesAreaRegistration.cs" />
+    <Compile Include="Areas\Cases\Controllers\CasesController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Cases\Content\cases.css" />
+    <Content Include="Areas\Cases\Scripts\cases.js" />
+    <Content Include="Areas\Cases\ViewModels\CaseListViewModelFactory.js" />
+    <Content Include="Areas\Cases\ViewModels\CaseNoteViewModelFactory.js" />
+    <Content Include="Areas\Cases\ViewModels\CreateCaseViewModelFactory.js" />
+    <Content Include="Areas\Cases\ViewModels\NoteDetailsViewModelFactory.js" />
+    <Content Include="Areas\Cases\ViewModels\ViewCaseViewModelFactory.js" />
+    <Content Include="Audio\AlarmPending.mp3" />
+    <Content Include="Audio\AlarmPending.wav" />
+    <Content Include="Audio\Drum.mp3" />
+    <Content Include="Audio\Drum.wav" />
+    <Content Include="Audio\Evacuation.mp3" />
+    <Content Include="Audio\Evacuation.wav" />
+    <Content Include="Audio\FireAlarm.mp3" />
+    <Content Include="Audio\FireAlarm.wav" />
+    <Content Include="Audio\Pager.mp3" />
+    <Content Include="Audio\Pager.wav" />
+    <Content Include="Audio\Siren.mp3" />
+    <Content Include="Audio\Siren.wav" />
+    <Content Include="Content\Account.css" />
+    <Content Include="Content\Alarms.css" />
+    <Content Include="Content\bootstrap-responsive.css" />
+    <Content Include="Content\bootstrap-responsive.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\glyphicons-halflings-white.png" />
+    <Content Include="Content\images\glyphicons-halflings.png" />
+    <Content Include="Content\LegalNotices.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\LimitedColorPicker\clear.png" />
+    <Content Include="Content\LimitedColorPicker\LimitedColorPicker.css" />
+    <Content Include="Content\LimitedColorPicker\shine.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Help-es\bookclosed.gif" />
+    <Content Include="Help-es\book_open.gif" />
+    <Content Include="Help-es\close.gif" />
+    <Content Include="Help-es\content.gif" />
+    <Content Include="Help-es\cshdat_robohelp.htm" />
+    <Content Include="Help-es\cshdat_webhelp.htm" />
+    <Content Include="Help-es\directional.gif" />
+    <Content Include="Help-es\ehlpdhtm.js" />
+    <Content Include="Help-es\favicon.png" />
+    <Content Include="Help-es\go.gif" />
+    <Content Include="Help-es\gray-left.gif" />
+    <Content Include="Help-es\gray-rt.gif" />
+    <Content Include="Help-es\greyback.gif" />
+    <Content Include="Help-es\index.gif" />
+    <Content Include="Help-es\index.htm" />
+    <Content Include="Help-es\index_csh.htm" />
+    <Content Include="Help-es\index_rhc.htm" />
+    <Content Include="Help-es\jci_logo_color_small.png" />
+    <Content Include="Help-es\left-ar.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\bookclosed.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\book_open.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\bsscftp.txt" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\close.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\content.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\cshdat_robohelp.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\cshdat_webhelp.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\directional.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\ehlpdhtm.js" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\favicon.png" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\AppxA\AppxA.css" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\AppxA\bsscftp.txt" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\AppxA\Troubleshooting.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp1\About_the_P2000_Alarm_Manager.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp1\Audience.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp1\bsscftp.txt" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp1\Chp1.css" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp1\Getting_Started.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp1\Guide_Conventions.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp1\Guide_Summary.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp1\Important_Terms.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp1\Introduction.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp1\Logging_On.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp1\P2000_Web_UI_Navigation_Options.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp1\Verifying_the_System_Requirements.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp2\About_P2000_Alarms.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp2\Alarm_Color_and_Sound_Indicators.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp2\Alarm_Details_and_History.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp2\Alarm_Escalation.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp2\alarm_flow_chart_new2.png" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp2\Alarm_Life_Cycle.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp2\Alarm_Life_Cycle_Scenario.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp2\Alarm_Types.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp2\Alarm_Visibility_and_Notification.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp2\Authorization_Menu_Permissions.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp2\bsscftp.txt" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp2\Chp2.css" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp2\external_devices.png" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp2\Understanding_the_P2000_Alarm_Manager.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp3\bsscftp.txt" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp3\Changing_the_Time_Zone_Setting.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp3\Chp3.css" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp3\Configuring_Alarm_Display_Options.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp3\Configuring_the_P2000_Alarm_Manager.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp3\Uploading_a_Company_Logo.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp4\Acknowledging_Alarms.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp4\ascending_arrow.png" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp4\bsscftp.txt" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp4\Chp4.css" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp4\Completing_Alarms.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp4\descending_arrow.png" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp4\Removing_Alarms.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp4\Responding_to_Alarms.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp4\Sorting_Alarms.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp4\Using_the_P2000_Alarm_Manager.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp4\Viewing_Alarms_and_Alarm_Details.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\go.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\gray-left.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\gray-rt.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\greyback.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\index.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\index.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\index_csh.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\index_rhc.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\jci_logo_color_small.png" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\left-ar.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\MasterData.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\other_index.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\page.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\readme.txt" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\resource\bsscftp.txt" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\resource\resource.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\RHStyleMapping.css" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\right-ar.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\search.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\SearchOptions.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\urls.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whbrs.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whcshdata.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whcsh_home.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whdata\bsscftp.txt" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whdata\whgdata.js" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whdata\whglo.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whdata\whglo.js" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whdata\whidata.js" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whdata\whidata0.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whdata\whidata1.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whdata\whidata2.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whdata\whidx.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whdata\whidx.js" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whdata\whtdata.js" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whdata\whtdata0.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whdata\whtoc.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whdata\whtoc.js" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whestart.ico" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whfbody.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whfdhtml.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whfform.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whfhost.js" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whform.js" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whframes.js" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgbody.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\bsscftp.txt" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whexpbar.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstf0.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstf1.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstf2.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstf3.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstf4.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstf5.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstf6.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstf7.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstf8.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstfl0.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstfl1.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstfl10.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstfl11.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstfl12.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstfl13.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstfl14.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstfl15.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstfl16.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstfl17.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstfl18.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstfl19.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstfl2.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstfl20.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstfl21.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstfl3.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstfl4.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstfl5.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstfl6.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstfl7.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstfl8.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstfl9.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstg0.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whlsti0.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whlsti1.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstt0.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstt1.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstt2.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstt3.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstt4.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstt5.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstt6.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstt7.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstt8.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whnvf30.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whnvf31.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whnvf32.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whnvf33.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whnvl31.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whnvl32.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whnvl33.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whnvp30.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whnvp31.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whnvp32.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whnvp33.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whnvt30.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whnvt31.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whnvt32.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdata\whnvt33.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdef.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whgdhtml.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whghost.js" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whhost.js" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whibody.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whidhtml.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whiform.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whihost.js" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whlang.js" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whmozemu.js" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whmsg.js" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whnjs.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whphost.js" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whproj.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whproj.js" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whproj.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whproxy.js" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whres.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whrstart.ico" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whskin_banner.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whskin_blank.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whskin_frmset01.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whskin_frmset010.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whskin_homepage.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whskin_info.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whskin_mbars.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whskin_pdhtml.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whskin_pickup.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whskin_plist.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whskin_tbars.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whskin_tw.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whstart.ico" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whstart.js" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whstub.js" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whst_topics.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whtbar.js" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whtdhtml.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whthost.js" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whtopic.js" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\wht_abge.jpg" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\wht_abgi.jpg" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\wht_abgw.jpg" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\wht_abte.jpg" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\wht_abti.jpg" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\wht_abtw.jpg" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\wht_fts_h.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\wht_fts_n.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\wht_glo_h.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\wht_glo_n.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\wht_go.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\wht_hide.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\wht_idx_h.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\wht_idx_n.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\wht_logo1.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\wht_logo2.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\wht_next.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\wht_next_g.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\wht_prev.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\wht_prev_g.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\wht_spac.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\wht_sync.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\wht_tab0.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\wht_tab1.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\wht_tab2.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\wht_tab3.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\wht_tab4.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\wht_tab5.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\wht_tab6.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\wht_tab7.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\wht_tab8.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\wht_toc_h.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\wht_toc_n.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\wht_ws.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\wht_ws_g.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whutils.js" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whver.js" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whxdata\bsscftp.txt" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whxdata\packageindex.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whxdata\package_0.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whxdata\package_1.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whxdata\package_2.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whxdata\package_3.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whxdata\package_4.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whxdata\package_5.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whxdata\package_6.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whxdata\synonym.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whxdata\topictableindex.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whxdata\topictable_0.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whxdata\whfts.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whxdata\whglo.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whxdata\whidata0.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whxdata\whidata1.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whxdata\whidata2.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whxdata\whidx.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whxdata\whtdata0.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\whxdata\whtoc.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 Alarm Manager Help\xmlreadhelper.js" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\bookclosed.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\book_open.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\bsscftp.txt" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\close.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\content.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\cshdat_robohelp.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\cshdat_webhelp.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\directional.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\ehlpdhtm.js" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\favicon.png" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\Framemaker_Files\24-10685-25\AppxA\AppxA.css" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\Framemaker_Files\24-10685-25\AppxA\AppxA.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\Framemaker_Files\24-10685-25\AppxA\bsscftp.txt" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\Framemaker_Files\24-10685-25\Ch1\bsscftp.txt" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\Framemaker_Files\24-10685-25\Ch1\Ch1.css" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\Framemaker_Files\24-10685-25\Ch1\Introduction.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\Framemaker_Files\24-10685-25\Ch1\Key_Terms.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\Framemaker_Files\24-10685-25\Ch1\Overview.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\Framemaker_Files\24-10685-25\Ch2\bsscftp.txt" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\Framemaker_Files\24-10685-25\Ch2\Ch2.css" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\Framemaker_Files\24-10685-25\Ch2\Configuring_the_P2000_Web_UI.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\Framemaker_Files\24-10685-25\Ch3\About_Reports.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\Framemaker_Files\24-10685-25\Ch3\bsscftp.txt" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\Framemaker_Files\24-10685-25\Ch3\Cancelling_a_Report.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\Framemaker_Files\24-10685-25\Ch3\Ch3.css" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\Framemaker_Files\24-10685-25\Ch3\Choosing_a_Data_Source.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\Framemaker_Files\24-10685-25\Ch3\Custom_Reports.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\Framemaker_Files\24-10685-25\Ch3\Daily_or_Weekly_Reports.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\Framemaker_Files\24-10685-25\Ch3\Report_Appearance.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\Framemaker_Files\24-10685-25\Ch3\Report_Format.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\Framemaker_Files\24-10685-25\Ch3\Running_Versus_Scheduling_Reports.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\Framemaker_Files\24-10685-25\Ch3\Sharing_A_Report.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\Framemaker_Files\24-10685-25\Ch3\Standard_Reports.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\Framemaker_Files\24-10685-25\Ch3\Text_Fields.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\Framemaker_Files\24-10685-25\Ch4\bsscftp.txt" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\Framemaker_Files\24-10685-25\Ch4\Ch4.css" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\Framemaker_Files\24-10685-25\Ch4\Modifying_a_Scheduled_Report.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\Framemaker_Files\24-10685-25\Ch4\Running_and_Scheduling_Reports.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\Framemaker_Files\24-10685-25\Ch4\Running_a_Report.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\Framemaker_Files\24-10685-25\Ch4\Scheduling_a_Report.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\Framemaker_Files\24-10685-25\Ch5\bsscftp.txt" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\Framemaker_Files\24-10685-25\Ch5\Ch5.css" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\Framemaker_Files\24-10685-25\Ch5\Overview.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\Framemaker_Files\24-10685-25\Ch5\Scheduling_an_Audit_Trail_Report.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\Framemaker_Files\24-10685-25\Ch5\Scheduling_an_Audit_Trail_Report1.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\go.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\gray-left.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\gray-rt.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\greyback.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\index.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\index.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\index_csh.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\index_rhc.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\jci_logo_color_small.png" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\left-ar.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\MasterData.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\other_index.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\page.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\readme.txt" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\resource\bsscftp.txt" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\resource\resource.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\RHStyleMapping.css" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\right-ar.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\search.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\SearchOptions.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\urls.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whbrs.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whcshdata.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whcsh_home.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whdata\bsscftp.txt" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whdata\whgdata.js" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whdata\whglo.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whdata\whglo.js" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whdata\whidata.js" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whdata\whidata0.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whdata\whidata1.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whdata\whidx.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whdata\whidx.js" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whdata\whtdata.js" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whdata\whtdata0.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whdata\whtoc.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whdata\whtoc.js" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whestart.ico" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whfbody.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whfdhtml.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whfform.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whfhost.js" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whform.js" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whframes.js" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgbody.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\bsscftp.txt" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whexpbar.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whlstf0.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whlstf1.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whlstf2.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whlstf3.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whlstf4.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whlstf5.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whlstf6.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whlstfl0.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whlstfl1.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whlstfl10.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whlstfl11.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whlstfl12.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whlstfl13.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whlstfl14.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whlstfl15.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whlstfl16.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whlstfl17.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whlstfl18.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whlstfl19.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whlstfl2.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whlstfl20.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whlstfl21.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whlstfl3.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whlstfl4.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whlstfl5.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whlstfl6.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whlstfl7.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whlstfl8.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whlstfl9.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whlstg0.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whlsti0.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whlstt0.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whlstt1.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whlstt2.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whlstt3.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whlstt4.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whlstt5.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whnvf30.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whnvf31.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whnvf32.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whnvf33.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whnvl31.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whnvl32.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whnvl33.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whnvp30.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whnvp31.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whnvp32.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whnvp33.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whnvt30.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whnvt31.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whnvt32.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdata\whnvt33.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdef.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whgdhtml.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whghost.js" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whhost.js" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whibody.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whidhtml.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whiform.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whihost.js" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whlang.js" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whmozemu.js" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whmsg.js" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whnjs.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whphost.js" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whproj.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whproj.js" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whproj.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whproxy.js" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whres.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whrstart.ico" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whskin_banner.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whskin_blank.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whskin_frmset01.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whskin_frmset010.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whskin_homepage.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whskin_info.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whskin_mbars.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whskin_pdhtml.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whskin_pickup.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whskin_plist.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whskin_tbars.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whskin_tw.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whstart.ico" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whstart.js" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whstub.js" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whst_topics.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whtbar.js" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whtdhtml.htm" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whthost.js" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whtopic.js" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\wht_abge.jpg" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\wht_abgi.jpg" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\wht_abgw.jpg" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\wht_abte.jpg" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\wht_abti.jpg" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\wht_abtw.jpg" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\wht_fts_h.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\wht_fts_n.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\wht_glo_h.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\wht_glo_n.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\wht_go.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\wht_hide.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\wht_idx_h.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\wht_idx_n.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\wht_logo1.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\wht_logo2.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\wht_next.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\wht_next_g.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\wht_prev.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\wht_prev_g.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\wht_spac.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\wht_sync.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\wht_tab0.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\wht_tab1.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\wht_tab2.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\wht_tab3.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\wht_tab4.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\wht_tab5.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\wht_tab6.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\wht_tab7.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\wht_tab8.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\wht_toc_h.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\wht_toc_n.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\wht_ws.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\wht_ws_g.gif" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whutils.js" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whver.js" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whxdata\bsscftp.txt" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whxdata\packageindex.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whxdata\package_0.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whxdata\package_1.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whxdata\package_2.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whxdata\package_3.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whxdata\package_4.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whxdata\package_5.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whxdata\synonym.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whxdata\topictableindex.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whxdata\topictable_0.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whxdata\whfts.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whxdata\whglo.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whxdata\whidata0.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whxdata\whidata1.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whxdata\whidx.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whxdata\whtdata0.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\whxdata\whtoc.xml" />
+    <Content Include="Help-es\mergedProjects\P2000 ARS Web Help\xmlreadhelper.js" />
+    <Content Include="Help-es\other_index.gif" />
+    <Content Include="Help-es\page.gif" />
+    <Content Include="Help-es\resource\resource.xml" />
+    <Content Include="Help-es\RHStyleMapping.css" />
+    <Content Include="Help-es\right-ar.gif" />
+    <Content Include="Help-es\search.gif" />
+    <Content Include="Help-es\SearchOptions.xml" />
+    <Content Include="Help-es\urls.gif" />
+    <Content Include="Help-es\Welcome.htm" />
+    <Content Include="Help-es\whbrs.xml" />
+    <Content Include="Help-es\whcshdata.htm" />
+    <Content Include="Help-es\whcsh_home.htm" />
+    <Content Include="Help-es\whdata\whgdata.js" />
+    <Content Include="Help-es\whdata\whglo.htm" />
+    <Content Include="Help-es\whdata\whglo.js" />
+    <Content Include="Help-es\whdata\whidata.js" />
+    <Content Include="Help-es\whdata\whidx.htm" />
+    <Content Include="Help-es\whdata\whidx.js" />
+    <Content Include="Help-es\whdata\whtdata.js" />
+    <Content Include="Help-es\whdata\whtdata0.htm" />
+    <Content Include="Help-es\whdata\whtoc.htm" />
+    <Content Include="Help-es\whdata\whtoc.js" />
+    <Content Include="Help-es\whestart.ico" />
+    <Content Include="Help-es\whfbody.htm" />
+    <Content Include="Help-es\whfdhtml.htm" />
+    <Content Include="Help-es\whfform.htm" />
+    <Content Include="Help-es\whfhost.js" />
+    <Content Include="Help-es\whform.js" />
+    <Content Include="Help-es\whframes.js" />
+    <Content Include="Help-es\whgbody.htm" />
+    <Content Include="Help-es\whgdata\whexpbar.gif" />
+    <Content Include="Help-es\whgdata\whlstf0.htm" />
+    <Content Include="Help-es\whgdata\whlstfl0.htm" />
+    <Content Include="Help-es\whgdata\whlstfl1.htm" />
+    <Content Include="Help-es\whgdata\whlstfl10.htm" />
+    <Content Include="Help-es\whgdata\whlstfl11.htm" />
+    <Content Include="Help-es\whgdata\whlstfl12.htm" />
+    <Content Include="Help-es\whgdata\whlstfl2.htm" />
+    <Content Include="Help-es\whgdata\whlstfl3.htm" />
+    <Content Include="Help-es\whgdata\whlstfl4.htm" />
+    <Content Include="Help-es\whgdata\whlstfl5.htm" />
+    <Content Include="Help-es\whgdata\whlstfl6.htm" />
+    <Content Include="Help-es\whgdata\whlstfl7.htm" />
+    <Content Include="Help-es\whgdata\whlstfl8.htm" />
+    <Content Include="Help-es\whgdata\whlstfl9.htm" />
+    <Content Include="Help-es\whgdata\whlstg0.htm" />
+    <Content Include="Help-es\whgdata\whlsti0.htm" />
+    <Content Include="Help-es\whgdata\whlstt0.htm" />
+    <Content Include="Help-es\whgdata\whnvf30.htm" />
+    <Content Include="Help-es\whgdata\whnvf31.htm" />
+    <Content Include="Help-es\whgdata\whnvf32.htm" />
+    <Content Include="Help-es\whgdata\whnvf33.htm" />
+    <Content Include="Help-es\whgdata\whnvl31.htm" />
+    <Content Include="Help-es\whgdata\whnvl32.htm" />
+    <Content Include="Help-es\whgdata\whnvl33.htm" />
+    <Content Include="Help-es\whgdata\whnvp30.htm" />
+    <Content Include="Help-es\whgdata\whnvp31.htm" />
+    <Content Include="Help-es\whgdata\whnvp32.htm" />
+    <Content Include="Help-es\whgdata\whnvp33.htm" />
+    <Content Include="Help-es\whgdata\whnvt30.htm" />
+    <Content Include="Help-es\whgdata\whnvt31.htm" />
+    <Content Include="Help-es\whgdata\whnvt32.htm" />
+    <Content Include="Help-es\whgdata\whnvt33.htm" />
+    <Content Include="Help-es\whgdef.htm" />
+    <Content Include="Help-es\whgdhtml.htm" />
+    <Content Include="Help-es\whghost.js" />
+    <Content Include="Help-es\whhost.js" />
+    <Content Include="Help-es\whibody.htm" />
+    <Content Include="Help-es\whidhtml.htm" />
+    <Content Include="Help-es\whiform.htm" />
+    <Content Include="Help-es\whihost.js" />
+    <Content Include="Help-es\whlang.js" />
+    <Content Include="Help-es\whmozemu.js" />
+    <Content Include="Help-es\whmsg.js" />
+    <Content Include="Help-es\whnjs.htm" />
+    <Content Include="Help-es\whphost.js" />
+    <Content Include="Help-es\whproj.htm" />
+    <Content Include="Help-es\whproj.js" />
+    <Content Include="Help-es\whproj.xml" />
+    <Content Include="Help-es\whproxy.js" />
+    <Content Include="Help-es\whres.xml" />
+    <Content Include="Help-es\whrstart.ico" />
+    <Content Include="Help-es\whskin_banner.htm" />
+    <Content Include="Help-es\whskin_blank.htm" />
+    <Content Include="Help-es\whskin_frmset01.htm" />
+    <Content Include="Help-es\whskin_frmset010.htm" />
+    <Content Include="Help-es\whskin_homepage.htm" />
+    <Content Include="Help-es\whskin_info.htm" />
+    <Content Include="Help-es\whskin_mbars.htm" />
+    <Content Include="Help-es\whskin_pdhtml.htm" />
+    <Content Include="Help-es\whskin_pickup.htm" />
+    <Content Include="Help-es\whskin_plist.htm" />
+    <Content Include="Help-es\whskin_tbars.htm" />
+    <Content Include="Help-es\whskin_tw.htm" />
+    <Content Include="Help-es\whstart.ico" />
+    <Content Include="Help-es\whstart.js" />
+    <Content Include="Help-es\whstub.js" />
+    <Content Include="Help-es\whst_topics.xml" />
+    <Content Include="Help-es\whtbar.js" />
+    <Content Include="Help-es\whtdhtml.htm" />
+    <Content Include="Help-es\whthost.js" />
+    <Content Include="Help-es\whtopic.js" />
+    <Content Include="Help-es\wht_abge.jpg" />
+    <Content Include="Help-es\wht_abgi.jpg" />
+    <Content Include="Help-es\wht_abgw.jpg" />
+    <Content Include="Help-es\wht_abte.jpg" />
+    <Content Include="Help-es\wht_abti.jpg" />
+    <Content Include="Help-es\wht_abtw.jpg" />
+    <Content Include="Help-es\wht_fts_h.gif" />
+    <Content Include="Help-es\wht_fts_n.gif" />
+    <Content Include="Help-es\wht_glo_h.gif" />
+    <Content Include="Help-es\wht_glo_n.gif" />
+    <Content Include="Help-es\wht_go.gif" />
+    <Content Include="Help-es\wht_hide.gif" />
+    <Content Include="Help-es\wht_idx_h.gif" />
+    <Content Include="Help-es\wht_idx_n.gif" />
+    <Content Include="Help-es\wht_logo1.gif" />
+    <Content Include="Help-es\wht_logo2.gif" />
+    <Content Include="Help-es\wht_next.gif" />
+    <Content Include="Help-es\wht_next_g.gif" />
+    <Content Include="Help-es\wht_prev.gif" />
+    <Content Include="Help-es\wht_prev_g.gif" />
+    <Content Include="Help-es\wht_spac.gif" />
+    <Content Include="Help-es\wht_sync.gif" />
+    <Content Include="Help-es\wht_tab0.gif" />
+    <Content Include="Help-es\wht_tab1.gif" />
+    <Content Include="Help-es\wht_tab2.gif" />
+    <Content Include="Help-es\wht_tab3.gif" />
+    <Content Include="Help-es\wht_tab4.gif" />
+    <Content Include="Help-es\wht_tab5.gif" />
+    <Content Include="Help-es\wht_tab6.gif" />
+    <Content Include="Help-es\wht_tab7.gif" />
+    <Content Include="Help-es\wht_tab8.gif" />
+    <Content Include="Help-es\wht_toc_h.gif" />
+    <Content Include="Help-es\wht_toc_n.gif" />
+    <Content Include="Help-es\wht_ws.gif" />
+    <Content Include="Help-es\wht_ws_g.gif" />
+    <Content Include="Help-es\whutils.js" />
+    <Content Include="Help-es\whver.js" />
+    <Content Include="Help-es\whxdata\packageindex.xml" />
+    <Content Include="Help-es\whxdata\package_0.xml" />
+    <Content Include="Help-es\whxdata\synonym.xml" />
+    <Content Include="Help-es\whxdata\topictableindex.xml" />
+    <Content Include="Help-es\whxdata\topictable_0.xml" />
+    <Content Include="Help-es\whxdata\whfts.xml" />
+    <Content Include="Help-es\whxdata\whglo.xml" />
+    <Content Include="Help-es\whxdata\whidx.xml" />
+    <Content Include="Help-es\whxdata\whtdata0.xml" />
+    <Content Include="Help-es\whxdata\whtoc.xml" />
+    <Content Include="Help-es\xmlreadhelper.js" />
+    <Content Include="Help\cshdat_robohelp.htm" />
+    <Content Include="Help\cshdat_webhelp.htm" />
+    <Content Include="Help\default.css" />
+    <Content Include="Help\ehlpdhtm.js" />
+    <Content Include="Help\favicon.png" />
+    <Content Include="Help\First_Topic.htm" />
+    <Content Include="Help\index.htm" />
+    <Content Include="Help\index_csh.htm" />
+    <Content Include="Help\index_rhc.htm" />
+    <Content Include="Help\jci_logo_color_small.png" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\bookclosed.gif" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\book_open.gif" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\bsscftp.txt" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\close.gif" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\content.gif" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\cshdat_robohelp.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\cshdat_webhelp.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\directional.gif" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\ehlpdhtm.js" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\favicon.png" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\AppxA\AppxA.css" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\AppxA\bsscftp.txt" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\AppxA\Troubleshooting.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp1\About_the_P2000_Alarm_Manager.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp1\Audience.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp1\bsscftp.txt" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp1\Chp1.css" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp1\Guide_Conventions.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp1\Guide_Summary.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp1\Important_Terms.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp1\Introduction.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp2\About_P2000_Alarms.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp2\Alarm_Color_and_Sound_Indicators.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp2\Alarm_Escalation.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp2\alarm_flow_chart_new2.png" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp2\Alarm_History.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp2\alarm_history_newui3.jpg" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp2\alarm_info_newui3.jpg" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp2\Alarm_Life_Cycle.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp2\Alarm_Life_Cycle_Scenario.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp2\Alarm_States.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp2\Alarm_Types.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp2\Alarm_Visibility_and_Notification.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp2\Authorization_Menu_Permissions.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp2\bsscftp.txt" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp2\Chp2.css" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp2\external_devices.png" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp2\Understanding_the_P2000_Alarm_Manager.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp3\bsscftp.txt" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp3\Chp3.css" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp3\Configuring_Alarm_Display_Options.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp3\Configuring_the_P2000_Alarm_Manager.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp3\The_Time_Zone_Setting.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp4\Acknowledging_Alarms.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp4\bsscftp.txt" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp4\Chp4.css" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp4\Completing_Alarms.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp4\Removing_Alarms.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp4\Responding_to_Alarms.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp4\Using_the_P2000_Alarm_Manager.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\Framemaker_Files\24-10685-9\Chp4\Viewing_Alarms_and_Alarm_History.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\go.gif" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\gray-left.gif" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\gray-rt.gif" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\greyback.gif" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\index.gif" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\index.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\index_csh.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\index_rhc.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\jci_logo_color_small.png" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\left-ar.gif" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\MasterData.xml" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\other_index.gif" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\page.gif" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\readme.txt" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\resource\bsscftp.txt" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\resource\resource.xml" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\RHStyleMapping.css" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\right-ar.gif" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\search.gif" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\SearchOptions.xml" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\urls.gif" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whbrs.xml" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whcshdata.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whcsh_home.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whdata\bsscftp.txt" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whdata\whgdata.js" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whdata\whglo.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whdata\whglo.js" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whdata\whidata.js" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whdata\whidata0.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whdata\whidx.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whdata\whidx.js" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whdata\whtdata.js" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whdata\whtdata0.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whdata\whtoc.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whdata\whtoc.js" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whestart.ico" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whfbody.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whfdhtml.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whfform.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whfhost.js" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whform.js" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whframes.js" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgbody.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\bsscftp.txt" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whexpbar.gif" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstf0.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstf1.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstf2.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstf3.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstf4.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstf5.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstf6.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstfl0.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstfl1.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstfl10.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstfl11.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstfl12.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstfl13.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstfl14.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstfl15.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstfl16.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstfl17.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstfl18.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstfl19.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstfl2.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstfl20.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstfl21.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstfl3.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstfl4.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstfl5.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstfl6.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstfl7.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstfl8.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstfl9.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstg0.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whlsti0.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstt0.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstt1.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstt2.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstt3.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstt4.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstt5.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstt6.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whlstt7.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whnvf30.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whnvf31.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whnvf32.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whnvf33.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whnvl31.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whnvl32.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whnvl33.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whnvp30.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whnvp31.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whnvp32.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whnvp33.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whnvt30.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whnvt31.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whnvt32.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdata\whnvt33.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdef.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whgdhtml.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whghost.js" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whhost.js" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whibody.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whidhtml.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whiform.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whihost.js" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whlang.js" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whmozemu.js" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whmsg.js" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whnjs.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whphost.js" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whproj.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whproj.js" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whproj.xml" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whproxy.js" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whres.xml" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whrstart.ico" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whskin_banner.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whskin_blank.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whskin_frmset01.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whskin_frmset010.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whskin_homepage.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whskin_info.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whskin_mbars.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whskin_pdhtml.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whskin_pickup.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whskin_plist.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whskin_tbars.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whskin_tw.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whstart.ico" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whstart.js" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whstub.js" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whst_topics.xml" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whtbar.js" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whtdhtml.htm" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whthost.js" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whtopic.js" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\wht_abge.jpg" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\wht_abgi.jpg" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\wht_abgw.jpg" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\wht_abte.jpg" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\wht_abti.jpg" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\wht_abtw.jpg" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\wht_fts_h.gif" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\wht_fts_n.gif" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\wht_glo_h.gif" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\wht_glo_n.gif" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\wht_go.gif" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\wht_hide.gif" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\wht_idx_h.gif" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\wht_idx_n.gif" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\wht_logo1.gif" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\wht_logo2.gif" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\wht_next.gif" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\wht_next_g.gif" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\wht_prev.gif" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\wht_prev_g.gif" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\wht_spac.gif" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\wht_sync.gif" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\wht_tab0.gif" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\wht_tab1.gif" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\wht_tab2.gif" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\wht_tab3.gif" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\wht_tab4.gif" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\wht_tab5.gif" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\wht_tab6.gif" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\wht_tab7.gif" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\wht_tab8.gif" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\wht_toc_h.gif" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\wht_toc_n.gif" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\wht_ws.gif" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\wht_ws_g.gif" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whutils.js" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whver.js" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whxdata\bsscftp.txt" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whxdata\packageindex.xml" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whxdata\package_0.xml" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whxdata\synonym.xml" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whxdata\topictableindex.xml" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whxdata\topictable_0.xml" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whxdata\whfts.xml" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whxdata\whglo.xml" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whxdata\whidata0.xml" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whxdata\whidx.xml" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whxdata\whtdata0.xml" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\whxdata\whtoc.xml" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\xmlreadhelper.js" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\bookclosed.gif" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\book_open.gif" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\bsscftp.txt" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\close.gif" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\content.gif" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\cshdat_robohelp.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\cshdat_webhelp.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\directional.gif" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\ehlpdhtm.js" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\favicon.png" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\Framemaker_Files\24-10685-25\Back_Cover\Back_Cover.css" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\Framemaker_Files\24-10685-25\Back_Cover\bsscftp.txt" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\Framemaker_Files\24-10685-25\Ch1\About_the_P2000_ARS.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\Framemaker_Files\24-10685-25\Ch1\Audience.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\Framemaker_Files\24-10685-25\Ch1\bsscftp.txt" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\Framemaker_Files\24-10685-25\Ch1\Ch1.css" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\Framemaker_Files\24-10685-25\Ch1\Important_Terms.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\Framemaker_Files\24-10685-25\Ch1\Introduction.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\Framemaker_Files\24-10685-25\Ch2\bsscftp.txt" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\Framemaker_Files\24-10685-25\Ch2\Ch2.css" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\Framemaker_Files\24-10685-25\Ch2\Overview.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\Framemaker_Files\24-10685-25\Ch2\Setup.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\Framemaker_Files\24-10685-25\Ch3\About_Reports.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\Framemaker_Files\24-10685-25\Ch3\Authorization_Menu_Permissions.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\Framemaker_Files\24-10685-25\Ch3\bsscftp.txt" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\Framemaker_Files\24-10685-25\Ch3\Cancelling_a_Report.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\Framemaker_Files\24-10685-25\Ch3\Ch3.css" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\Framemaker_Files\24-10685-25\Ch3\Choosing_a_Data_Source.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\Framemaker_Files\24-10685-25\Ch3\Custom_Reports.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\Framemaker_Files\24-10685-25\Ch3\Daily_or_Weekly_Scheduled_Reports.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\Framemaker_Files\24-10685-25\Ch3\Report_Appearance.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\Framemaker_Files\24-10685-25\Ch3\Report_Format.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\Framemaker_Files\24-10685-25\Ch3\Running_Versus_Scheduling_Reports.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\Framemaker_Files\24-10685-25\Ch3\Sharing_A_Report.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\Framemaker_Files\24-10685-25\Ch3\Standard_Reports.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\Framemaker_Files\24-10685-25\Ch3\Text_Fields.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\Framemaker_Files\24-10685-25\Ch4\bsscftp.txt" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\Framemaker_Files\24-10685-25\Ch4\Ch4.css" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\Framemaker_Files\24-10685-25\Ch4\Configuration_Criteria.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\Framemaker_Files\24-10685-25\Ch4\Modifying_a_Scheduled_Report.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\Framemaker_Files\24-10685-25\Ch4\Running_and_Scheduling_Reports.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\Framemaker_Files\24-10685-25\Ch4\Running_a_Report.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\Framemaker_Files\24-10685-25\Ch4\Scheduling_a_Report.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\Framemaker_Files\24-10685-25\Front_Cover\bsscftp.txt" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\Framemaker_Files\24-10685-25\Front_Cover\Front_Cover.css" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\go.gif" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\gray-left.gif" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\gray-rt.gif" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\greyback.gif" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\index.gif" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\index.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\index_csh.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\index_rhc.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\jci_logo_color_small.png" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\left-ar.gif" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\MasterData.xml" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\other_index.gif" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\page.gif" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\readme.txt" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\resource\bsscftp.txt" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\resource\resource.xml" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\RHStyleMapping.css" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\right-ar.gif" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\search.gif" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\SearchOptions.xml" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\urls.gif" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whbrs.xml" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whcshdata.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whcsh_home.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whdata\bsscftp.txt" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whdata\whgdata.js" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whdata\whglo.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whdata\whglo.js" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whdata\whidata.js" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whdata\whidata0.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whdata\whidx.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whdata\whidx.js" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whdata\whtdata.js" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whdata\whtdata0.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whdata\whtoc.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whdata\whtoc.js" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whestart.ico" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whfbody.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whfdhtml.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whfform.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whfhost.js" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whform.js" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whframes.js" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgbody.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\bsscftp.txt" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whexpbar.gif" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whlstf0.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whlstf1.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whlstf2.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whlstf3.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whlstf4.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whlstf5.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whlstf6.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whlstfl0.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whlstfl1.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whlstfl10.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whlstfl11.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whlstfl12.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whlstfl13.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whlstfl14.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whlstfl15.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whlstfl16.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whlstfl17.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whlstfl18.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whlstfl19.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whlstfl2.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whlstfl20.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whlstfl21.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whlstfl22.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whlstfl3.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whlstfl4.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whlstfl5.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whlstfl6.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whlstfl7.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whlstfl8.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whlstfl9.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whlstg0.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whlsti0.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whlstt0.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whlstt1.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whlstt2.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whlstt3.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whlstt4.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whlstt5.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whnvf30.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whnvf31.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whnvf32.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whnvf33.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whnvl31.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whnvl32.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whnvl33.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whnvp30.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whnvp31.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whnvp32.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whnvp33.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whnvt30.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whnvt31.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whnvt32.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdata\whnvt33.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdef.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whgdhtml.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whghost.js" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whhost.js" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whibody.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whidhtml.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whiform.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whihost.js" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whlang.js" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whmozemu.js" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whmsg.js" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whnjs.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whphost.js" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whproj.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whproj.js" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whproj.xml" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whproxy.js" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whres.xml" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whrstart.ico" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whskin_banner.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whskin_blank.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whskin_frmset01.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whskin_frmset010.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whskin_homepage.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whskin_info.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whskin_mbars.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whskin_pdhtml.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whskin_pickup.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whskin_plist.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whskin_tbars.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whskin_tw.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whstart.ico" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whstart.js" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whstub.js" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whst_topics.xml" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whtbar.js" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whtdhtml.htm" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whthost.js" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whtopic.js" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\wht_abge.jpg" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\wht_abgi.jpg" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\wht_abgw.jpg" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\wht_abte.jpg" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\wht_abti.jpg" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\wht_abtw.jpg" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\wht_fts_h.gif" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\wht_fts_n.gif" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\wht_glo_h.gif" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\wht_glo_n.gif" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\wht_go.gif" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\wht_hide.gif" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\wht_idx_h.gif" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\wht_idx_n.gif" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\wht_logo1.gif" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\wht_logo2.gif" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\wht_next.gif" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\wht_next_g.gif" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\wht_prev.gif" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\wht_prev_g.gif" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\wht_spac.gif" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\wht_sync.gif" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\wht_tab0.gif" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\wht_tab1.gif" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\wht_tab2.gif" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\wht_tab3.gif" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\wht_tab4.gif" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\wht_tab5.gif" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\wht_tab6.gif" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\wht_tab7.gif" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\wht_tab8.gif" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\wht_toc_h.gif" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\wht_toc_n.gif" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\wht_ws.gif" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\wht_ws_g.gif" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whutils.js" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whver.js" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whxdata\bsscftp.txt" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whxdata\packageindex.xml" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whxdata\package_0.xml" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whxdata\synonym.xml" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whxdata\topictableindex.xml" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whxdata\topictable_0.xml" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whxdata\whfts.xml" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whxdata\whglo.xml" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whxdata\whidata0.xml" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whxdata\whidx.xml" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whxdata\whtdata0.xml" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\whxdata\whtoc.xml" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\xmlreadhelper.js" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\bookclosed.gif" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\book_open.gif" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\bsscftp.txt" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\close.gif" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\content.gif" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\cshdat_robohelp.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\cshdat_webhelp.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\default.css" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\directional.gif" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\ehlpdhtm.js" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\favicon.png" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\Framemaker_Files\24-10685-173_Rev.-\Back_Cover\Back_Cover.css" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\Framemaker_Files\24-10685-173_Rev.-\Back_Cover\Back_Cover.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\Framemaker_Files\24-10685-173_Rev.-\Back_Cover\bsscftp.txt" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\Framemaker_Files\24-10685-173_Rev.-\Contents\About_the_P2000_Web_UI.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\Framemaker_Files\24-10685-173_Rev.-\Contents\Browser_Requirements.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\Framemaker_Files\24-10685-173_Rev.-\Contents\bsscftp.txt" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\Framemaker_Files\24-10685-173_Rev.-\Contents\Communications_with_the_P2000_ARS.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\Framemaker_Files\24-10685-173_Rev.-\Contents\Configuring_SSL.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\Framemaker_Files\24-10685-173_Rev.-\Contents\Contents.css" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\Framemaker_Files\24-10685-173_Rev.-\Contents\Contents00005.jpg" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\Framemaker_Files\24-10685-173_Rev.-\Contents\Getting_Started.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\Framemaker_Files\24-10685-173_Rev.-\Contents\Installing_the_P2000_Web_UI.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\Framemaker_Files\24-10685-173_Rev.-\Contents\P2000_Menu_Permissions_for_Web_UI.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\Framemaker_Files\24-10685-173_Rev.-\Contents\P2000_Web_UI_Navigation_Options_Menu_Bar.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\Framemaker_Files\24-10685-173_Rev.-\Contents\Signing_In.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\Framemaker_Files\24-10685-173_Rev.-\Contents\Uploading_a_Company_Logo.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\go.gif" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\gray-left.gif" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\gray-rt.gif" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\greyback.gif" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\index.gif" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\index.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\index_csh.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\index_rhc.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\jci_logo_color_small.png" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\left-ar.gif" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\MasterData.xml" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\other_index.gif" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\page.gif" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\readme.txt" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\resource\bsscftp.txt" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\resource\resource.xml" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\RHStyleMapping.css" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\right-ar.gif" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\search.gif" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\SearchOptions.xml" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\urls.gif" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\Welcome.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whbrs.xml" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whcshdata.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whcsh_home.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whdata\bsscftp.txt" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whdata\whgdata.js" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whdata\whglo.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whdata\whglo.js" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whdata\whidata.js" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whdata\whidata0.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whdata\whidx.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whdata\whidx.js" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whdata\whtdata.js" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whdata\whtdata0.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whdata\whtoc.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whdata\whtoc.js" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whestart.ico" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whfbody.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whfdhtml.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whfform.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whfhost.js" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whform.js" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whframes.js" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgbody.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdata\bsscftp.txt" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdata\whexpbar.gif" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdata\whlstf0.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdata\whlstf1.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdata\whlstf2.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdata\whlstf3.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdata\whlstfl0.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdata\whlstfl1.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdata\whlstfl10.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdata\whlstfl11.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdata\whlstfl12.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdata\whlstfl13.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdata\whlstfl14.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdata\whlstfl15.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdata\whlstfl16.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdata\whlstfl17.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdata\whlstfl18.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdata\whlstfl19.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdata\whlstfl2.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdata\whlstfl20.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdata\whlstfl21.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdata\whlstfl3.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdata\whlstfl4.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdata\whlstfl5.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdata\whlstfl6.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdata\whlstfl7.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdata\whlstfl8.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdata\whlstfl9.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdata\whlstg0.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdata\whlsti0.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdata\whlstt0.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdata\whlstt1.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdata\whlstt2.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdata\whnvf30.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdata\whnvf31.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdata\whnvf32.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdata\whnvf33.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdata\whnvl31.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdata\whnvl32.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdata\whnvl33.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdata\whnvp30.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdata\whnvp31.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdata\whnvp32.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdata\whnvp33.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdata\whnvt30.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdata\whnvt31.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdata\whnvt32.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdata\whnvt33.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdef.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whgdhtml.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whghost.js" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whhost.js" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whibody.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whidhtml.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whiform.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whihost.js" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whlang.js" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whmozemu.js" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whmsg.js" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whnjs.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whphost.js" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whproj.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whproj.js" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whproj.xml" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whproxy.js" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whres.xml" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whrstart.ico" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whskin_banner.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whskin_blank.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whskin_frmset01.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whskin_frmset010.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whskin_homepage.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whskin_info.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whskin_mbars.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whskin_pdhtml.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whskin_pickup.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whskin_plist.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whskin_tbars.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whskin_tw.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whstart.ico" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whstart.js" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whstub.js" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whst_topics.xml" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whtbar.js" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whtdhtml.htm" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whthost.js" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whtopic.js" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\wht_abge.jpg" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\wht_abgi.jpg" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\wht_abgw.jpg" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\wht_abte.jpg" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\wht_abti.jpg" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\wht_abtw.jpg" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\wht_fts_h.gif" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\wht_fts_n.gif" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\wht_glo_h.gif" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\wht_glo_n.gif" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\wht_go.gif" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\wht_hide.gif" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\wht_idx_h.gif" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\wht_idx_n.gif" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\wht_logo1.gif" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\wht_logo2.gif" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\wht_next.gif" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\wht_next_g.gif" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\wht_prev.gif" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\wht_prev_g.gif" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\wht_spac.gif" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\wht_sync.gif" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\wht_tab0.gif" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\wht_tab1.gif" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\wht_tab2.gif" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\wht_tab3.gif" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\wht_tab4.gif" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\wht_tab5.gif" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\wht_tab6.gif" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\wht_tab7.gif" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\wht_tab8.gif" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\wht_toc_h.gif" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\wht_toc_n.gif" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\wht_ws.gif" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\wht_ws_g.gif" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whutils.js" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whver.js" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whxdata\bsscftp.txt" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whxdata\packageindex.xml" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whxdata\package_0.xml" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whxdata\package_1.xml" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whxdata\package_2.xml" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whxdata\synonym.xml" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whxdata\topictableindex.xml" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whxdata\topictable_0.xml" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whxdata\whfts.xml" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whxdata\whglo.xml" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whxdata\whidata0.xml" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whxdata\whidx.xml" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whxdata\whtdata0.xml" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\whxdata\whtoc.xml" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\xmlreadhelper.js" />
+    <Content Include="Help\resource\resource.xml" />
+    <Content Include="Help\RHStyleMapping.css" />
+    <Content Include="Help\SearchOptions.xml" />
+    <Content Include="Help\whbrs.xml" />
+    <Content Include="Help\whcshdata.htm" />
+    <Content Include="Help\whcsh_home.htm" />
+    <Content Include="Help\whdata\whgdata.js" />
+    <Content Include="Help\whdata\whglo.htm" />
+    <Content Include="Help\whdata\whglo.js" />
+    <Content Include="Help\whdata\whidata.js" />
+    <Content Include="Help\whdata\whidx.htm" />
+    <Content Include="Help\whdata\whidx.js" />
+    <Content Include="Help\whdata\whtdata.js" />
+    <Content Include="Help\whdata\whtdata0.htm" />
+    <Content Include="Help\whdata\whtoc.htm" />
+    <Content Include="Help\whdata\whtoc.js" />
+    <Content Include="Help\whestart.ico" />
+    <Content Include="Help\whfbody.htm" />
+    <Content Include="Help\whfdhtml.htm" />
+    <Content Include="Help\whfform.htm" />
+    <Content Include="Help\whfhost.js" />
+    <Content Include="Help\whform.js" />
+    <Content Include="Help\whframes.js" />
+    <Content Include="Help\whgbody.htm" />
+    <Content Include="Help\whgdata\whexpbar.gif" />
+    <Content Include="Help\whgdata\whlstf0.htm" />
+    <Content Include="Help\whgdata\whlstfl0.htm" />
+    <Content Include="Help\whgdata\whlstfl1.htm" />
+    <Content Include="Help\whgdata\whlstfl10.htm" />
+    <Content Include="Help\whgdata\whlstfl11.htm" />
+    <Content Include="Help\whgdata\whlstfl2.htm" />
+    <Content Include="Help\whgdata\whlstfl3.htm" />
+    <Content Include="Help\whgdata\whlstfl4.htm" />
+    <Content Include="Help\whgdata\whlstfl5.htm" />
+    <Content Include="Help\whgdata\whlstfl6.htm" />
+    <Content Include="Help\whgdata\whlstfl7.htm" />
+    <Content Include="Help\whgdata\whlstfl8.htm" />
+    <Content Include="Help\whgdata\whlstfl9.htm" />
+    <Content Include="Help\whgdata\whlstg0.htm" />
+    <Content Include="Help\whgdata\whlsti0.htm" />
+    <Content Include="Help\whgdata\whlstt0.htm" />
+    <Content Include="Help\whgdata\whnvf30.htm" />
+    <Content Include="Help\whgdata\whnvf31.htm" />
+    <Content Include="Help\whgdata\whnvf32.htm" />
+    <Content Include="Help\whgdata\whnvf33.htm" />
+    <Content Include="Help\whgdata\whnvl31.htm" />
+    <Content Include="Help\whgdata\whnvl32.htm" />
+    <Content Include="Help\whgdata\whnvl33.htm" />
+    <Content Include="Help\whgdata\whnvp30.htm" />
+    <Content Include="Help\whgdata\whnvp31.htm" />
+    <Content Include="Help\whgdata\whnvp32.htm" />
+    <Content Include="Help\whgdata\whnvp33.htm" />
+    <Content Include="Help\whgdata\whnvt30.htm" />
+    <Content Include="Help\whgdata\whnvt31.htm" />
+    <Content Include="Help\whgdata\whnvt32.htm" />
+    <Content Include="Help\whgdata\whnvt33.htm" />
+    <Content Include="Help\whgdef.htm" />
+    <Content Include="Help\whgdhtml.htm" />
+    <Content Include="Help\whghost.js" />
+    <Content Include="Help\whhost.js" />
+    <Content Include="Help\whibody.htm" />
+    <Content Include="Help\whidhtml.htm" />
+    <Content Include="Help\whiform.htm" />
+    <Content Include="Help\whihost.js" />
+    <Content Include="Help\whlang.js" />
+    <Content Include="Help\whmozemu.js" />
+    <Content Include="Help\whmsg.js" />
+    <Content Include="Help\whnjs.htm" />
+    <Content Include="Help\whphost.js" />
+    <Content Include="Help\whproj.htm" />
+    <Content Include="Help\whproj.js" />
+    <Content Include="Help\whproj.xml" />
+    <Content Include="Help\whproxy.js" />
+    <Content Include="Help\whres.xml" />
+    <Content Include="Help\whrstart.ico" />
+    <Content Include="Help\whskin_banner.htm" />
+    <Content Include="Help\whskin_blank.htm" />
+    <Content Include="Help\whskin_frmset01.htm" />
+    <Content Include="Help\whskin_frmset010.htm" />
+    <Content Include="Help\whskin_homepage.htm" />
+    <Content Include="Help\whskin_info.htm" />
+    <Content Include="Help\whskin_mbars.htm" />
+    <Content Include="Help\whskin_pdhtml.htm" />
+    <Content Include="Help\whskin_pickup.htm" />
+    <Content Include="Help\whskin_plist.htm" />
+    <Content Include="Help\whskin_tbars.htm" />
+    <Content Include="Help\whskin_tw.htm" />
+    <Content Include="Help\whstart.ico" />
+    <Content Include="Help\whstart.js" />
+    <Content Include="Help\whstub.js" />
+    <Content Include="Help\whst_topics.xml" />
+    <Content Include="Help\whtbar.js" />
+    <Content Include="Help\whtdhtml.htm" />
+    <Content Include="Help\whthost.js" />
+    <Content Include="Help\whtopic.js" />
+    <Content Include="Help\wht_abge.jpg" />
+    <Content Include="Help\wht_abgi.jpg" />
+    <Content Include="Help\wht_abgw.jpg" />
+    <Content Include="Help\wht_abte.jpg" />
+    <Content Include="Help\wht_abti.jpg" />
+    <Content Include="Help\wht_abtw.jpg" />
+    <Content Include="Help\wht_fts_h.gif" />
+    <Content Include="Help\wht_fts_n.gif" />
+    <Content Include="Help\wht_glo_h.gif" />
+    <Content Include="Help\wht_glo_n.gif" />
+    <Content Include="Help\wht_go.gif" />
+    <Content Include="Help\wht_hide.gif" />
+    <Content Include="Help\wht_idx_h.gif" />
+    <Content Include="Help\wht_idx_n.gif" />
+    <Content Include="Help\wht_logo1.gif" />
+    <Content Include="Help\wht_logo2.gif" />
+    <Content Include="Help\wht_next.gif" />
+    <Content Include="Help\wht_next_g.gif" />
+    <Content Include="Help\wht_prev.gif" />
+    <Content Include="Help\wht_prev_g.gif" />
+    <Content Include="Help\wht_spac.gif" />
+    <Content Include="Help\wht_sync.gif" />
+    <Content Include="Help\wht_tab0.gif" />
+    <Content Include="Help\wht_tab1.gif" />
+    <Content Include="Help\wht_tab2.gif" />
+    <Content Include="Help\wht_tab3.gif" />
+    <Content Include="Help\wht_tab4.gif" />
+    <Content Include="Help\wht_tab5.gif" />
+    <Content Include="Help\wht_tab6.gif" />
+    <Content Include="Help\wht_tab7.gif" />
+    <Content Include="Help\wht_tab8.gif" />
+    <Content Include="Help\wht_toc1.gif" />
+    <Content Include="Help\wht_toc2.gif" />
+    <Content Include="Help\wht_toc3.gif" />
+    <Content Include="Help\wht_toc4.gif" />
+    <Content Include="Help\wht_toc_h.gif" />
+    <Content Include="Help\wht_toc_n.gif" />
+    <Content Include="Help\wht_ws.gif" />
+    <Content Include="Help\wht_ws_g.gif" />
+    <Content Include="Help\whutils.js" />
+    <Content Include="Help\whver.js" />
+    <Content Include="Help\whxdata\packageindex.xml" />
+    <Content Include="Help\whxdata\package_0.xml" />
+    <Content Include="Help\whxdata\synonym.xml" />
+    <Content Include="Help\whxdata\topictableindex.xml" />
+    <Content Include="Help\whxdata\topictable_0.xml" />
+    <Content Include="Help\whxdata\whfts.xml" />
+    <Content Include="Help\whxdata\whglo.xml" />
+    <Content Include="Help\whxdata\whidx.xml" />
+    <Content Include="Help\whxdata\whtdata0.xml" />
+    <Content Include="Help\whxdata\whtoc.xml" />
+    <Content Include="Help\xmlreadhelper.js" />
+    <Content Include="Images\Csv.png" />
+    <Content Include="Images\empty.png" />
+    <Content Include="Images\excel.png" />
+    <Content Include="Images\exclamation.png" />
+    <Content Include="Images\gear.png" />
+    <Content Include="Images\help.png" />
+    <Content Include="Images\info_new.png" />
+    <Content Include="Images\item_collapsed.png" />
+    <Content Include="Images\item_expanded.png" />
+    <Content Include="Images\jci_logo-white.png" />
+    <Content Include="Images\login_shadow.png" />
+    <Content Include="Images\logo.gif" />
+    <Content Include="Images\P2000_logo_blue.png" />
+    <Content Include="Images\p2000_small_logo_white.png" />
+    <Content Include="Images\pdf.png" />
+    <Content Include="Images\PendingIndicator.png" />
+    <Content Include="Images\PriorityIcon.png" />
+    <Content Include="Images\ProductLogo.png" />
+    <Content Include="Images\speaker.png" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jci.polyfills.js" />
+    <Content Include="Scripts\jquery-1.8.0-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.8.0.js" />
+    <Content Include="Scripts\jquery-1.8.0.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.23.js" />
+    <Content Include="Scripts\jquery-ui-1.8.23.min.js" />
+    <Content Include="Scripts\jquery-ui-i18n.js" />
+    <Content Include="Scripts\jquery-ui-i18n.min.js" />
+    <Content Include="Scripts\jquery.signalR-0.5.2.js" />
+    <Content Include="Scripts\jquery.signalR-0.5.2.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\knockout-2.1.0.debug.js" />
+    <Content Include="Scripts\knockout-2.1.0.js" />
+    <Content Include="Scripts\lib\crossroads.min.js" />
+    <Content Include="Scripts\lib\signals.min.js" />
+    <Content Include="Scripts\LimitedColorPicker.js" />
+    <Content Include="Scripts\require.config.js" />
+    <Content Include="Scripts\require.js" />
+    <Content Include="Scripts\rivets.js" />
+    <Content Include="Scripts\webapi.csrf.js" />
+    <Content Include="Scripts\webapi.routes.js" />
+    <Content Include="ViewModels\AlarmDisplayOptions\AlarmDisplayRange.js" />
+    <Content Include="ViewModels\AlarmDisplayOptions\AlarmDisplayOptionsViewModel.js" />
+    <Content Include="ViewModels\AlarmManager\Alarm.js" />
+    <Content Include="ViewModels\AlarmManager\AlarmDisplayOptions.js" />
+    <Content Include="ViewModels\AlarmManager\AlarmManagerViewModel.js" />
+    <Content Include="ViewModels\AlarmManager\HistoryEntry.js" />
+    <Content Include="Scripts\johnson.controls.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\logging.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="ViewModels\Reports\ReportParameters.js" />
+    <Content Include="ViewModels\Reports\RunnerViewModel.js" />
+    <Content Include="ViewModels\Reports\SchedulerViewModel.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="_ViewStart.cshtml" />
+    <Content Include="Views\Account\LogOn.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BuildingSecurity.Globalization\BuildingSecurity.Globalization.csproj">
+      <Project>{5AF24352-A6E0-420D-A9D6-680EFECE44C8}</Project>
+      <Name>BuildingSecurity.Globalization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BuildingSecurity.Reporting\BuildingSecurity.Reporting.csproj">
+      <Project>{70EDDE33-397D-4A53-A497-4E735B1C21DD}</Project>
+      <Name>BuildingSecurity.Reporting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BuildingSecurity.Web.Kernel\BuildingSecurity.Web.Kernel.csproj">
+      <Project>{F842A84E-9D38-425E-BDFE-28AEE3819A9F}</Project>
+      <Name>BuildingSecurity.Web.Kernel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BuildingSecurity.Web\BuildingSecurity.Web.csproj">
+      <Project>{334590E7-4244-4793-AE53-0B8F59F63615}</Project>
+      <Name>BuildingSecurity.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JohnsonControls.BuildingSecurity\JohnsonControls.BuildingSecurity.csproj">
+      <Project>{2E986667-407A-4B1B-B5A6-4BACF481DA01}</Project>
+      <Name>JohnsonControls.BuildingSecurity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JohnsonControls.BuildingSecurity\JohnsonControls.BuildingSecurity.csproj">
+      <Project>{2E986667-407A-4B1B-B5A6-4BACF481DA01}</Project>
+      <Name>JohnsonControls.BuildingSecurity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JohnsonControls.Core\JohnsonControls.Core.csproj">
+      <Project>{2D6A836C-C3A4-4109-A9AB-CB274FA5ADA1}</Project>
+      <Name>JohnsonControls.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JohnsonControls.Web\JohnsonControls.Web.csproj">
+      <Project>{43B2657B-FC8A-4B09-9599-F66845DEF183}</Project>
+      <Name>JohnsonControls.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JohnsonControls.XmlRpc\JohnsonControls.XmlRpc.csproj">
+      <Project>{4AF3B7F8-837A-4FEC-BF1F-F182285C409D}</Project>
+      <Name>JohnsonControls.XmlRpc</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reports\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Unauthorized\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reports\Runner.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reports\Scheduler.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reports\MissingReport.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ReportServerConfiguration\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AlarmDisplayOptions\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reports\DynamicParameters.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reports\Error.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reports\Scheduled.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reports\ModifyScheduled.cshtml" />
+    <Content Include="Views\Reports\ScheduledReport.cshtml" />
+    <Content Include="Views\Reports\ScheduleForm.cshtml" />
+    <Content Include="Areas\Cases\Views\Web.config" />
+    <Content Include="Areas\Cases\Views\Cases\Index.cshtml" />
+    <Content Include="Areas\Cases\Views\Cases\CreateCase.cshtml" />
+    <Content Include="Areas\Cases\Views\Cases\ViewCase.cshtml" />
+    <Content Include="Areas\Cases\Views\Cases\CaseList.cshtml" />
+    <Content Include="Areas\Cases\Views\Cases\NoteDetails.cshtml" />
+    <None Include="Help-es\mergedProjects\P2000 Alarm Manager Help\p2000 alarm manager help.log" />
+    <None Include="Help-es\mergedProjects\P2000 Alarm Manager Help\RoboHHRE.lng" />
+    <None Include="Help-es\mergedProjects\P2000 ARS Web Help\p2000 ars web help.log" />
+    <None Include="Help-es\mergedProjects\P2000 ARS Web Help\RoboHHRE.lng" />
+    <None Include="Help-es\p2000 web user interface help.log" />
+    <None Include="Help-es\RoboHHRE.lng" />
+    <Content Include="Views\AlarmManager\Index.cshtml" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\p2000 alarm manager help.log" />
+    <Content Include="Help\mergedProjects\P2000 Alarm Manager Help\RoboHHRE.lng" />
+    <Content Include="Help\mergedProjects\P2000 Archive Report Server Help\RoboHHRE.lng" />
+    <Content Include="Help\mergedProjects\P2000 Web UI - Getting Started\RoboHHRE.lng" />
+    <Content Include="Help\p2000 web user interface help.log" />
+    <Content Include="Help\RoboHHRE.lng" />
+    <Content Include="Views\AlarmManager\IndexV2.cshtml" />
+    <Content Include="Views\Error\403.cshtml" />
+    <Content Include="Scripts\webapi.errors.js" />
+    <Content Include="Scripts\webapi.ajax.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Areas\Cases\Models\" />
+    <Folder Include="Areas\Cases\Views\Shared\" />
+    <Folder Include="ViewModels\CompanyLogo\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>18223</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

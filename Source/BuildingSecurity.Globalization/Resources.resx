@@ -1,0 +1,1140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountControllerLogOnFailedErrorMessage" xml:space="preserve">
+    <value>The user name or password provided is incorrect.</value>
+  </data>
+  <data name="ActiveViewAcknowledgeItemTitle" xml:space="preserve">
+    <value>Acknowledge</value>
+  </data>
+  <data name="ActiveViewAlarmDetailsResponseLabel" xml:space="preserve">
+    <value>Type a response</value>
+  </data>
+  <data name="ActiveViewAlarmListNewAlarmsFormat" xml:space="preserve">
+    <value>{0} New Alarm(s)</value>
+    <comment>) is the count of new alarms received while the list is paused.</comment>
+  </data>
+  <data name="ActiveViewAlarmListStatusFormat" xml:space="preserve">
+    <value>{0} Total Alarm(s), &lt;strong&gt;{1} Pending Alarm(s)&lt;/strong&gt;,  {2} Selected Alarm(s)</value>
+    <comment>0 is the count of all alarms in a list, 1 is the count of pending alarms in a list, 2 is the count of selected alarms in a list - The pending alarms fragment should keep the &lt;strong&gt; tags surrounding it as this will  become an html fragment</comment>
+  </data>
+  <data name="ActiveViewCloseItemTitle" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="ActiveViewCollapseButtonTooltip" xml:space="preserve">
+    <value>Collapse</value>
+  </data>
+  <data name="ActiveViewCompleteItemTitle" xml:space="preserve">
+    <value>Complete</value>
+  </data>
+  <data name="ActiveViewExpandButtonTooltip" xml:space="preserve">
+    <value>Expand</value>
+  </data>
+  <data name="ActiveViewHeaderItemSelectorTooltip" xml:space="preserve">
+    <value>Select / Deselect All</value>
+  </data>
+  <data name="ActiveViewInstructions" xml:space="preserve">
+    <value>Alarms</value>
+  </data>
+  <data name="ActiveViewItemCategoryLabel" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="ActiveViewItemDescriptionTitle" xml:space="preserve">
+    <value>Source</value>
+  </data>
+  <data name="ActiveViewItemEscalationLabel" xml:space="preserve">
+    <value>Escalation</value>
+  </data>
+  <data name="ActiveViewItemInstructionsLabel" xml:space="preserve">
+    <value>Instructions</value>
+  </data>
+  <data name="ActiveViewItemIsPublicLabel" xml:space="preserve">
+    <value>Public</value>
+  </data>
+  <data name="ActiveViewItemOccuredTitle" xml:space="preserve">
+    <value>Date/Time</value>
+  </data>
+  <data name="ActiveViewItemPriorityTitle" xml:space="preserve">
+    <value>Priority</value>
+  </data>
+  <data name="ActiveViewItemShowDetailsTitle" xml:space="preserve">
+    <value>Details/Respond &gt;</value>
+  </data>
+  <data name="ActiveViewItemSiteLabel" xml:space="preserve">
+    <value>Site</value>
+  </data>
+  <data name="ActiveViewItemStateLabel" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="ActiveViewItemStatusTitle" xml:space="preserve">
+    <value>Alarm Status</value>
+  </data>
+  <data name="ActiveViewItemUpdatedTitle" xml:space="preserve">
+    <value>Action Date/Time</value>
+  </data>
+  <data name="ActiveViewListItemSelectorTooltip" xml:space="preserve">
+    <value>Select / Deselect</value>
+  </data>
+  <data name="ActiveViewMoreActionsButtonTitle" xml:space="preserve">
+    <value>More Actions</value>
+  </data>
+  <data name="ActiveViewPendingIndicatorTooltip" xml:space="preserve">
+    <value>Pending</value>
+  </data>
+  <data name="ActiveViewRemoveItemTitle" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="ActiveViewRespondToItemTitle" xml:space="preserve">
+    <value>Respond</value>
+  </data>
+  <data name="ActiveViewResponseDialogCancelButtonTitle" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="ActiveViewResponseDialogConfirmButtonTitle" xml:space="preserve">
+    <value>Respond</value>
+  </data>
+  <data name="ActiveViewResponseDialogManualResponseLabel" xml:space="preserve">
+    <value>Type a response</value>
+  </data>
+  <data name="ActiveViewResponseDialogRepsonseSeperatorTitle" xml:space="preserve">
+    <value>or</value>
+  </data>
+  <data name="ActiveViewResponseDialogTitle" xml:space="preserve">
+    <value>Respond to selected alarms</value>
+  </data>
+  <data name="ActiveViewSettingsButtonTitle" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="ActiveViewTitle" xml:space="preserve">
+    <value>Alarms</value>
+  </data>
+  <data name="Ascending" xml:space="preserve">
+    <value>Ascending</value>
+  </data>
+  <data name="CaseFilterAll" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="CaseFilterOpen" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="CaseHistory" xml:space="preserve">
+    <value>Case History</value>
+  </data>
+  <data name="CaseIdRequired" xml:space="preserve">
+    <value>Id is required.</value>
+  </data>
+  <data name="CaseOwnerMissing" xml:space="preserve">
+    <value>Owner is required.</value>
+  </data>
+  <data name="CaseTitleAcceptEdit" xml:space="preserve">
+    <value>Accept changes made to title.</value>
+  </data>
+  <data name="CaseTitleCancelEdit" xml:space="preserve">
+    <value>Cancel editing of title.</value>
+  </data>
+  <data name="CaseUpdateFieldRequired" xml:space="preserve">
+    <value>UpdateField is required.</value>
+  </data>
+  <data name="CaseUpdateFieldIsNotRecognized" xml:space="preserve">
+    <value>UpdateField does not contain a recognized value.</value>
+  </data>
+  <data name="CompanyName" xml:space="preserve">
+    <value>Johnson Controls Inc.</value>
+  </data>
+  <data name="Descending" xml:space="preserve">
+    <value>Descending</value>
+  </data>
+  <data name="ExcelLabel" xml:space="preserve">
+    <value>Microsoft Excel</value>
+  </data>
+  <data name="ErrorInvalidRequest" xml:space="preserve">
+    <value>The request contained invalid data.</value>
+  </data>
+  <data name="LayoutPageTitleFormat" xml:space="preserve">
+    <value>{0} - {1}</value>
+    <comment>0 is the actual page title, 1 is the Product Name</comment>
+  </data>
+  <data name="LogOnModelPasswordLabel" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="LogOnModelPasswordRequiredErrorMessage" xml:space="preserve">
+    <value>The Password field is required.</value>
+  </data>
+  <data name="LogOnModelUserNameLabel" xml:space="preserve">
+    <value>User Name</value>
+  </data>
+  <data name="LogOnModelUserNameRequiredErrorMessage" xml:space="preserve">
+    <value>The User Name field is required.</value>
+  </data>
+  <data name="LogOnPartialGreetingFormat" xml:space="preserve">
+    <value>Hello, {0}!</value>
+    <comment>0 is the user's name or username</comment>
+  </data>
+  <data name="LogOnPartialLogOffLinkText" xml:space="preserve">
+    <value>Sign out</value>
+  </data>
+  <data name="LogOnViewInstructions" xml:space="preserve">
+    <value>Enter your user name and password below.</value>
+  </data>
+  <data name="LogOnViewLegend" xml:space="preserve">
+    <value>Sign in</value>
+  </data>
+  <data name="LogOnViewSubmitButtonText" xml:space="preserve">
+    <value>Sign in</value>
+  </data>
+  <data name="LogOnViewTitle" xml:space="preserve">
+    <value>Sign in</value>
+  </data>
+  <data name="LogOnViewValidationSummaryMessage" xml:space="preserve">
+    <value>Sign in was unsuccessful. Please correct the errors and try again.</value>
+  </data>
+  <data name="NoteDetailsAttachedBy" xml:space="preserve">
+    <value>Entered by</value>
+  </data>
+  <data name="NoteDetailsClose" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="NoteDetailsNote" xml:space="preserve">
+    <value>Note</value>
+  </data>
+  <data name="NoteDetailsTimeEntered" xml:space="preserve">
+    <value>Entered at</value>
+  </data>
+  <data name="PdfLabel" xml:space="preserve">
+    <value>PDF</value>
+  </data>
+  <data name="ProductName" xml:space="preserve">
+    <value>P2000</value>
+    <comment>Used in the webpage titles.</comment>
+  </data>
+  <data name="ReportDestinationEmailLabel" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="ReportDestinationFileShareLabel" xml:space="preserve">
+    <value>File Share</value>
+  </data>
+  <data name="ReportFrequencyDailyLabel" xml:space="preserve">
+    <value>Daily</value>
+  </data>
+  <data name="ReportFrequencyWeeklyLabel" xml:space="preserve">
+    <value>Weekly</value>
+  </data>
+  <data name="ReportRunnerViewHeaderTitle" xml:space="preserve">
+    <value>TAILOR YOUR REPORT</value>
+  </data>
+  <data name="ReportRunnerViewInstructions" xml:space="preserve">
+    <value>One-time reports can be generated in Microsoft Excel, PDF, or CSV formats.</value>
+  </data>
+  <data name="ReportRunnerViewPageTitleFormat" xml:space="preserve">
+    <value>{0}</value>
+    <comment>0 is the name of a report</comment>
+  </data>
+  <data name="ReportRunnerViewStep1Prompt" xml:space="preserve">
+    <value>How do you want to configure your report?</value>
+  </data>
+  <data name="ReportRunnerViewStep2Prompt" xml:space="preserve">
+    <value>How do you want to generate your report?</value>
+  </data>
+  <data name="ReportRunnerViewTitleFormat" xml:space="preserve">
+    <value>{0}</value>
+    <comment>0 is the name of a report</comment>
+  </data>
+  <data name="ReportSchedulerEmailAddressesHelpBlock" xml:space="preserve">
+    <value>(Use (;) to separate multiple e-mail addresses.)</value>
+  </data>
+  <data name="ReportSchedulerModelCommentLabel" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+  <data name="ReportSchedulerModelEmailAddressesLabel" xml:space="preserve">
+    <value>Email address(es)</value>
+  </data>
+  <data name="ReportSchedulerModelEndDateLabel" xml:space="preserve">
+    <value>Ending on</value>
+  </data>
+  <data name="ReportSchedulerModelLocationLabel" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="ReportSchedulerModelPasswordLabel" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="ReportSchedulerModelPasswordRequiredErrorMessage" xml:space="preserve">
+    <value>A Password must be entered for this scheduled report.</value>
+  </data>
+  <data name="ReportSchedulerModelStartDateLabel" xml:space="preserve">
+    <value>Starting on</value>
+  </data>
+  <data name="ReportSchedulerModelSubjectLabel" xml:space="preserve">
+    <value>Subject</value>
+  </data>
+  <data name="ReportSchedulerModelUserNameLabel" xml:space="preserve">
+    <value>User Name</value>
+  </data>
+  <data name="ReportSchedulerModelWeekDayLabel" xml:space="preserve">
+    <value>on</value>
+  </data>
+  <data name="ReportSchedulerModeRunTimeLabel" xml:space="preserve">
+    <value>at</value>
+  </data>
+  <data name="ReportSchedulerSubmitButtonTitle" xml:space="preserve">
+    <value>Schedule Report</value>
+  </data>
+  <data name="ReportSchedulerViewHeaderTitle" xml:space="preserve">
+    <value>TAILOR YOUR REPORT</value>
+  </data>
+  <data name="ReportSchedulerViewInstructions" xml:space="preserve">
+    <value>You may receive a scheduled report daily or weekly delivered to your email or a file share.</value>
+  </data>
+  <data name="ReportSchedulerViewPageTitle" xml:space="preserve">
+    <value>Schedule Report</value>
+  </data>
+  <data name="ReportSchedulerDescriptionPrompt" xml:space="preserve">
+    <value>How do you want to describe your report?</value>
+  </data>
+  <data name="ReportSchedulerConfigurePrompt" xml:space="preserve">
+    <value>How do you want to configure your report?</value>
+  </data>
+  <data name="ReportSchedulerReceiveFormatPrompt" xml:space="preserve">
+    <value>In what format would you like to receive your report?</value>
+  </data>
+  <data name="ReportSchedulerRunWhenPrompt" xml:space="preserve">
+    <value>When do you want to run your report?</value>
+  </data>
+  <data name="ReportsIndexViewCustomTabTitle" xml:space="preserve">
+    <value>Custom</value>
+  </data>
+  <data name="ReportsIndexViewInstructions" xml:space="preserve">
+    <value>Choose from one of the report types below.</value>
+  </data>
+  <data name="ReportsIndexViewPageTitle" xml:space="preserve">
+    <value>Run a Report</value>
+  </data>
+  <data name="ReportsIndexViewRunButtonTitle" xml:space="preserve">
+    <value>Run Now</value>
+  </data>
+  <data name="ReportsIndexViewScheduleButtonTitle" xml:space="preserve">
+    <value>Schedule</value>
+  </data>
+  <data name="ReportsIndexViewStandardTabTitle" xml:space="preserve">
+    <value>Standard</value>
+  </data>
+  <data name="ReportsIndexViewTitle" xml:space="preserve">
+    <value>Reports</value>
+  </data>
+  <data name="ReportsViewErrorLabel" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="ReportsViewInvalidReportErrorMessage" xml:space="preserve">
+    <value>The report you are trying to view can not be found.</value>
+  </data>
+  <data name="ReportsViewRequestedReportLabel" xml:space="preserve">
+    <value>Requested Report Id</value>
+  </data>
+  <data name="SiteHelpContentsTitle" xml:space="preserve">
+    <value>Help Contents</value>
+  </data>
+  <data name="SiteHelpTitle" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="SiteMenuHomeTitle" xml:space="preserve">
+    <value>Alarms</value>
+  </data>
+  <data name="SiteMenuInvestigateTitle" xml:space="preserve">
+    <value>Reports</value>
+  </data>
+  <data name="SiteMenuSystemSetupTitle" xml:space="preserve">
+    <value>System Setup</value>
+  </data>
+  <data name="SitePrivacyStatementTitle" xml:space="preserve">
+    <value>Privacy Statement</value>
+  </data>
+  <data name="SystemSetupViewTitle" xml:space="preserve">
+    <value>System Setup</value>
+  </data>
+  <data name="UnauthorizedViewMessage" xml:space="preserve">
+    <value>You do not have access to the requested feature. Please contact the system administrator.</value>
+  </data>
+  <data name="UnauthorizedViewTitle" xml:space="preserve">
+    <value>Unauthorized</value>
+  </data>
+  <data name="VersionFormat" xml:space="preserve">
+    <value>Version: {0}</value>
+    <comment>0 is the version of the application. Ex. 3.12.1.4</comment>
+  </data>
+  <data name="AlarmDisplayOptionsColorTitle" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="AlarmDisplayOptionsLoadFailedMessage" xml:space="preserve">
+    <value>An error occurred. Unable to load the alarm display options.</value>
+  </data>
+  <data name="AlarmDisplayOptionsPriorityRangeTitle" xml:space="preserve">
+    <value>Priority Range</value>
+  </data>
+  <data name="AlarmDisplayOptionsResetButtonTitle" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="AlarmDisplayOptionsSaveButtonTitle" xml:space="preserve">
+    <value>Save New Changes</value>
+  </data>
+  <data name="AlarmDisplayOptionsSaveCompletedMessage" xml:space="preserve">
+    <value>Your changes to the alarm display options have been saved successfully.</value>
+  </data>
+  <data name="AlarmDisplayOptionsSaveFailedMessage" xml:space="preserve">
+    <value>An error occurred. Your changes to the alarm display options have not been saved.</value>
+  </data>
+  <data name="AlarmDisplayOptionsSoundTitle" xml:space="preserve">
+    <value>Assigned Sound</value>
+  </data>
+  <data name="AlarmDisplayOptionsViewPageTitle" xml:space="preserve">
+    <value>Configure Alarm Display Options</value>
+  </data>
+  <data name="AlarmDisplayOptionsViewTitle" xml:space="preserve">
+    <value>Configure Alarm Display Options</value>
+  </data>
+  <data name="ActiveViewEntryListHistoryResponse" xml:space="preserve">
+    <value>Response</value>
+  </data>
+  <data name="ActiveViewEntryListHistoryState" xml:space="preserve">
+    <value>Alarm State</value>
+  </data>
+  <data name="ActiveViewEntryListHistoryStatus" xml:space="preserve">
+    <value>Alarm Status</value>
+  </data>
+  <data name="ActiveViewEntryListHistoryTimestamp" xml:space="preserve">
+    <value>Action Date/Time</value>
+  </data>
+  <data name="ActiveViewEntryListHistoryUser" xml:space="preserve">
+    <value>User Name</value>
+  </data>
+  <data name="ReportDescriptionAlarmActivity" xml:space="preserve">
+    <value>Displays all alarm activities, such as acknowledgements, responses, clearing of alarms, etc.</value>
+  </data>
+  <data name="ReportDescriptionAlarmHistory" xml:space="preserve">
+    <value>Shows all of the recorded alarms stored in the P2000.</value>
+  </data>
+  <data name="ReportDescriptionAlarmSummary" xml:space="preserve">
+    <value>Provides a historical alarm summary based on category, type, description, etc.</value>
+  </data>
+  <data name="ReportDescriptionAreaTransactionHistory" xml:space="preserve">
+    <value>Lists all badge in and out type transactions stored by the system for a specified area.</value>
+  </data>
+  <data name="ReportDescriptionAuditTrail" xml:space="preserve">
+    <value>Displays the menu items selected by an operator during a specific time and date. The report is time-stamped and monitors day-to-day activity of an operator.</value>
+  </data>
+  <data name="ReportDescriptionGuardTourTransactionHistory" xml:space="preserve">
+    <value>Lists all tour transactions performed by a guard during a tour of the facility.</value>
+  </data>
+  <data name="ReportDescriptionIntrusionTransactionHistory" xml:space="preserve">
+    <value>Displays the recorded historical activity of various intrusion related elements.</value>
+  </data>
+  <data name="ReportDescriptionMusterAnalysis" xml:space="preserve">
+    <value>Displays a listing of individuals within a Muster Zone during a drill or an actual emergency.</value>
+  </data>
+  <data name="ReportDescriptionTransactionHistory" xml:space="preserve">
+    <value>Shows the recorded history of various system elements (panels, terminals, inputs, outputs, host, etc) and the activity of those elements.</value>
+  </data>
+  <data name="ReportNameAlarmActivity" xml:space="preserve">
+    <value>Alarm Activity Report</value>
+  </data>
+  <data name="ReportNameAlarmHistory" xml:space="preserve">
+    <value>Alarm History Report</value>
+  </data>
+  <data name="ReportNameAlarmSummary" xml:space="preserve">
+    <value>Alarm Summary Report</value>
+  </data>
+  <data name="ReportNameAreaTransactionHistory" xml:space="preserve">
+    <value>Area Transaction Report</value>
+  </data>
+  <data name="ReportNameAuditTrail" xml:space="preserve">
+    <value>Audit Trail Report</value>
+  </data>
+  <data name="ReportNameGuardTourTransactionHistory" xml:space="preserve">
+    <value>Guard Tour Transaction Report</value>
+  </data>
+  <data name="ReportNameIntrusionTransactionHistory" xml:space="preserve">
+    <value>Intrusion Transaction Report</value>
+  </data>
+  <data name="ReportNameMusterAnalysis" xml:space="preserve">
+    <value>Muster Analysis Report</value>
+  </data>
+  <data name="ReportNameTransactionHistory" xml:space="preserve">
+    <value>Transaction Report</value>
+  </data>
+  <data name="ReportDescriptionEntityTransactionHistory" xml:space="preserve">
+    <value>Shows the access / denial transaction history of a badge.</value>
+  </data>
+  <data name="ReportNameEntityTransactionHistory" xml:space="preserve">
+    <value>Entity Transaction History</value>
+  </data>
+  <data name="ReportSchedulerViewTitleFormat" xml:space="preserve">
+    <value>Schedule {0} Now</value>
+    <comment>0 is the Name of the report to Schedule</comment>
+  </data>
+  <data name="ActiveViewAlarmListLoadingMessage" xml:space="preserve">
+    <value>Retrieving alarms…</value>
+  </data>
+  <data name="ReportServerModelDomainLabel" xml:space="preserve">
+    <value>Domain</value>
+  </data>
+  <data name="ReportServerModelPasswordLabel" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="ReportServerModelPasswordRequiredErrorMessage" xml:space="preserve">
+    <value>The Password field is required.</value>
+  </data>
+  <data name="ReportServerModelUserNameLabel" xml:space="preserve">
+    <value>User Name</value>
+  </data>
+  <data name="ReportServerModelUserNameRequiredErrorMessage" xml:space="preserve">
+    <value>The User Name field is required.</value>
+  </data>
+  <data name="ReportServerModelServiceUrlLabel" xml:space="preserve">
+    <value>Service URL</value>
+  </data>
+  <data name="ReportServerViewInstructions" xml:space="preserve">
+    <value>Enter your Report Server configuration below.</value>
+  </data>
+  <data name="ReportServerViewLegend" xml:space="preserve">
+    <value>Report Server</value>
+  </data>
+  <data name="ReportServerViewSubmitButtonText" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="ReportServerViewTitle" xml:space="preserve">
+    <value>Report Server</value>
+  </data>
+  <data name="SystemSetupMenuReportServerTitle" xml:space="preserve">
+    <value>Report Server</value>
+  </data>
+  <data name="UpdateCompanyLogoDefaultApplied" xml:space="preserve">
+    <value>The default Customer Logo has been applied</value>
+  </data>
+  <data name="UpdateCompanyLogoFileUploaded" xml:space="preserve">
+    <value>File Uploaded, click Apply to save this change for all users</value>
+  </data>
+  <data name="UpdateCompanyLogoInvalidExtension" xml:space="preserve">
+    <value>Incompatible file format.  Acceptable options include: .JPG, .GIF, or .PNG</value>
+  </data>
+  <data name="UpdateCompanyLogoInvalidFile" xml:space="preserve">
+    <value>The file specified is invalid or no longer accessible</value>
+  </data>
+  <data name="UpdateCompanyLogoInvalidSize" xml:space="preserve">
+    <value>The file specified is too large, please select an image of less than 200k</value>
+  </data>
+  <data name="UpdateCompanyLogoSuccess" xml:space="preserve">
+    <value>The image has been successfully applied as the Customer Logo for this site</value>
+  </data>
+  <data name="CompanyLogoViewApply" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="CompanyLogoViewInstructions" xml:space="preserve">
+    <value>Customize the logo that displays for your company in the upper right of the application.</value>
+  </data>
+  <data name="CompanyLogoViewMaximumFileSize" xml:space="preserve">
+    <value>Maximum file size: 200k</value>
+  </data>
+  <data name="CompanyLogoViewPageTitle" xml:space="preserve">
+    <value>Upload Company Logo</value>
+  </data>
+  <data name="CompanyLogoViewRecommendedDimensions" xml:space="preserve">
+    <value>Recommended dimensions: 175x65</value>
+  </data>
+  <data name="CompanyLogoViewRequiredFormat" xml:space="preserve">
+    <value>Required format: JPG, GIF, PNG</value>
+  </data>
+  <data name="CompanyLogoViewRestoreDefault" xml:space="preserve">
+    <value>Restore Default</value>
+  </data>
+  <data name="CompanyLogoViewTitle" xml:space="preserve">
+    <value>Upload Company Logo</value>
+  </data>
+  <data name="UpdateCompanyLogoInvalidImage" xml:space="preserve">
+    <value>The file specified is not a valid image.</value>
+  </data>
+  <data name="ReportDescriptionCardholderTransaction" xml:space="preserve">
+    <value>Shows the access / denial transaction history of a badge.</value>
+  </data>
+  <data name="ReportNameCardholderTransaction" xml:space="preserve">
+    <value>Cardholder Transaction Report</value>
+  </data>
+  <data name="ReportRunnerSubmitButtonTitle" xml:space="preserve">
+    <value>Run Report</value>
+  </data>
+  <data name="ConfigureNow" xml:space="preserve">
+    <value>Configure Now</value>
+  </data>
+  <data name="PleaseContactYourSystemAdministrator" xml:space="preserve">
+    <value>Please contact your System Administrator</value>
+  </data>
+  <data name="ReportingAuthenticationException" xml:space="preserve">
+    <value>The credentials for Reporting Services are incorrect; please update the configuration.</value>
+  </data>
+  <data name="ReportingEndpointException" xml:space="preserve">
+    <value>Unable to contact Reporting Service; check configuration.</value>
+  </data>
+  <data name="ReportingSchemeException" xml:space="preserve">
+    <value>The SSL/TLS setting for Reporting Services is incorrect; please update the configuration.</value>
+  </data>
+  <data name="ReportServerModelServerLabel" xml:space="preserve">
+    <value>Server (IP Address or Host Name)</value>
+  </data>
+  <data name="ReportServerModelServerRequiredErrorMessage" xml:space="preserve">
+    <value>The Server field is required.</value>
+  </data>
+  <data name="ReportServerModelUseSslLabel" xml:space="preserve">
+    <value>Use SSL/TLS</value>
+  </data>
+  <data name="ReportServerModelWebServiceUrlLabel" xml:space="preserve">
+    <value>Web Service URL</value>
+  </data>
+  <data name="ReportServerModelWebServiceVirtualDirectoryLabel" xml:space="preserve">
+    <value>Web Service Virtual Directory</value>
+  </data>
+  <data name="ReportServerModelWebServiceVirtualDirectoryRequiredErrorMessage" xml:space="preserve">
+    <value>The Web Service Virtual Directory field is required.</value>
+  </data>
+  <data name="ReportServerOptionsConnectionFailedMessage" xml:space="preserve">
+    <value>Failed to connect to the Reporting Services, please update the configuration.</value>
+  </data>
+  <data name="ReportServerOptionsConnectionSucceeded" xml:space="preserve">
+    <value>Connection Succeeded.</value>
+  </data>
+  <data name="ReportServerOptionsSaveCompletedMessage" xml:space="preserve">
+    <value>Your changes to the Report Server configuration have been saved successfully.</value>
+  </data>
+  <data name="ReportServerModelDefaultConfigurationMessage" xml:space="preserve">
+    <value>This configuration has not been set, please update the default values.</value>
+  </data>
+  <data name="AlarmDisplayOptionsResetToDefaultButton" xml:space="preserve">
+    <value>Restore Defaults</value>
+  </data>
+  <data name="DefaultDataSourceName" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="ReportRunnerViewStep3Prompt" xml:space="preserve">
+    <value>Which data source would you like to use?</value>
+  </data>
+  <data name="ReportSchedulerModelDescriptionLabel" xml:space="preserve">
+    <value>Scheduled Report Description</value>
+  </data>
+  <data name="ReportSchedulerModelDescriptionRequiredErrorMessage" xml:space="preserve">
+    <value>A Description must be entered for this scheduled report.</value>
+  </data>
+  <data name="ReportSchedulerWhereToReceivePrompt" xml:space="preserve">
+    <value>Where do you want to receive your report?</value>
+  </data>
+  <data name="ReportServerViewTestConfigurationButtonText" xml:space="preserve">
+    <value>Test Configuration</value>
+  </data>
+  <data name="SiteMenuSystemSetupAlarmManagerAdministrationTitle" xml:space="preserve">
+    <value>Alarm Manager Administration</value>
+  </data>
+  <data name="SiteMenuSystemSetupApplicationSettingsTitle" xml:space="preserve">
+    <value>Application Settings</value>
+  </data>
+  <data name="SiteMenuSystemSetupReportsAdministrationTitle" xml:space="preserve">
+    <value>Reports Administration</value>
+  </data>
+  <data name="ReportsErrorViewPageTitle" xml:space="preserve">
+    <value>Reporting Error Encountered</value>
+  </data>
+  <data name="ReportsScheduledViewPageTitle" xml:space="preserve">
+    <value>Manage Scheduled Reports</value>
+  </data>
+  <data name="ReportsScheduledModifyButtonTitle" xml:space="preserve">
+    <value>Modify</value>
+  </data>
+  <data name="SiteMenuInvestigateManageTitle" xml:space="preserve">
+    <value>Manage Scheduled Reports</value>
+  </data>
+  <data name="SiteMenuInvestigateReportsTitle" xml:space="preserve">
+    <value>Reports</value>
+  </data>
+  <data name="ScheduleReport" xml:space="preserve">
+    <value>Schedule Report</value>
+  </data>
+  <data name="ReportRunnerViewPageTitle" xml:space="preserve">
+    <value>Run Report</value>
+  </data>
+  <data name="ReportSchedulerViewPageTitleFormat" xml:space="preserve">
+    <value>Schedule {0}</value>
+    <comment>0 is a report name</comment>
+  </data>
+  <data name="ReportsScheduledDeleteButtonTitle" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="ReportScheduledViewPageTitle" xml:space="preserve">
+    <value>Report Scheduled</value>
+  </data>
+  <data name="ReportModifyScheduledSubmitButtonTitle" xml:space="preserve">
+    <value>Update Scheduled Report</value>
+  </data>
+  <data name="ReportModifyScheduledViewHeaderTitle" xml:space="preserve">
+    <value>MODIFY REPORT</value>
+  </data>
+  <data name="ReportModifyScheduledViewInstructions" xml:space="preserve">
+    <value>Make changes to the following scheduled report.</value>
+  </data>
+  <data name="ReportModifyScheduledViewTitleFormat" xml:space="preserve">
+    <value>Modify {0}</value>
+  </data>
+  <data name="EmailDeliverySettingsText" xml:space="preserve">
+    <value>Email to: {0}</value>
+  </data>
+  <data name="FileShareDeliverySettingsText" xml:space="preserve">
+    <value>Save file to: {0}</value>
+  </data>
+  <data name="ReportFrequencyDailyText" xml:space="preserve">
+    <value>Daily at {0}{1}{2}</value>
+  </data>
+  <data name="ReportFrequencyEnding" xml:space="preserve">
+    <value>ending</value>
+  </data>
+  <data name="ReportFrequencyStarting" xml:space="preserve">
+    <value>starting</value>
+  </data>
+  <data name="ReportFrequencyWeeklyText" xml:space="preserve">
+    <value>Weekly on {0} at {1}{2}{3}</value>
+  </data>
+  <data name="ReportScheduledViewDateRangeTitle" xml:space="preserve">
+    <value>Date Range:</value>
+  </data>
+  <data name="ReportScheduledViewFileFormatTitle" xml:space="preserve">
+    <value>File Format:</value>
+  </data>
+  <data name="ReportScheduledViewHeaderTitle" xml:space="preserve">
+    <value>SUMMARY</value>
+  </data>
+  <data name="ReportScheduledViewInstructions" xml:space="preserve">
+    <value>Your {0} "{1}" has been scheduled.</value>
+  </data>
+  <data name="ReportScheduledViewModifyButtonTitle" xml:space="preserve">
+    <value>MODIFY THIS SCHEDULED REPORT</value>
+  </data>
+  <data name="ReportScheduledViewReportDeliveryTitle" xml:space="preserve">
+    <value>Report Delivery:</value>
+  </data>
+  <data name="ReportScheduledViewRunScheduleTitle" xml:space="preserve">
+    <value>Back to Schedule a Report</value>
+  </data>
+  <data name="ReportSchedulerModelInvalidEndDateErrorMessage" xml:space="preserve">
+    <value>The End Date specified is invalid.</value>
+  </data>
+  <data name="ReportSchedulerModelInvalidScheduledTimeErrorMessage" xml:space="preserve">
+    <value>The Scheduled Time entered is invalid.</value>
+  </data>
+  <data name="ReportSchedulerModelInvalidStartDateErrorMessage" xml:space="preserve">
+    <value>The Start Date specified is invalid.</value>
+  </data>
+  <data name="ReportSchedulerModelLocationInvalidErrorMessage" xml:space="preserve">
+    <value>The Location specified is invalid.</value>
+  </data>
+  <data name="ReportSchedulerModelLocationRequiredErrorMessage" xml:space="preserve">
+    <value>A Location must be entered for this scheduled report.</value>
+  </data>
+  <data name="ReportSchedulerModelSubjectRequiredErrorMessage" xml:space="preserve">
+    <value>A Subject must be entered for this scheduled report.</value>
+  </data>
+  <data name="ReportSchedulerModelUserNameRequiredErrorMessage" xml:space="preserve">
+    <value>A User Name must be entered for this scheduled report.</value>
+  </data>
+  <data name="ReportModifyScheduledNewButtonTitle" xml:space="preserve">
+    <value>Save As New Report</value>
+  </data>
+  <data name="ReportSchedulerModelEmailAddressesRequiredErrorMessage" xml:space="preserve">
+    <value>One or more E-mail Addresses must be entered for this scheduled report.</value>
+  </data>
+  <data name="ReportSchedulerModelEndDatePrecedesStartDateErrorMessage" xml:space="preserve">
+    <value>The End Date must be on or after the Start Date.</value>
+  </data>
+  <data name="ReportServerModelInvalidServer" xml:space="preserve">
+    <value>The Service URL is invalid, please ensure the Server is a valid IP Address or Host Name, and that the Virtual Directory is correct.</value>
+  </data>
+  <data name="CopyrightClaim2012" xml:space="preserve">
+    <value>© 2012 Johnson Controls. All rights reserved.</value>
+  </data>
+  <data name="CopyrightClaimFormat" xml:space="preserve">
+    <value>© 2012 - {0} Johnson Controls. All rights reserved.</value>
+    <comment>0 is the current year.</comment>
+  </data>
+  <data name="SystemStatusConnected" xml:space="preserve">
+    <value>Connected</value>
+  </data>
+  <data name="SystemStatusDisconnected" xml:space="preserve">
+    <value>Disconnected, last update received at: </value>
+  </data>
+  <data name="SystemStatusCanNotReachP2000" xml:space="preserve">
+    <value>Web server is unable to connect to P2000</value>
+  </data>
+  <data name="SystemStatusCanNotReachWebServer" xml:space="preserve">
+    <value>Unable to connect to web server</value>
+  </data>
+  <data name="SystemStatusNoNetworkConnection" xml:space="preserve">
+    <value>Check your network connection</value>
+  </data>
+  <data name="ReportServerViewValidatingConfiguration" xml:space="preserve">
+    <value>Validating Configuration…</value>
+  </data>
+  <data name="CsvLabel" xml:space="preserve">
+    <value>CSV</value>
+  </data>
+  <data name="ReportScheduledViewOutputFormat" xml:space="preserve">
+    <value>Output Format</value>
+  </data>
+  <data name="AlarmManagerAlarmListStatusFormat" xml:space="preserve">
+    <value>{0} Total Alarm(s), &lt;strong&gt;{1} Pending Alarm(s)&lt;/strong&gt;</value>
+    <comment>0 is the count of all alarms in a list, 1 is the count of pending alarms in a list - The pending alarms fragment should keep the &lt;strong&gt; tags surrounding it as this will  become an html fragment</comment>
+  </data>
+  <data name="ReportsScheduleListViewPageTitle" xml:space="preserve">
+    <value>Schedule a Report</value>
+  </data>
+  <data name="RunReportsIndexViewPageTitle" xml:space="preserve">
+    <value>Run a Report</value>
+  </data>
+  <data name="ScheduleReportsIndexViewPageTitle" xml:space="preserve">
+    <value>Schedule a Report</value>
+  </data>
+  <data name="SiteMenuInvestigateRunTitle" xml:space="preserve">
+    <value>Run a Report</value>
+  </data>
+  <data name="SiteMenuInvestigateScheduleTitle" xml:space="preserve">
+    <value>Schedule a Report</value>
+  </data>
+  <data name="AlarmManagerViewHideHistoryText" xml:space="preserve">
+    <value>Hide Details</value>
+  </data>
+  <data name="AlarmManagerViewShowHistoryText" xml:space="preserve">
+    <value>Show Details</value>
+  </data>
+  <data name="SchedulerReportLocationInvalidErrorMessage" xml:space="preserve">
+    <value>The Location specified is invalid.</value>
+  </data>
+  <data name="SchedulerReportUnexpectedErrorMessage" xml:space="preserve">
+    <value>One of more of the parameters specified is invalid.  Please check the configuration, then try again.</value>
+  </data>
+  <data name="SchedulerReportUnacceptableValueMessage" xml:space="preserve">
+    <value>An unacceptable parameter value was specified.  All values have been reset.</value>
+  </data>
+  <data name="ReportParameterInvalidError" xml:space="preserve">
+    <value>One or more of the values specified are invalid, please try again.</value>
+  </data>
+  <data name="ReportDateRangeInvalidMessage" xml:space="preserve">
+    <value>The To date must follow the From date, and both be between 1/1/1900 and 1/1/2100.  Please try again.</value>
+  </data>
+  <data name="ReportDateInvalidFromFormatMessage" xml:space="preserve">
+    <value>The Date/Time From is formatted incorrectly.  Please try again.</value>
+  </data>
+  <data name="ReportDateInvalidFromRangeMessage" xml:space="preserve">
+    <value>The Date/Time From must be between 1/1/1900 and 1/1/2100.  Please try again.</value>
+  </data>
+  <data name="ReportDateInvalidSequenceMessage" xml:space="preserve">
+    <value>The Date/Time To must follow the Date/Time From.  Please try again.</value>
+  </data>
+  <data name="ReportDateInvalidToFormatMessage" xml:space="preserve">
+    <value>The Date/Time To is formatted incorrectly.  Please try again.</value>
+  </data>
+  <data name="ReportDateInvalidToRangeMessage" xml:space="preserve">
+    <value>The Date/Time To must be between 1/1/1900 and 1/1/2100.  Please try again.</value>
+  </data>
+  <data name="ReportTimeOutMessage" xml:space="preserve">
+    <value>Report server timed out returning results. Please adjust selection criteria and try again.</value>
+  </data>
+  <data name="ReportExceedingExcelWorksheeSizeMessage" xml:space="preserve">
+    <value>Report server was unable to generate Excel report. Report exceeded maximum worksheet size. Please narrow selection criteria and try again.</value>
+  </data>
+  <data name="ReportMessageQuotaExceededExceptionMessage" xml:space="preserve">
+    <value>Report server exceeded a maximum size quota for incoming messages. Please narrow selection criteria and try again.</value>
+  </data>
+  <data name="ActiveViewAddNote" xml:space="preserve">
+    <value>Add a note</value>
+  </data>
+  <data name="AudioAlertChime" xml:space="preserve">
+    <value>Chime</value>
+  </data>
+  <data name="AudioAlertDrum" xml:space="preserve">
+    <value>Drum</value>
+  </data>
+  <data name="AudioAlertEvacuation" xml:space="preserve">
+    <value>Evacuation</value>
+  </data>
+  <data name="AudioAlertFireAlarm" xml:space="preserve">
+    <value>Fire Alarm</value>
+  </data>
+  <data name="AudioAlertPager" xml:space="preserve">
+    <value>Pager</value>
+  </data>
+  <data name="AudioAlertSiren" xml:space="preserve">
+    <value>Siren</value>
+  </data>
+  <data name="ReportParameterRequiredError" xml:space="preserve">
+    <value>A value for '{0}' is required, please try again.</value>
+  </data>
+  <data name="ActiveViewAlarmHistoryAlarmStatus" xml:space="preserve">
+    <value>Status</value>
+    <comment>Alarm History Status Column Heading</comment>
+  </data>
+  <data name="ActiveViewAlarmHistoryResponse" xml:space="preserve">
+    <value>Response</value>
+    <comment>Alarm History Response Column Heading</comment>
+  </data>
+  <data name="ActiveViewAlarmHistoryState" xml:space="preserve">
+    <value>State</value>
+    <comment>Alarm History State Column Heading</comment>
+  </data>
+  <data name="ActiveViewAlarmHistoryTimeStamp" xml:space="preserve">
+    <value>Time Stamp</value>
+    <comment>Alarm History Time Stamp Column Heading</comment>
+  </data>
+  <data name="ActiveViewAlarmHistoryUser" xml:space="preserve">
+    <value>User</value>
+    <comment>Alarm History User Column Heading</comment>
+  </data>
+  <data name="ReportSchedulerModelScheduledTimeRequiredMessage" xml:space="preserve">
+    <value>Scheduled time is required.</value>
+  </data>
+  <data name="ReportModelReportOutputTypeErrorMessage" xml:space="preserve">
+    <value>A report output format must be specified.</value>
+  </data>
+  <data name="ReportModelReportRecurranceNotSpecifiedErrorMessage" xml:space="preserve">
+    <value>When this report is to be run must be specified.</value>
+  </data>
+  <data name="ReportServerUntrustedCertificateMessage" xml:space="preserve">
+    <value>Unable to communicate with report server. The certificate presented is not trusted.</value>
+  </data>
+  <data name="SiteAboutTitle" xml:space="preserve">
+    <value>About this Version</value>
+  </data>
+  <data name="SiteDocumentationTitle" xml:space="preserve">
+    <value>Documentation</value>
+  </data>
+  <data name="AboutClose" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="VersionP2000" xml:space="preserve">
+    <value>P2000 Version:</value>
+  </data>
+  <data name="VersionWebUI" xml:space="preserve">
+    <value>Web UI Version:</value>
+  </data>
+  <data name="LegalNotices" xml:space="preserve">
+    <value>Legal Notices</value>
+  </data>
+  <data name="ActiveViewInstructionsV2" xml:space="preserve">
+    <value>Alarms</value>
+  </data>
+  <data name="AlarmManagerMenuItemVersion1" xml:space="preserve">
+    <value>Version 1</value>
+  </data>
+  <data name="AlarmManagerMenuItemVersion2" xml:space="preserve">
+    <value>Version 2</value>
+  </data>
+  <data name="AlarmManagerViewSubmitAResponse" xml:space="preserve">
+    <value>Submit</value>
+    <comment>Enter a Response Submit button</comment>
+  </data>
+  <data name="AlarmManagerPendingAlarmsFormat" xml:space="preserve">
+    <value>{0} Pending Alarm(s)</value>
+  </data>
+  <data name="AlarmManagerTotalAlarmsFormat" xml:space="preserve">
+    <value>{0} Total Alarm(s)</value>
+  </data>
+  <data name="AlarmManagerToolTipCategory" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="AlarmManagerToolTipDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="AlarmManagerToolTipEscalation" xml:space="preserve">
+    <value>Escalation</value>
+  </data>
+  <data name="AlarmManagerToolTipSite" xml:space="preserve">
+    <value>Site</value>
+  </data>
+  <data name="AlarmManagerToolTipState" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="AlarmManagerToolTipStatus" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="AlarmManagerAlarmInfo" xml:space="preserve">
+    <value>Alarm Info:</value>
+  </data>
+  <data name="AlarmManagerTotalsSeparator" xml:space="preserve">
+    <value>, </value>
+  </data>
+  <data name="CaseManagerPageTitle" xml:space="preserve">
+    <value>Cases</value>
+  </data>
+  <data name="SiteMenuCaseManagerTitle" xml:space="preserve">
+    <value>Cases</value>
+  </data>
+  <data name="CaseTitleLabel" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="CaseTitleRequired" xml:space="preserve">
+    <value>Case title is required</value>
+  </data>
+  <data name="CaseTitleExceedsMaxLength" xml:space="preserve">
+    <value>Title cannot be longer than 255 characters</value>
+  </data>
+  <data name="CreateCaseButton" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="NewCaseButton" xml:space="preserve">
+    <value>New Case</value>
+  </data>
+  <data name="ErrorResourceNotFound" xml:space="preserve">
+    <value>Resource not found.</value>
+  </data>
+  <data name="CaseCreatedByLabel" xml:space="preserve">
+    <value>Created by</value>
+  </data>
+  <data name="CaseOwnerLabel" xml:space="preserve">
+    <value>Owner</value>
+  </data>
+  <data name="CaseNoteTextTooLong" xml:space="preserve">
+    <value>Note cannot be longer than 2000 characters.</value>
+  </data>
+  <data name="CaseNoteCaseIdRequired" xml:space="preserve">
+    <value>Case Id required.</value>
+  </data>
+  <data name="CaseNoteTextRequired" xml:space="preserve">
+    <value>Note must contain text.</value>
+  </data>
+  <data name="AddCaseNoteButton" xml:space="preserve">
+    <value>Enter Note</value>
+  </data>
+  <data name="CaseNoteTitle" xml:space="preserve">
+    <value>Enter a note...</value>
+  </data>
+  <data name="CaseCreatedDateTimeLabel" xml:space="preserve">
+    <value>Created at</value>
+  </data>
+  <data name="CaseIdLabel" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="CaseStatusInvalid" xml:space="preserve">
+    <value>Unrecognized status</value>
+  </data>
+  <data name="CloseCaseButton" xml:space="preserve">
+    <value>Close Case</value>
+  </data>
+  <data name="OpenCaseButton" xml:space="preserve">
+    <value>Reopen Case</value>
+  </data>
+</root>

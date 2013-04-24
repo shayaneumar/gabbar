@@ -1,0 +1,17 @@
+﻿@*----------------------------------------------------------------------------
+
+(C) Copyright 2013 Johnson Controls, Inc.
+Use or Copying of all or any part of this program, except as
+permitted by License Agreement, is prohibited.
+
+------------------------------------------------------------------------------*@
+
+<div id="new-case-section">
+    <div>
+        <input type="text" id="title" class="new-case" required autofocus placeholder="@Resources.CaseTitleLabel" maxlength="255" data-bind="value: caseTitle, valueUpdate: 'input propertychange', event: { keypress: onTitleInputKeypress }" />
+    </div>
+    <button type="submit" id="create" class="btn btn-large btn-primary" data-bind='click: createCaseClick, enable: canCreateCase'>@Resources.CreateCaseButton</button>
+</div>
+<ul data-bind="foreach: messages" class="alerts">
+    <li class="alert" data-bind="text: message, css: { 'alert-error': messageType === 'error', 'alert-info': messageType === 'info', 'alert-success': messageType === 'success', }"></li>
+</ul>

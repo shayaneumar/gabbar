@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include>
+  <!-- Default Value for VIRTUAL_DIR_VAL -->
+  <Property Id="VIRTUAL_DIR_VAL" Value="P2000WebUI" />
+
+  <!-- Default Value for WEB_APP_NAME -->
+  <Property Id="WEB_APP_NAME" Value="P2000WebUIAppPool" />
+
+  <!-- Default Value for SETUP_SSL -->
+  <Property Id="SETUP_SSL" Value="1" />
+
+  <!-- Default Value for P2000_SERVER_IP_ADDRESS -->
+  <Property Id="P2000_SERVER_IP_ADDRESS" Value="127.0.0.1" />
+
+  <!-- Default Value for P2000_SERVER_RPC_PORT -->
+  <Property Id="P2000_SERVER_RPC_PORT" Value="41023" />
+</Include>

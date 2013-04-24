@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{334590E7-4244-4793-AE53-0B8F59F63615}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BuildingSecurity.Web</RootNamespace>
+    <AssemblyName>BuildingSecurity.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>..\Monkeypaw.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>..\Monkeypaw.ruleset</CodeAnalysisRuleSet>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.8\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SignalR">
+      <HintPath>..\packages\SignalR.Server.0.5.2\lib\net40\SignalR.dll</HintPath>
+    </Reference>
+    <Reference Include="SignalR.Hosting.AspNet">
+      <HintPath>..\packages\SignalR.Hosting.AspNet.0.5.2\lib\net40\SignalR.Hosting.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="SignalR.Hosting.Common">
+      <HintPath>..\packages\SignalR.Hosting.Common.0.5.2\lib\net40\SignalR.Hosting.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SharedAssemblyInfo.cs">
+      <Link>SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Api\Controllers\AlarmDisplayOptionsController.cs" />
+    <Compile Include="Api\Controllers\AlarmResponsesController.cs" />
+    <Compile Include="Api\Controllers\AlarmsController.cs" />
+    <Compile Include="Api\Controllers\AudioAlertsController.cs" />
+    <Compile Include="Api\Controllers\BaseApiController.cs" />
+    <Compile Include="Api\Controllers\CaseNotesController.cs" />
+    <Compile Include="Api\Controllers\CasesController.cs" />
+    <Compile Include="Api\Controllers\Debugging\SimulatorController.cs" />
+    <Compile Include="Api\Controllers\HistoryController.cs" />
+    <Compile Include="Api\Controllers\ReportParametersController.cs" />
+    <Compile Include="Api\Controllers\CurrentUserController.cs" />
+    <Compile Include="Api\Controllers\RequestTokenController.cs" />
+    <Compile Include="Api\Controllers\UserPreferencesController.cs" />
+    <Compile Include="Api\KeepUserSessionActive.cs" />
+    <Compile Include="Api\Models\ActionResult.cs" />
+    <Compile Include="Api\Models\AlarmActionInput.cs" />
+    <Compile Include="Api\Models\AlarmDisplayOptions.cs" />
+    <Compile Include="Api\Models\AlarmDisplayRange.cs" />
+    <Compile Include="Api\Models\AudioAlert.cs" />
+    <Compile Include="Api\Models\CaseCreateRequest.cs" />
+    <Compile Include="Api\Models\CaseNoteModel.cs" />
+    <Compile Include="Api\Models\CaseUpdateRequest.cs" />
+    <Compile Include="Api\Models\CaseValidation.cs" />
+    <Compile Include="Api\Models\PushServices.cs" />
+    <Compile Include="Api\Models\ReportParametersInput.cs" />
+    <Compile Include="Api\Models\SimulatorScript.cs" />
+    <Compile Include="Api\Models\UserPreferencesInput.cs" />
+    <Compile Include="Api\RequiredPermissionAttribute.cs" />
+    <Compile Include="App\Controllers\AccountController.cs" />
+    <Compile Include="App\Controllers\AlarmDisplayOptionsController.cs" />
+    <Compile Include="App\Controllers\AlarmsController.cs" />
+    <Compile Include="Api\Controllers\Debugging\SessionController.cs" />
+    <Compile Include="App\Controllers\AlarmManagerController.cs" />
+    <Compile Include="App\Controllers\ReportsController.cs" />
+    <Compile Include="App\Controllers\ReportServerConfigurationController.cs" />
+    <Compile Include="App\Controllers\UnauthorizedController.cs" />
+    <Compile Include="App\Controllers\CompanyLogoController.cs" />
+    <Compile Include="App\HttpErrorHandler.cs" />
+    <Compile Include="App\KeepUserSessionActive.cs" />
+    <Compile Include="App\Models\AccountModels.cs" />
+    <Compile Include="App\Models\ActiveAlarmsModel.cs" />
+    <Compile Include="App\Models\MissingReportModel.cs" />
+    <Compile Include="App\Models\ParametersModel.cs" />
+    <Compile Include="App\Models\ParameterType.cs" />
+    <Compile Include="App\Models\ReportActionModel.cs" />
+    <Compile Include="App\Models\ReportParameter.cs" />
+    <Compile Include="App\Models\ReportParameterContainer.cs" />
+    <Compile Include="App\Models\ReportParameters.cs" />
+    <Compile Include="App\Models\ReportSchedulerModel.cs" />
+    <Compile Include="App\Models\ReportsErrorModel.cs" />
+    <Compile Include="App\Models\ReportsModel.cs" />
+    <Compile Include="App\MvcBuildingSecurityProviderFactory.cs" />
+    <Compile Include="CopyrightFactory.cs" />
+    <Compile Include="ReportControlType.cs" />
+    <Compile Include="App\RequiredPermissionAttribute.cs" />
+    <Compile Include="App\UserExtensions.cs" />
+    <Compile Include="App\Models\ReportServerConfigurationModel.cs" />
+    <Compile Include="App\Models\ReportsScheduledModel.cs" />
+    <Compile Include="App\Models\CompanyLogoModel.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="HelpLinkLanguageHelper.cs" />
+    <Compile Include="HttpResponses.cs" />
+    <Compile Include="MessageType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportingExtensions.cs" />
+    <Compile Include="SecurityExtensions.cs" />
+    <Compile Include="Security\AuthenticationServices.cs" />
+    <Compile Include="Security\HttpSessionManager.cs" />
+    <Compile Include="Security\IHttpSessionManager.cs" />
+    <Compile Include="Security\MvcLoggedOnAttribute.cs" />
+    <Compile Include="Security\PrincipalExtensions.cs" />
+    <Compile Include="UserPreferenceKeys.cs" />
+    <Compile Include="WebApiResolverAdapter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BuildingSecurity.Globalization\BuildingSecurity.Globalization.csproj">
+      <Project>{5AF24352-A6E0-420D-A9D6-680EFECE44C8}</Project>
+      <Name>BuildingSecurity.Globalization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BuildingSecurity.Reporting\BuildingSecurity.Reporting.csproj">
+      <Project>{70EDDE33-397D-4A53-A497-4E735B1C21DD}</Project>
+      <Name>BuildingSecurity.Reporting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JohnsonControls.BuildingSecurity.XmlRpc3.Client\JohnsonControls.BuildingSecurity.XmlRpc3.Client.csproj">
+      <Project>{8A354004-18FA-47A7-B49E-CC88A16FBF2E}</Project>
+      <Name>JohnsonControls.BuildingSecurity.XmlRpc3.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JohnsonControls.BuildingSecurity\JohnsonControls.BuildingSecurity.csproj">
+      <Project>{2E986667-407A-4B1B-B5A6-4BACF481DA01}</Project>
+      <Name>JohnsonControls.BuildingSecurity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JohnsonControls.Core\JohnsonControls.Core.csproj">
+      <Project>{2D6A836C-C3A4-4109-A9AB-CB274FA5ADA1}</Project>
+      <Name>JohnsonControls.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JohnsonControls.Web\JohnsonControls.Web.csproj">
+      <Project>{43B2657B-FC8A-4B09-9599-F66845DEF183}</Project>
+      <Name>JohnsonControls.Web</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDictionary Include="..\CustomDictionary.xml">
+      <Link>CustomDictionary.xml</Link>
+      <SubType>Designer</SubType>
+    </CodeAnalysisDictionary>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

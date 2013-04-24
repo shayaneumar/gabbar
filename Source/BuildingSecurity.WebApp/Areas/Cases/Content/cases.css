@@ -1,0 +1,399 @@
+﻿.cases {
+    float: inherit;
+}
+
+.cases ul {
+    list-style: none;
+    display: inline-block;
+    margin-left: 0;
+    width: 100%;
+}
+
+.cases li {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin: 5px 0;
+    white-space: nowrap;
+}
+
+#new-case-section {
+    margin-top: 50px;
+    margin-right: 20px;
+}
+
+input[type="text"].new-case {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.nav.cases.core {
+    bottom: auto;
+    overflow-y: auto;
+}
+
+.nav.cases.supporting {
+    top: 140px;
+    min-height: 140px;
+    overflow-y: auto;
+}
+
+h4 {
+    color: #DDD
+}
+
+.create-note-container {
+    margin: 8px 0;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+}
+
+.create-note-container textarea {
+    margin-bottom: 0;
+    display: block;
+    width: 100%;
+    height: 40px;
+    box-sizing: border-box;
+    resize: none;
+    border: none;
+    padding: 5px;
+    -webkit-box-shadow: inset 0 5px 5px 0 #dddddd;
+       -moz-box-shadow: inset 0 5px 5px 0 #dddddd;
+            box-shadow: inset 0 5px 5px 0 #dddddd;
+
+    -webkit-transition: height 0.35s ease;
+       -moz-transition: height 0.35s ease;
+            transition: height 0.35s ease;
+
+    -webkit-transition-delay: 0.5s;
+       -moz-transition-delay: 0.5s;
+            transition-delay: 0.5s;
+}
+
+.create-note-container.enabled textarea {
+    height: 140px;
+
+    -webkit-transition-delay: 0;
+       -moz-transition-delay: 0;
+            transition-delay: 0;
+}
+
+.create-note-container textarea:focus {
+    height: 140px;
+
+    -webkit-transition-delay: 0;
+       -moz-transition-delay: 0;
+            transition-delay: 0;
+}
+
+.create-note-button-container {
+    text-align: right;
+    width: 100%;
+    padding-top: 6px;
+    margin-bottom: 6px;
+    border-top: 1px solid lightgray;
+}
+
+.create-note-button-container button {
+    margin-right: 6px;
+}
+
+.case-details {
+    background: #F8F8F8;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    padding: 0 8px;
+}
+
+.case-details .row-fluid {
+    padding-bottom: 8px;
+}
+
+.case-details dd {
+    padding: 0 0 8px 0;
+}
+
+.case-details dl {
+    margin-bottom: 0;
+    margin-top: 8px;
+}
+
+#case-details a {
+    background: #F8F8F8;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    padding: 2px 8px;
+
+    -webkit-transition: background 0.7s ease;
+       -moz-transition: background 0.7s ease;
+            transition: background 0.7s ease;
+}
+
+#case-details a.collapsed {
+    background: transparent;
+}
+
+#case-details a .icon-arrow-down {
+    margin-right: 4px;
+
+    visibility: visible;
+    -webkit-transform:rotate(180deg);
+       -moz-transform:rotate(180deg);
+            transform:rotate(180deg);
+
+    -webkit-transition-property: -webkit-transform, visibility;
+    -webkit-transition-duration: 0.35s, 0.3s;
+       -moz-transition-property: -moz-transform, visibility;
+       -moz-transition-duration: 0.35s, 0.3s;
+            transition-property: transform, visibility;
+            transition-duration: 0.35s, 0.3s;
+}
+
+#case-details a.collapsed .icon-arrow-down {
+    visibility: hidden;
+    -webkit-transform:rotate(0);
+       -moz-transform:rotate(0);
+            transform:rotate(0);
+}
+
+#case-title {
+    word-wrap: break-word;
+}
+
+.case-history-table {
+    list-style: none;
+    margin-left: 0;
+    margin-bottom: 0;
+    font-size: 9pt;
+}
+
+.header-row .column {
+    position: relative;
+    float: left;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding: 3px 0;
+    line-height: 20px;
+}
+
+/* Case List - Start */
+
+.filterSelector {
+    white-space: nowrap;
+    color: #999;
+    margin-top: 0px;
+}
+.filterSelector .btn-group {
+    display: inline-block;
+}
+.filterSelector .btn {
+    min-width: 45px;
+    padding: 0 2px;
+    font-size: x-small;
+}
+
+/* Case List - End */
+
+.case-history-row {
+    padding-right: 184px;
+    border-bottom: 1px solid lightgray;
+}
+
+.case-history-row:last-child {
+    border: none;
+}
+
+.case-history-row:hover {
+    background-color: #0081c2;
+    background-image: -webkit-linear-gradient(top, #0088cc, #0077b3);
+    background-image: -moz-linear-gradient(top, #0088cc, #0077b3);
+    background-image: linear-gradient(to bottom, #0088cc, #0077b3);
+    background-repeat: repeat-x;
+
+    color: white;
+    cursor: pointer;
+}
+
+.case-history-resizable-columns {
+    position: relative;
+    float: left;
+    width: 100%;
+}
+
+.case-history-fixed-columns {
+    width: 184px;
+    margin-right: -184px;
+}
+
+.case-history-type-icon {
+    margin-right: 6px;
+    margin-left: 4px;
+}
+
+.no-wrap {
+    white-space: nowrap;
+}
+
+.case-history-text {
+    width: 100%;
+}
+
+.case-history-username {
+    width: 100px;
+}
+
+.case-history-timestamp {
+    width: 80px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Case History - End */
+
+/* Note Details - Start */
+
+.note-details-close {
+    text-align:right;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.note-details-heading {
+    font-weight: bold;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.note-details-text {
+    word-wrap: break-word;
+    margin-left: 15px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+}
+
+/* Note Details - End */
+
+.area .nav {
+    position: fixed;
+    left: 25px;
+    bottom: 0px;
+    top: 40px;
+    width: 175px;
+    overflow: hidden;
+    margin: 0px;
+}
+
+.area .content {
+    min-width: 550px;
+    margin-left: 220px;
+    margin-right: 270px;
+
+    -webkit-transition: margin-right 0.35s ease;
+       -moz-transition: margin-right 0.35s ease;
+            transition: margin-right 0.35s ease;
+}
+
+.area .content.full-width {
+    margin-right: 20px;
+}
+
+.area .content-details {
+    position:fixed;
+    z-index: 40;
+    top: 40px;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+    background-color: #FAFAFA;
+    border-left: 1px solid lightgray;
+    -webkit-box-shadow: inset 5px 0 5px 0 #dddddd;
+       -moz-box-shadow: inset 5px 0 5px 0 #dddddd;
+            box-shadow: inset 5px 0 5px 0 #dddddd;
+
+    width: 250px;
+    -webkit-transition: width 0.35s ease;
+       -moz-transition: width 0.35s ease;
+            transition: width 0.35s ease;
+}
+
+.area .content-details:empty {
+    width: 0;
+}
+
+/* End of File */
+.editable {
+    cursor: text;
+}
+
+h2.editable {
+    margin: 0 1px;
+    position: relative;
+    padding: 3px 36px 3px 3px;
+    box-sizing: border-box;
+    outline: 1px solid transparent;
+
+    -webkit-transition: outline-color 0.35s ease;
+       -moz-transition: outline-color 0.35s ease;
+            transition: outline-color 0.35s ease;
+}
+
+h2.editable:hover {
+    outline: 1px solid #aaa;
+}
+
+h2.editable.active {
+    margin: 0;
+    padding: 0;
+    outline: 1px solid transparent;
+}
+
+.editable .edit-icon {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #f0f0f0;
+    border: 1px solid;
+    border-color: #fff #fff #ddd #ddd;
+    line-height: 16px;
+
+    -webkit-transition: opacity 0.35s ease;
+       -moz-transition: opacity 0.35s ease;
+            transition: opacity 0.35s ease;
+}
+
+.editable:hover .edit-icon {
+    opacity: 1;
+}
+
+.edit-icon .icon-pencil {
+    margin: 8px;
+}
+
+h2.editable.active input[type="text"] {
+    font-size: 30px;
+    line-height: 40px;
+    height: 50px;
+    font-weight: bold;
+    width: 100%;
+    border: 1px solid #4e91fe;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.editable.active .edit-toolbar {
+    background-color: #e8f1ff;
+    line-height: 16px;
+    position: absolute;
+    bottom: -33px;
+    right: 8px;
+    z-index: 20;
+    padding: 3px;
+    border-radius: 0 0 3px 3px;
+    border: 1px solid #a7c8ff;
+    border-top: none;
+}

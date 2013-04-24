@@ -1,0 +1,36 @@
+﻿.color-option,
+.color-display {
+    width:30px;
+    height:30px;
+    background-image: url(shine.png);
+    background-size: 100%;
+    border: 1px inset #999;
+    cursor: pointer;
+}
+.color-display {
+    display: inline-block;
+}
+.color-options {
+    background:#FFF;
+    margin:0px;
+    overflow-y: auto;
+    list-style-type: none;
+    padding: 5px;
+    border-radius: 3px;
+    box-shadow:0 0 6px rgba(0, 0, 0, .25);
+    border: solid 1px #BBB;
+    display: none;
+    z-index: 10;
+    position:absolute;
+    width:96px; 
+    }
+.color-option 
+{
+    float:left;
+}
+.color-picker
+{
+    display:inline-block;
+    overflow: hidden;
+    height: 32px;
+}

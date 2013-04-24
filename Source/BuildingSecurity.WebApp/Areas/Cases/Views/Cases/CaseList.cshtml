@@ -1,0 +1,18 @@
+﻿@*----------------------------------------------------------------------------
+
+(C) Copyright 2013 Johnson Controls, Inc.
+Use or Copying of all or any part of this program, except as
+permitted by License Agreement, is prohibited.
+
+------------------------------------------------------------------------------*@
+
+<div class="filterSelector btn-group">
+    <button id="filterOpen" class="btn" data-bind="css:{'active': filterToOpen()}, click: function() { filterToOpen(true) }">@Resources.CaseFilterOpen</button>
+    <button id="filterAll" class="btn" data-bind="css:{'active': !filterToOpen()}, click: function() { filterToOpen(false) }">@Resources.CaseFilterAll</button>
+</div>
+
+<ul class="cases" id="caselist" data-bind="foreach: cases">
+    <li data-bind="attr: {id: id}">
+        <a data-bind="attr: {href: viewCase}, click:viewCaseSoftLink"><span data-bind="text: title"/></a>
+    </li>
+</ul>

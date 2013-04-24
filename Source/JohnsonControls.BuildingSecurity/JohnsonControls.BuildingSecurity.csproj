@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2E986667-407A-4B1B-B5A6-4BACF481DA01}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JohnsonControls.BuildingSecurity</RootNamespace>
+    <AssemblyName>JohnsonControls.BuildingSecurity</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>..\Monkeypaw.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>..\Monkeypaw.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SharedAssemblyInfo.cs">
+      <Link>SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="AlarmReceivedEventArgs.cs" />
+    <Compile Include="BuildingSecuritySessionStore.cs" />
+    <Compile Include="CaseReceivedEventArgs.cs" />
+    <Compile Include="ChannelUpdateEventArgs.cs" />
+    <Compile Include="Entities\Case.cs" />
+    <Compile Include="Entities\CaseNote.cs" />
+    <Compile Include="Entities\CaseStatus.cs" />
+    <Compile Include="Entities\SystemInformation.cs" />
+    <Compile Include="Entities\MutableUser.cs" />
+    <Compile Include="Entities\TimeZoneIdAndDisplayName.cs" />
+    <Compile Include="Entities\Version.cs" />
+    <Compile Include="HeartbeatReceivedEventArgs.cs" />
+    <Compile Include="Entities\AlarmIdSequenceTuple.cs" />
+    <Compile Include="Entities\HistoryEntry.cs" />
+    <Compile Include="Entities\Partition.cs" />
+    <Compile Include="Entities\ReportServerConfiguration.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="IBuildingSecurityClientCookie.cs" />
+    <Compile Include="IMessageProcessingClient.cs" />
+    <Compile Include="Entities\User.cs" />
+    <Compile Include="IBuildingSecuritySessionStore.cs" />
+    <Compile Include="ISimulatorClient.cs" />
+    <Compile Include="IReportServerConfigurationFactory.cs" />
+    <Compile Include="IUser.cs" />
+    <Compile Include="PermissionNames.cs" />
+    <Compile Include="ReportServerConfigurationFactory.cs" />
+    <Compile Include="IUserPreferences.cs" />
+    <Compile Include="ServiceResponse\AlarmServiceResponse.cs" />
+    <Compile Include="ServiceResponse\ServiceResponse.cs" />
+    <Compile Include="Exceptions\BuildingSecurityAuthenticationFailedException.cs" />
+    <Compile Include="Exceptions\BuildingSecurityException.cs" />
+    <Compile Include="Entities\Alarm.cs" />
+    <Compile Include="Entities\Message.cs" />
+    <Compile Include="IBuildingSecurityClient.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Session.cs" />
+    <Compile Include="Entities\UserPreferences.cs" />
+    <Compile Include="SettingNames.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDictionary Include="..\CustomDictionary.xml">
+      <Link>CustomDictionary.xml</Link>
+      <SubType>Designer</SubType>
+    </CodeAnalysisDictionary>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JohnsonControls.Core\JohnsonControls.Core.csproj">
+      <Project>{2D6A836C-C3A4-4109-A9AB-CB274FA5ADA1}</Project>
+      <Name>JohnsonControls.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Include references to suplimental libraries -->
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:iis="http://schemas.microsoft.com/wix/IIsExtension"
+     xmlns:util="http://schemas.microsoft.com/wix/UtilExtension"
+     xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension">
+
+  <!-- Defined application details, some of these are visible throughout the installer process -->
+  <Product Id="{B3AEA690-2777-4AE8-86A2-638CB71AA124}"
+    Name="P2000 v3.12 Web Application"
+    Language="1033"
+    Version="1.0.0.0"
+    Manufacturer="Johnson Controls Inc."
+    UpgradeCode="{E5C9F391-5787-4fd1-81E6-D1A4A91D226D}">
+
+    <!-- Define installer attributes, and ensure it will be run with escalated privileges -->
+    <Package InstallerVersion="200" Compressed="yes" AdminImage="yes" InstallPrivileges="elevated" />
+    <Property Id="MSIUSEREALADMINDETECTION" Value="1" />
+
+    <!-- Define the media file (within the .MSI) that will contain the application content -->
+    <Media Id="1" Cabinet="Setup.cab" EmbedCab="yes" />
+
+    <!-- Configurable install location -->
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLLOCATION" />
+
+    <!-- Creating directories -->
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <!-- Install stuff into program files folder. -->
+      <Directory Id="ProgramFilesFolder">
+        <!-- In program files create folder with name Johnson Controls -->
+        <Directory Id="INSTALLLOCATION" Name="Johnson Controls">
+          <!-- This is the folder where the website content will be located -->
+          <Directory Id="WEBSITEDIRECTORY" Name="P2000WebUI">
+            <!-- Continue in DirectoryRef with specific name -->
+            <Component Id='RemoveFilesComponent' Guid='AB6B4E43-5DF5-4B99-A497-CBA4EE24D3A7'>
+              <RemoveFile Id='RemoveFiles' Name='web.config' On='uninstall'/>
+            </Component>
+          </Directory>
+        </Directory>
+      </Directory>
+    </Directory>
+
+    <!-- Complete feature which will be installed. -->
+    <Feature Id="Complete"
+      Title="P2000 Web Application"
+      Level="1"
+      Display="expand"
+      ConfigurableDirectory="INSTALLLOCATION">
+
+      <!-- Main content of the Complete feature. -->
+      <Feature Id="MainContent"
+        Title="Website"
+        Description="This will install the P2000 Web Application"
+        Level="1">
+
+        <!-- Include IIS Configuration. -->
+        <ComponentGroupRef Id="IssConfiguration" />
+
+        <!-- Include web content. -->
+        <ComponentGroupRef Id="WebContent" />
+
+        <!-- Perform changes in the web.config file. -->
+        <ComponentRef Id="WebConfigCmp" />
+
+        <!-- Perform changes in the registry. -->
+        <ComponentRef Id="RegistryEntries" />
+
+        <!-- Delete web.config -->
+        <ComponentRef Id="RemoveFilesComponent" />
+      </Feature>
+    </Feature>
+
+    <DirectoryRef Id="WEBSITEDIRECTORY">
+      <!-- Component handling the web.config -->
+      <Component Id="WebConfigCmp" Guid="">
+        <!-- Copy web.config to WEBSITEDIRECTORY folder. -->
+        <File Id="WebConfigFile" KeyPath="yes" Source="$(var.publishDir)\Web.config" Vital="yes" />
+
+        <!-- Update p2k:service:url value in web.config, based on the P2000_SERVER_IP_ADDRESS and P2000_SERVER_RPC_PORT parameters collected in the P2000ServerSettingsDlg step -->
+        <util:XmlFile Id="p2kServiceUrl"
+          Action="setValue"
+          Permanent="yes"
+          ElementPath="/configuration/appSettings/add[\[]@key='p2k:service:url'[\]]"
+          Name="value"
+          File="[#WebConfigFile]"
+          Value="http://[P2000_SERVER_IP_ADDRESS]:[P2000_SERVER_RPC_PORT]"
+          SelectionLanguage="XSLPattern"
+          Sequence="2" />
+
+        <!-- Update RealTimeServiceAddress value in web.config, based on the P2000_SERVER_IP_ADDRESS parameter collected in the P2000ServerSettingsDlg step -->
+        <util:XmlFile Id="RealTimeServiceAddress"
+          Action="setValue"
+          Permanent="yes"
+          ElementPath="/configuration/appSettings/add[\[]@key='RealTimeServiceAddress'[\]]"
+          Name="value"
+          File="[#WebConfigFile]"
+          Value="[P2000_SERVER_IP_ADDRESS]"
+          SelectionLanguage="XSLPattern"
+          Sequence="2" />
+      </Component>
+    </DirectoryRef>
+
+    <!-- Get the path to the .NET Framework from the registry -->
+    <Property Id="FRAMEWORKBASEPATH">
+      <RegistrySearch Id="FindFrameworkDir" Root="HKLM"
+        Key="SOFTWARE\Microsoft\.NETFramework"
+        Name="InstallRoot" Type="raw"
+        Win64="yes">
+      </RegistrySearch>
+    </Property>
+
+    <!-- Get the path to MVC 4 32-bit from the registry (C:\Program Files\Microsoft ASP.NET\ASP.NET MVC 4\Assemblies) -->
+    <Property Id="MVC4PATH32">
+      <RegistrySearch Id="FindMVC4Dir32" Root="HKLM"
+        Key="SOFTWARE\Microsoft\ASP.NET MVC 4\Runtime"
+        Name="InstallPath" Type="raw"
+        Win64="no">
+      </RegistrySearch>
+    </Property>
+
+    <!-- Get the path to MVC 4 64-bit from the registry (C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC 4\Assemblies) -->
+    <Property Id="MVC4PATH64">
+      <RegistrySearch Id="FindMVC4Dir64" Root="HKLM"
+        Key="SOFTWARE\Wow6432Node\Microsoft\ASP.NET MVC 4\Runtime"
+        Name="InstallPath" Type="raw"
+        Win64="no">
+      </RegistrySearch>
+    </Property>
+
+    <!-- Get the installation status of IIS component ISAPI Extensions from the registry -->
+    <Property Id="IIS_ISAPI_EXTENSIONS">
+      <RegistrySearch Id="IIS_ISAPIExtensions" Root="HKLM"
+        Key="SOFTWARE\Microsoft\InetStp\Components"
+        Name="ISAPIExtensions" Type="raw"
+        Win64="yes">
+      </RegistrySearch>
+    </Property>
+
+    <!-- Get the installation status of IIS component ISAPI Filters from the registry -->
+    <Property Id="IIS_ISAPI_FILTERS">
+      <RegistrySearch Id="IIS_ISAPIFilters" Root="HKLM"
+        Key="SOFTWARE\Microsoft\InetStp\Components"
+        Name="ISAPIFilter" Type="raw"
+        Win64="yes">
+      </RegistrySearch>
+    </Property>
+
+    <!-- Get the installation status of IIS component Windows Authentication from the registry -->
+    <Property Id="IIS_WINDOWS_AUTHENTICATION">
+      <RegistrySearch Id="IIS_WindowsAuthentication" Root="HKLM"
+        Key="SOFTWARE\Microsoft\InetStp\Components"
+        Name="WindowsAuthentication" Type="raw"
+        Win64="yes">
+      </RegistrySearch>
+    </Property>
+
+    <!-- Enable reference to extended variables -->
+    <PropertyRef Id="NETFRAMEWORK40FULLINSTALLROOTDIR"/>
+    <PropertyRef Id="NETFRAMEWORK40FULLINSTALLROOTDIR64"/>
+
+    <PropertyRef Id="IISMAJORVERSION"/>
+    <PropertyRef Id="IISMINORVERSION"/>
+
+    <!-- Validate that IIS v7.0+ is installed, or display a message then quit -->
+    <Condition Message="This product requires IIS version 7.0 or higher.  Please restart this installation after IIS setup is complete (NOTE: You must include the components: ISAPI Extensions, ISAPI Filters, and Windows Authentication).">
+      <![CDATA[Installed OR (IISMAJORVERSION AND (IISMAJORVERSION >= "#7"))]]>
+    </Condition>
+
+    <!-- Retrieve the path to aspnet_regiis.exe -->
+    <Property Id="ASPNETREGIIS" >
+      <DirectorySearch Path="[FRAMEWORKBASEPATH]" Depth="4" Id="FindAspNetRegIis">
+        <FileSearch Name="aspnet_regiis.exe" MinVersion="4.0.3"/>
+      </DirectorySearch>
+    </Property>
+
+    <!-- Retrieve the path to EventLogMessages.dll -->
+    <Property Id="EVENTLOGMESSAGES" >
+      <DirectorySearch Path="[FRAMEWORKBASEPATH]" Depth="4" Id="FindErrorLogMessages">
+        <FileSearch Name="EventLogMessages.dll" MinVersion="4.0.3"/>
+      </DirectorySearch>
+    </Property>
+
+    <!-- Validate that Microsoft .NET 4.0+ is installed, or display a message then quit -->
+    <Condition Message="This product requires the Microsoft® .NET Framework version 4.0 or higher.">
+      <![CDATA[Installed OR ASPNETREGIIS]]>
+    </Condition>
+
+    <!-- Retrieve the path to the 32-bit version of System.Web.Mvc.dll -->
+    <Property Id="ASP_NET_MVC_4_0_32_DLL">
+      <DirectorySearch Id="MVC_32_DLL_DIR" Path="[MVC4PATH32]Assemblies">
+        <FileSearch Id="MVC_32_DLL_FILE" Name="System.Web.Mvc.dll" MinVersion="4.0.20126"/>
+      </DirectorySearch>
+    </Property>
+
+    <!-- Retrieve the path to the 64-bit version of System.Web.Mvc.dll -->
+    <Property Id="ASP_NET_MVC_4_0_64_DLL">
+      <DirectorySearch Id="MVC_64_DLL_DIR" Path="[MVC4PATH64]Assemblies">
+        <FileSearch Id="MVC_64_DLL_FILE" Name="System.Web.Mvc.dll" MinVersion="4.0.20126"/>
+      </DirectorySearch>
+    </Property>
+
+    <!-- Validate that MVC 4.0+ is installed, or display a message then quit -->
+    <Condition Message="This product requires ASP.NET MVC 4.x.">
+      <![CDATA[Installed OR ASP_NET_MVC_4_0_64_DLL OR ASP_NET_MVC_4_0_32_DLL]]>
+    </Condition>
+
+    <!-- Validate that IIS components ISAPI Extensions, ISAPI Filters, and Windows Authentication are installed, or display a message then quit -->
+    <Condition Message="This product requires the following IIS components to be installed: ISAPI Extensions, ISAPI Filters, and Windows Authentication">
+      <![CDATA[Installed OR (IIS_ISAPI_EXTENSIONS = "#1") AND (IIS_ISAPI_FILTERS = "#1") AND (IIS_WINDOWS_AUTHENTICATION = "#1")]]>
+    </Condition>
+
+    <DirectoryRef Id="TARGETDIR">
+      <Component Id="RegistryEntries" Guid="60564C6A-7602-4E1B-8F42-B1049D5872D4">
+        <RegistryKey Root="HKLM"
+                     Key="SYSTEM\CurrentControlSet\Services\EventLog\Application\JohnsonControls.P2000.WebUI"
+              Action="create">
+          <RegistryValue Type="integer" Name="TypesSupported" Value="7" KeyPath="yes"/>
+          <RegistryValue Type="expandable" Name="EventMessageFile" Value="[EVENTLOGMESSAGES]"/>
+        </RegistryKey>
+      </Component>
+    </DirectoryRef>
+
+    <!-- Allow the 32-bit version of aspnet_isapi.dll in the ISAPI and CGI Restrictions list (under IIS Server config) -->
+    <CustomAction Id="UpdateIsapiCgiRestrictions32" Property="QtExecInstallCmdLineRun"
+      Value="[WindowsFolder]System32\inetsrv\appcmd.exe set config -section:isapiCgiRestriction /[\[]path='[NETFRAMEWORK40FULLINSTALLROOTDIR]aspnet_isapi.dll'[\]].allowed:True"
+      Return="check"/>
+
+    <!-- Allow the 64-bit version of aspnet_isapi.dll in the ISAPI and CGI Restrictions list (under IIS Server config) -->
+    <CustomAction Id="UpdateIsapiCgiRestrictions64" Property="QtExecInstallCmdLineRun"
+      Value="[WindowsFolder]System32\inetsrv\appcmd.exe set config -section:isapiCgiRestriction /[\[]path='[NETFRAMEWORK40FULLINSTALLROOTDIR64]aspnet_isapi.dll'[\]].allowed:True"
+      Return="check"/>
+
+    <!-- Install the scriptmap for the website -->
+    <CustomAction Id="InstallScriptmap" Property="QtExecInstallCmdLineRun"
+      Value="[ASPNETREGIIS] -norestart -s W3SVC/1/ROOT/[VIRTUAL_DIR_VAL]"
+      Return="check"/>
+
+    <Binary Id="IisActions" SourceFile="bin\CustomActions\IisActions.CA.dll" />
+    <Binary Id="makecert" SourceFile="bin\CustomActions\makecert.exe" />
+    <CustomAction Id="CreateSSLBinding" BinaryKey="IisActions" DllEntry="DeployCertificate" Execute="deferred" Impersonate="no" Return="ignore" />
+    <CustomAction Id="SetCustomActionDataValue" Return="check" Property="CreateSSLBinding" Value="INSTALLLOCATION=[WEBSITEDIRECTORY];CERTEXPORTPATH=[CERT_EXPORT_PATH]" />
+
+    <!-- Call the CustomActions defined above in the specified sequence (based on Before / After attributes)-->
+    <InstallExecuteSequence>
+      <RemoveExistingProducts After='InstallInitialize'>(NOT UPGRADINGPRODUCTCODE) AND (Installed)</RemoveExistingProducts>
+      <Custom Action="UpdateIsapiCgiRestrictions32" Before="UpdateIsapiCgiRestrictions64">ASPNETREGIIS AND NOT Installed</Custom>
+      <Custom Action="UpdateIsapiCgiRestrictions64" Before="SetCustomActionDataValue">ASPNETREGIIS AND NOT Installed</Custom>
+      <Custom Action="SetCustomActionDataValue" Before="CreateSSLBinding">SETUP_SSL AND ASPNETREGIIS AND NOT Installed</Custom>
+      <Custom Action="CreateSSLBinding" Before="InstallScriptmap">SETUP_SSL AND ASPNETREGIIS AND NOT Installed</Custom>
+      <Custom Action="InstallScriptmap" Before="InstallFinalize">ASPNETREGIIS AND NOT Installed</Custom>
+    </InstallExecuteSequence>
+
+    <!-- License and images -->
+    <WixVariable Id="WixUILicenseRtf" Value="$(var.ResourcePath)\License.rtf" />
+    <WixVariable Id="WixUIDialogBmp" Value="$(var.ResourcePath)\dialog.bmp" />
+    <WixVariable Id="WixUIBannerBmp" Value="$(var.ResourcePath)\banner.bmp" />
+    <Icon Id="icon.ico" SourceFile="$(var.ResourcePath)\icon.ico"/>
+    <Property Id="ARPPRODUCTICON" Value="icon.ico" />
+
+    <!-- Specify UI -->
+    <UIRef Id="WebUI" />
+  </Product>
+</Wix>

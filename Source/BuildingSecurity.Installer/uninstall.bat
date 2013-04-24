@@ -1,0 +1,1 @@
+msiexec /x {B3AEA690-2777-4AE8-86A2-638CB71AA124} /lv "%~dp0log.txt"
